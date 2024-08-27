@@ -1,0 +1,61 @@
+
+/* Desktop */
+
+@media ( width >= 701px ){
+
+
+    .videoComparison_container{
+        max-width: 100vw;
+        height: 70vh;
+        padding: 6vw;
+        background-color:var(--secondary-color) ;
+        z-index: 8;
+    }
+    .videoComparison_main_text{
+        color: var(--primary-color);
+        font-weight: 500;
+        font-size: 2.6vw;
+        line-height:3vw;
+        letter-spacing: 0.01vw;
+        font-family: "Inter", sans-serif;
+    }
+    .videoComparison_videos_container{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 6vw;
+    }
+    .videoComparison_video_one_container,.videoComparison_video_two_container{
+        width: 100%;
+    }
+    .videoComparison_title_one, .videoComparison_title_two {
+        color: var(--tertiary-color);
+        font-weight: 500;
+        font-size: 0.8vw;
+        font-family: "Inter", sans-serif;
+        padding-bottom: 1vw;
+    }
+    .videoComparison_video_one, .videoComparison_video_two{
+        width: 90%;
+    
+        z-index: 99900;
+        border-radius: 30px;
+        overflow: hidden;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .videoComparison_video_one, .videoComparison_video_two{
+     
+        border: 3px solid var(--tertiary-color)
+      
+    }
+    .videoComparison_video_two{
+     
+        border: 4px solid var(--primary-color)
+      
+    }
+
+}
