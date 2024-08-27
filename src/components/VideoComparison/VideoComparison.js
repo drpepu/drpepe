@@ -14,7 +14,7 @@ function VideoComparison() {
             <div className={styles.videoComparison_video_one_container}>
                 <div className={styles.videoComparison_title_one}>Woke GPT</div>
                 <div className={styles.videoComparison_video_one}>
-                    <video autoplay="autoplay" muted="muted" controls="controls" loop="loop"  width="100%" >
+                    <video autoplay="" muted="muted" controls="controls" loop="loop"  width="100%" >
                         <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4 " type="video/mp4"  />
                     </video>
                 </div>
@@ -24,7 +24,7 @@ function VideoComparison() {
             <div className={styles.videoComparison_video_two_container}>
                 <div className={styles.videoComparison_title_two}>DR. PEPE</div>
                     <div className={styles.videoComparison_video_two}>
-                    <video autoplay="autoplay" muted="muted" controls="controls" loop="loop"  width="100%"  >
+                    <video autoplay="" muted="muted" controls="controls" loop="loop"  width="100%"  >
                         <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" type="video/mp4"  />
                     </video>
                 </div>
