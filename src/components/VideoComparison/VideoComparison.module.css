@@ -11,13 +11,30 @@
         background-color:var(--secondary-color) ;
         z-index: 8;
     }
-    .videoComparison_main_text{
+    .videoComparison_main_text_one{
+        width: 100%;
         color: var(--primary-color);
         font-weight: 500;
-        font-size: 2.6vw;
-        line-height:3vw;
+        font-size: 1.9vw;
+        line-height:2vw;
         letter-spacing: 0.01vw;
         font-family: "Inter", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .videoComparison_main_text_two{
+        width: 100%;
+        color: var(--primary-color);
+        font-weight: 500;
+        font-size: 1.6vw;
+        line-height:2vw;
+        letter-spacing: 0.01vw;
+        font-family: "Inter", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2vw;
     }
     .videoComparison_videos_container{
         width: 100%;

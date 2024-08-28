@@ -5,8 +5,21 @@ function VideoComparison() {
   return (
     <>
       <div className={styles.videoComparison_container}>
-        <div className={styles.videoComparison_main_text}>
-          THE FIRST DECENTRALIZED SMART AGENT SPECIFICALLY DESIGNED TO HELP YOU UNDERSTAND HOW TO LIVE LONGER, LEVERAGING AN ELITE PEER-REVIEWED RESEARCH DATABASE
+      
+        <div className={styles.videoComparison_main_text_one}>
+          The first decentralized smarth agent
+        </div>
+        <div className={styles.videoComparison_main_text_one}>
+          specifically designed to help you 
+        </div>
+        <div className={styles.videoComparison_main_text_one}>
+         understand how to live longer.
+        </div>
+
+
+
+        <div className={styles.videoComparison_main_text_two}>
+          Laveraging an elite peer-reviewed research database
         </div>
 
         <div className={styles.videoComparison_videos_container}>
