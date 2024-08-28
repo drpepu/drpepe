@@ -45,8 +45,16 @@
     }
     .videoComparison_video_one_container,.videoComparison_video_two_container{
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+        
     }
     .videoComparison_title_one, .videoComparison_title_two {
+        width: 90%;
         color: var(--tertiary-color);
         font-weight: 500;
         font-size: 0.8vw;
@@ -75,4 +83,4 @@
       
     }
 
-}
+

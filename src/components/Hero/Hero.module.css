@@ -28,6 +28,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        font-family: 'Inter';
     }
     .hero_main_text_one_container{
         display: flex;
@@ -41,7 +42,7 @@
         line-height:11vw;
         letter-spacing: 0.75vw;
         font-family: "Inter", sans-serif;
-        font-weight: 800;
+        font-weight: 900;
         color: var(--primary-color);
         z-index: 200;
 
@@ -64,7 +65,7 @@
         font-size: 2.6vw;
         line-height:3vw;
         letter-spacing: 0.01vw;
-        font-family: "Inter", sans-serif;
+        font-family: "Inter";
 
     }
     .hero_doitnow_button{
