@@ -6,13 +6,14 @@ function Tokenomics() {
   return (
     <div className={styles.tokenomics_container}>
 
-
         <div className={styles.tokenomics_container_one}>
           <img src={drpepehi4} className={styles.tokenomics_container_one_a}></img>
           <div className={styles.tokenomics_container_one_b}></div>
         </div>
 
         <div className={styles.tokenomics_container_two}>
+          <div className={styles.tokenomics_main_title} >TOKENOMICS</div>
+
           <div className={styles.tokenomics_container_two_b}>
 
 
