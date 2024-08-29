@@ -6,7 +6,7 @@ import { useCountdown } from './countdown.js';
 
 function Tokenomics() {
   // Set the target date for the countdown
-  const targetDate = new Date("Jan 5, 2030 15:37:25").getTime();
+  const targetDate = new Date("Sep 6, 2024 00:00:00").getTime();
 
   // Use the countdown hook to get the time left
   const { days, hours, minutes, seconds } = useCountdown(targetDate);
