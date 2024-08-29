@@ -12,12 +12,12 @@
         flex-direction: row;
         align-items: center;
         align-content: center;
-        justify-content: space-between;
+        justify-content: flex-end;
 
         padding-left: 6vw;
         padding-right: 6vw;
     }
-    .header_button_one, .header_button_two, .header_button_three{
+    .header_button{
         width: fit-content;
         height: fit-content;
         font-size: 0.8vw;
@@ -25,6 +25,7 @@
         padding-top: 0.4vw;
         padding-bottom: 0.4vw;
         border-radius: 30vw;
+        margin-left: 1vw;
 
     }
     .header_button_one{
@@ -32,7 +33,7 @@
         color: var(--secondary-color);
         font-weight: bold;
     }
-    .header_button_two, .header_button_three{
+    .header_button_two, .header_button_three, .header_button_four, .header_button_five, .header_button_six, .header_button_seven, .header_button_eight{
         background-color: transparent;
         border: 2px solid var(--primary-color);
         color: var(--primary-color);
