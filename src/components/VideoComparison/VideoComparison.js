@@ -27,19 +27,27 @@ function VideoComparison() {
             <div className={styles.videoComparison_video_one_container}>
                 <div className={styles.videoComparison_title_one}>Woke GPT</div>
                 <div className={styles.videoComparison_video_one}>
-                    <video autoplay="" muted="muted" controls="controls" loop="loop"  width="100%" >
-                        <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4 " type="video/mp4"  />
-                    </video>
+                      <iframe
+                          src="https://customer-jjq55o3dxtfayxo5.cloudflarestream.com/f12bbf4cb56866e2bb8fe4cb9177dfd6/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-jjq55o3dxtfayxo5.cloudflarestream.com%2Ff12bbf4cb56866e2bb8fe4cb9177dfd6%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
+                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+
+                  
+                          className={styles.videoComparison_video_iframe}
+                        >
+                      </iframe>
                 </div>
             </div>
-
-
+            <div  className={styles.videoComparison_videos_spacing}></div>
             <div className={styles.videoComparison_video_two_container}>
                 <div className={styles.videoComparison_title_two}>DR. PEPE</div>
                     <div className={styles.videoComparison_video_two}>
-                    <video autoplay="" muted="muted" controls="controls" loop="loop"  width="100%"  >
-                        <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" type="video/mp4"  />
-                    </video>
+                      <iframe
+                        src="https://customer-jjq55o3dxtfayxo5.cloudflarestream.com/b63e08a96870860a5ddd0c953e160383/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-jjq55o3dxtfayxo5.cloudflarestream.com%2Fb63e08a96870860a5ddd0c953e160383%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
+                        allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+
+                        className={styles.videoComparison_video_iframe}
+                        
+                      ></iframe>
                 </div>
             </div>
 
