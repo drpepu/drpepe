@@ -14,9 +14,13 @@ html {
     --tertiary-color: #FFFFFF;
     --quaternary-color: #181C2D;
 
-    
   
+  
+  }
 
-  
-  
+  @media ( width <= 1000px ){
+
+    html{
+      display: none;
+    }
   }
