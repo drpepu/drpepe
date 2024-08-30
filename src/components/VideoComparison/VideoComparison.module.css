@@ -51,8 +51,6 @@
         justify-content: center;
         align-items: center;
     }
-        
-    }
     .videoComparison_title_one, .videoComparison_title_two {
         width: 100%;
         color: var(--tertiary-color);
@@ -60,38 +58,51 @@
         font-size: 0.8vw;
         font-family: "Inter", sans-serif;
         padding-bottom: 1vw;
+        
     }
+
     .videoComparison_video_one, .videoComparison_video_two{
         width: 100%;
-        height: 40vh;
+        height: auto;
     
-        z-index: 99900;
         border-radius: 10px;
         overflow: hidden;
     
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-bottom: 70.64%; /* 16:9 Aspect Ratio (9/16 * 100) */
+        position: relative;
+
+        
+    }
+    .videoComparison_video_iframe{
+       
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%); /* Center the video */
+        width: 177.78%; /* 100% * (16/9) aspect ratio to zoom in and crop sides */
+        height: 100%;
+        border: none;
 
     }
-    .videoComparison_video_one, .videoComparison_video_two{
+    .videoComparison_videos_spacing{
+        width: 6vw;
+    }
+
+    .videoComparison_video_one{
      
         border: 3px solid var(--tertiary-color)
       
     }
     .videoComparison_video_two{
-        position: relative;
         border: 4px solid var(--primary-color);
-    
-       
-
       
     }
-    .videoComparison_video_iframe{
-        border: none;  top: 0; left: 0; height: 100%; width: 100%;
-    }
-    .videoComparison_videos_spacing{
-        width: 6vw;
+
+
+
     }
 
 

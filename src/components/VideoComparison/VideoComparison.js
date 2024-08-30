@@ -27,27 +27,29 @@ function VideoComparison() {
             <div className={styles.videoComparison_video_one_container}>
                 <div className={styles.videoComparison_title_one}>Woke GPT</div>
                 <div className={styles.videoComparison_video_one}>
-                      <iframe
-                          src="https://customer-jjq55o3dxtfayxo5.cloudflarestream.com/f12bbf4cb56866e2bb8fe4cb9177dfd6/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-jjq55o3dxtfayxo5.cloudflarestream.com%2Ff12bbf4cb56866e2bb8fe4cb9177dfd6%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
-                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                  <iframe
+                      src="https://customer-jjq55o3dxtfayxo5.cloudflarestream.com/c722c8843596b3b4e04554289d2651c0/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-jjq55o3dxtfayxo5.cloudflarestream.com%2Fc722c8843596b3b4e04554289d2651c0%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+                      loading="lazy"
+                      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                      allowfullscreen="true"
+                                              className={styles.videoComparison_video_iframe}
 
-                  
-                          className={styles.videoComparison_video_iframe}
-                        >
-                      </iframe>
+                  ></iframe>
                 </div>
             </div>
             <div  className={styles.videoComparison_videos_spacing}></div>
             <div className={styles.videoComparison_video_two_container}>
                 <div className={styles.videoComparison_title_two}>DR. PEPE</div>
                     <div className={styles.videoComparison_video_two}>
-                      <iframe
-                        src="https://customer-jjq55o3dxtfayxo5.cloudflarestream.com/b63e08a96870860a5ddd0c953e160383/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-jjq55o3dxtfayxo5.cloudflarestream.com%2Fb63e08a96870860a5ddd0c953e160383%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
-                        allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                    <iframe
+                            src="https://customer-jjq55o3dxtfayxo5.cloudflarestream.com/7cd0b28d1a0557c216e61c38ccda79c8/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-jjq55o3dxtfayxo5.cloudflarestream.com%2F7cd0b28d1a0557c216e61c38ccda79c8%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
 
-                        className={styles.videoComparison_video_iframe}
-                        
-                      ></iframe>
+                      loading="lazy"
+                      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                      allowfullscreen="true"
+                                              className={styles.videoComparison_video_iframe}
+
+                  ></iframe>
                 </div>
             </div>
 
