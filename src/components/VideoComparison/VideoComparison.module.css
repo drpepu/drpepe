@@ -75,13 +75,14 @@
 
         
     }
+
     .videoComparison_video_iframe{
        
         position: absolute;
         top: 0;
         left: 50%;
         transform: translateX(-50%); /* Center the video */
-        width: 177.78%; /* 100% * (16/9) aspect ratio to zoom in and crop sides */
+        width: 128%; /* 100% * (16/9) aspect ratio to zoom in and crop sides */
         height: 100%;
         border: none;
 
@@ -91,11 +92,15 @@
     }
     .videoComparison_video_one{
      
-        border: 3px solid var(--tertiary-color)
+        border: 3px solid var(--tertiary-color);
+        background-color: #FFFFFF;
+
       
     }
     .videoComparison_video_two{
         border: 4px solid var(--primary-color);
+        background-color: #0166ff;
+
       
     }
 

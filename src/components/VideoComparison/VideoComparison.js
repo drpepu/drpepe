@@ -28,11 +28,11 @@ function VideoComparison() {
                 <div className={styles.videoComparison_title_one}>Woke GPT</div>
                 <div className={styles.videoComparison_video_one}>
                   <iframe
-                      src="https://customer-jjq55o3dxtfayxo5.cloudflarestream.com/c722c8843596b3b4e04554289d2651c0/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-jjq55o3dxtfayxo5.cloudflarestream.com%2Fc722c8843596b3b4e04554289d2651c0%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+                      src="https://customer-jjq55o3dxtfayxo5.cloudflarestream.com/54eb830541faef22b9e634d922e4dfc7/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-jjq55o3dxtfayxo5.cloudflarestream.com%2F54eb830541faef22b9e634d922e4dfc7%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
                       loading="lazy"
                       allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                       allowfullscreen="true"
-                                              className={styles.videoComparison_video_iframe}
+                      className={styles.videoComparison_video_iframe}
 
                   ></iframe>
                 </div>
@@ -42,12 +42,12 @@ function VideoComparison() {
                 <div className={styles.videoComparison_title_two}>DR. PEPE</div>
                     <div className={styles.videoComparison_video_two}>
                     <iframe
-                            src="https://customer-jjq55o3dxtfayxo5.cloudflarestream.com/7cd0b28d1a0557c216e61c38ccda79c8/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-jjq55o3dxtfayxo5.cloudflarestream.com%2F7cd0b28d1a0557c216e61c38ccda79c8%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
+                         src="https://customer-jjq55o3dxtfayxo5.cloudflarestream.com/db41485d5ebe7d08a3fad670230250a6/iframe?muted=true&preload=true&loop=true&autoplay=true&poster=https%3A%2F%2Fcustomer-jjq55o3dxtfayxo5.cloudflarestream.com%2Fdb41485d5ebe7d08a3fad670230250a6%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600&controls=false"
 
                       loading="lazy"
                       allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                       allowfullscreen="true"
-                                              className={styles.videoComparison_video_iframe}
+                      className={styles.videoComparison_video_iframe}
 
                   ></iframe>
                 </div>
