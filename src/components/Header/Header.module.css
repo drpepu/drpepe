@@ -31,6 +31,8 @@
     .header_button_one{
         background-color: var(--primary-color);
         color: var(--secondary-color);
+        border:  0.2vw solid var(--primary-color);
+
         font-weight: bold;
     }
     .header_button_two, .header_button_three, .header_button_four, .header_button_five, .header_button_six, .header_button_seven, .header_button_eight{

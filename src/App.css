@@ -1,7 +1,7 @@
 html {
     font-size: 16px; /* Adjust to your preference */
     font-family: 'Inter'; 
-    background-color:#f5f5f5;
+    background-color:var(--secondary-color);
     overflow-x: hidden;
   
   }
