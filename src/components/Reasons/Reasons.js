@@ -1,9 +1,47 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import horizontalLoop from './seamless-scroll';
+
 import styles from './Reasons.module.css';
 import drpepeheadshot from '../../Assets/DRPEPEVACCINEHEADSHOT.svg'
 import caduceus from '../../Assets/CADUCEUS.svg'
 
+gsap.registerPlugin(ScrollTrigger);
+
+
 function Reasons() {
+
+  const landingRef = useRef(null);
+  const wrapperRef = useRef(null);
+  const boxesRef = useRef([]);
+
+
+  useEffect(() => {
+    const boxes = boxesRef.current;
+    const colors = ['transparent'];
+
+    // Horizontal loop animation initialization
+    if (boxes.length > 0) {
+      gsap.set(boxes, {
+        backgroundColor: gsap.utils.wrap(colors),
+      });
+
+      horizontalLoop(boxes, { paused: false, repeat: -1, speed: 0.8 });
+    }
+
+
+    // Ensure cleanup of animations when component unmounts
+    return () => {
+      gsap.killTweensOf(boxes);
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
+  // Immediately set opacity to 1 once component mounts
+  useEffect(() => {
+    gsap.set(landingRef.current, { opacity: 1 });
+  }, []);
   return (
     <>
 
@@ -51,7 +89,17 @@ function Reasons() {
           
         </div>
     </div>
-        <div className={styles.reason_text_stripe}></div>
+        <div className={`${styles.reason_text_stripe } ${styles.wrapper}`} ref={wrapperRef}>
+
+        <div ref={(el) => (boxesRef.current[0] = el)} className={`${styles.reason_text_stripe_text } ${styles.boxtest}`} ><span className={styles.reason_pill}>💊</span> Backed by real experts, not just meme magic.</div>
+        <div ref={(el) => (boxesRef.current[1] = el)} className={`${styles.reason_text_stripe_text } ${styles.boxtest}`} ><span className={styles.reason_pill}>💊</span>No Bro Science: Verified by nerds, not your gym buddy</div>
+        <div ref={(el) => (boxesRef.current[2] = el)} className={`${styles.reason_text_stripe_text } ${styles.boxtest}`}><span className={styles.reason_pill}>💊</span>Real Gains, No Cap: Proven tips, minus the wild claims.</div>
+        <div ref={(el) => (boxesRef.current[3] = el)} className={`${styles.reason_text_stripe_text } ${styles.boxtest}`}><span className={styles.reason_pill}>💊</span>Scrutinized by smart folks so you don’t have to.</div>
+
+
+      
+
+        </div>
     </>
   )
 }

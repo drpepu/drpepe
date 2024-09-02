@@ -10,7 +10,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        border: 2px solid red;
         position:relative;
 
     }
@@ -101,7 +100,33 @@
         width: 100vw;
         background-color: var(--tertiary-color);
         margin-bottom: 6vw;
+
+        display: flex;
+        flex-direction: row;
     }
+
+    .reason_text_stripe_text{
+       color: var(--secondary-color);
+       font-size: 1.3vw;
+       font-weight: 600;
+    }
+    .reason_pill{
+        margin-right: 2vw;
+        margin-left: 0vw;
+        
+    }
+
+
+      .boxtest{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 2vw;
+        padding-left: 1vw;
+        position: relative;
+        flex-shrink: 0;
+        overflow-x:hidden;
+      }
     .reason_top_label{
     
         width: 15vw;
