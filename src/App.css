@@ -21,3 +21,9 @@ html {
   
   }
 
+  @media ( width <= 700px ){
+html{
+  display: none;
+}
+  
+  }
