@@ -5,7 +5,7 @@
 
     .header_container{
         max-width: 100vw;
-        height: 7.5vh;
+        height: 7vh;
         background-color:var(--secondary-color) ;
 
         display: flex;
@@ -35,13 +35,13 @@
     }
     .header_button_two, .header_button_three, .header_button_four, .header_button_five, .header_button_six, .header_button_seven, .header_button_eight{
         background-color: transparent;
-        border: 2px solid var(--primary-color);
+        border:  0.2vw solid var(--primary-color);
         color: var(--primary-color);
         font-weight: 600;
     }
      .header_button_seven{
         background-color: transparent;
-        border: 2px solid var(--tertiary-color);
+        border: 0.2vw solid var(--tertiary-color);
         color: var(--tertiary-color);
         font-weight: 600;
     }

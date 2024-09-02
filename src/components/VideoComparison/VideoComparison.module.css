@@ -1,12 +1,12 @@
 
 /* Desktop */
 
-@media ( width >= 701px ){
+@media ( width >= 201px ){
 
 
     .videoComparison_container{
         max-width: 100vw;
-        height: 80vh;
+       
         padding: 6vw;
         background-color:var(--secondary-color) ;
         z-index: 8;
