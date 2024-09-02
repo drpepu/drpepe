@@ -1,8 +1,9 @@
 import React from 'react'
 import styles from './Hero.module.css';
 import Header from '../Header/Header';
-import DrPepeVaccine from '../../Assets/DRPEPEVACCINE.svg'
-import DrPepeFat from '../../Assets/DRPEPEFAT.svg'
+import DrPepeVaccine from '../../Assets/DRPEPEVACCINE.svg';
+import DrPepeFat from '../../Assets/DRPEPEFAT.svg';
+import SolanaLogo from '../../Assets/SOLANALOGOWHITEBG.svg';
 
 
 
@@ -18,13 +19,29 @@ function Hero() {
             <div className={styles.hero_main_text_one} >DR. PEPE’S</div>
         </div>
         <div className={styles.hero_main_text_two}>LONGETIVITY</div>
-        <div className={styles.hero_main_text_three}>LAB. </div>
+
+        <div className={styles.hero_main_text_three_container} >
+          <div className={styles.hero_main_text_three}>LAB </div>
+
+        <div className={styles.hero_solana_container}>
+          <img src={SolanaLogo} alt=''className={styles.hero_solana_logo}></img>
+          <div className={styles.hero_main_text_solana}> BUILT ON SOLANA </div>
+        </div>
+
+        </div>
+
     </div>
 
     <div className={styles.hero_secondary_text_container}>
-        <div className={styles.hero_secondary_text_one}>AI POWERED AGENT DESIGNED </div>
-        <div className={styles.hero_secondary_text_two}>TO HELP YOU LIVE FOREVER</div>
-        <div className={styles.hero_doitnow_button}>DO IT NOW</div>
+        <div className={styles.hero_secondary_text_one}>AN AI-POWERED SMART AGENT  </div>
+        <div className={styles.hero_secondary_text_two}>DESIGNED TO HELP YOU LIVE FOREVER</div>
+
+        <div className={styles.hero_buttons_container}>
+          <div className={styles.hero_button_one}>JOIN THE COMMUNITY</div>
+          <div className={styles.hero_button_two}>SIGN UP FOR NEWSLETTER</div>
+        </div>
+
+
         <img src={DrPepeFat}alt='Dr Pepe' className={styles.hero_drpepe_image_two}></img>
     </div>
 

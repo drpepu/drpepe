@@ -5,6 +5,9 @@ html {
     overflow-x: hidden;
   
   }
+
+
+
   
   :root {
 
@@ -18,9 +21,3 @@ html {
   
   }
 
-  @media ( width <= 1000px ){
-
-    html{
-      display: none;
-    }
-  }
