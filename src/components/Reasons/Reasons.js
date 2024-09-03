@@ -91,10 +91,10 @@ function Reasons() {
     </div>
         <div className={`${styles.reason_text_stripe } ${styles.wrapper}`} ref={wrapperRef}>
 
-        <div ref={(el) => (boxesRef.current[0] = el)} className={`${styles.reason_text_stripe_text } ${styles.boxtest}`} ><span className={styles.reason_pill}>💊</span> Backed by real experts, not just meme magic.</div>
+        <div ref={(el) => (boxesRef.current[0] = el)} className={`${styles.reason_text_stripe_text } ${styles.boxtest}`} ><span className={styles.reason_pill}>💊</span> Backed by real experts, not just meme magic</div>
         <div ref={(el) => (boxesRef.current[1] = el)} className={`${styles.reason_text_stripe_text } ${styles.boxtest}`} ><span className={styles.reason_pill}>💊</span>No Bro Science: Verified by nerds, not your gym buddy</div>
-        <div ref={(el) => (boxesRef.current[2] = el)} className={`${styles.reason_text_stripe_text } ${styles.boxtest}`}><span className={styles.reason_pill}>💊</span>Real Gains, No Cap: Proven tips, minus the wild claims.</div>
-        <div ref={(el) => (boxesRef.current[3] = el)} className={`${styles.reason_text_stripe_text } ${styles.boxtest}`}><span className={styles.reason_pill}>💊</span>Scrutinized by smart folks so you don’t have to.</div>
+        <div ref={(el) => (boxesRef.current[2] = el)} className={`${styles.reason_text_stripe_text } ${styles.boxtest}`}><span className={styles.reason_pill}>💊</span>Real Gains, No Cap: Proven tips, minus the wild claims</div>
+        <div ref={(el) => (boxesRef.current[3] = el)} className={`${styles.reason_text_stripe_text } ${styles.boxtest}`}><span className={styles.reason_pill}>💊</span>Scrutinized by smart folks so you don’t have to</div>
 
 
       

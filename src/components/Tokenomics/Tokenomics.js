@@ -18,15 +18,11 @@ function Tokenomics() {
 
         <div className={styles.tokenomics_main_info_box}>
 
-
-                <div className={styles.tokenomics_info_box}>
-
-
-                </div>
-
-                <img src={drpepehi4} className={styles.tokenomics_pepe_image} alt="Tokenomics" />
+            <div className={styles.tokenomics_title}>TOKENOMICS</div>
+            <div className={styles.tokenomics_info_box}>
 
 
+            </div>
         </div>
 
 
@@ -34,6 +30,7 @@ function Tokenomics() {
 
 
       <div className={styles.tokenomics_countdown_main_container}>
+      <img src={drpepehi4} className={styles.tokenomics_pepe_image} alt="Tokenomics" />
 
 
 
