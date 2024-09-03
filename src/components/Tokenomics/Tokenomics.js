@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Tokenomics.module.css';
 import drpepehi4 from '../../Assets/DRPEPEHI4.svg';
 import { useCountdown } from './countdown.js';
+import solanalogotext from '../../Assets/SOLANALOGOTEXT.svg'
 
 
 function Tokenomics() {
@@ -29,7 +30,9 @@ function Tokenomics() {
                   </div>
                   <div className={styles.tokenomics_info_box}>
                     <div className={styles.tokenomics_info_title}>CHAIN</div>
-                    <div className={styles.tokenomics_info_description}>SOLANA</div>
+
+                          <img src={solanalogotext} alt='Solana Logo' className={styles.tokenomics_solana_logo}></img>
+
                   </div>
               </div>
 

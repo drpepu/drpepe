@@ -69,6 +69,14 @@
     font-weight: 600;
 }
 
+.tokenomics_solana_logo{
+ 
+    width: 10vw;
+    padding-top: 0.4vw;
+  
+
+}
+
 .tokenomics_pepe_image{
     width: 35%;
     position: absolute;
