@@ -29,7 +29,7 @@
     padding: 0vw;
 }
 .tokenomics_info_box{
-    border: 0.5vw solid var(--secondary-color);
+    border: 0.3vw solid var(--secondary-color);
     width: 50%;
     height: 100%;
     border-radius: 1.5vw;
@@ -37,7 +37,7 @@
 .tokenomics_pepe_image{
     width: 40%;
     position: absolute;
-    bottom: 8.5vw;
+    bottom: 8.1vw;
     right: 2vw;
 }
 .tokenomics_countdown_main_container{
@@ -50,7 +50,7 @@
 }
 .tokenomics_main_countdown_container{
     width: 100%;
-    border: 0.5vw solid var(--secondary-color);
+    border: 0.3vw solid var(--secondary-color);
     border-radius: 1.5vw;
     display: flex;
     flex-direction: row;
