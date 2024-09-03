@@ -22,6 +22,8 @@
     .reason_image{
         height: 14vw;
         width: 14vw;
+        border: 0.3vw solid var(--tertiary-color);
+        border-radius: 500%;
     }
     .reason_title_container{
         width: 100%;
