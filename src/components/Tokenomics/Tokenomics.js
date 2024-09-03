@@ -16,11 +16,33 @@ function Tokenomics() {
 
 
 
+            <div className={styles.tokenomics_title}>TOKENOMICS</div>
         <div className={styles.tokenomics_main_info_box}>
 
-            <div className={styles.tokenomics_title}>TOKENOMICS</div>
-            <div className={styles.tokenomics_info_box}>
 
+            <div className={styles.tokenomics_info_box_main_container}>
+
+              <div className={styles.tokenomics_info_box_container}>
+                  <div className={styles.tokenomics_info_box}>
+                    <div className={styles.tokenomics_info_title}>TOKEN TICKER</div>
+                    <div className={styles.tokenomics_info_description}>DRPEPEAI</div>
+                  </div>
+                  <div className={styles.tokenomics_info_box}>
+                    <div className={styles.tokenomics_info_title}>CHAIN</div>
+                    <div className={styles.tokenomics_info_description}>SOLANA</div>
+                  </div>
+              </div>
+
+              <div className={styles.tokenomics_info_box_container}>
+                  <div className={styles.tokenomics_info_box}>
+                    <div className={styles.tokenomics_info_title}>CONTACT ADDRESS</div>
+                    <div className={styles.tokenomics_info_description}>COMING SOON</div>
+                  </div>
+                  <div className={styles.tokenomics_info_box}>
+                    <div className={styles.tokenomics_info_title}>TOKEN SUPPLY</div>
+                    <div className={styles.tokenomics_info_description}>1.000.000.000.000.00</div>
+                  </div>
+              </div>
 
             </div>
         </div>
