@@ -13,57 +13,51 @@ function Tokenomics() {
 
   return (
     <div className={styles.tokenomics_container}>
-      <div className={styles.tokenomics_container_one}>
-        <img src={drpepehi4} className={styles.tokenomics_container_one_a} alt="Tokenomics" />
-        <div className={styles.tokenomics_container_one_b}>
-          <div className={styles.tokenomics_container_one_b_title}>TOKEN GENERATION EVENT</div>
-          <div className={styles.tokenomics_container_one_b_countdown}>
-            <div className={styles.tokenomics_container_one_b_countdown_box}>
-              <div className={styles.tokenomics_container_one_b_countdown_box_text}>Days</div>
-              <div className={styles.tokenomics_container_one_b_countdown_box_number}>{days}</div>
+
+        <div></div>
+
+        <img src={drpepehi4} className={styles.tokenomics_pepe_image} alt="Tokenomics" />
+
+      <div className={styles.tokenomics_countdown_main_container}>
+
+
+
+        <div className={styles.tokenomics_main_countdown_container}>
+          <div className={styles.tokenomics_tge_title}>TOKEN GENERATION EVENT</div>
+
+
+
+          <div className={styles.tokenomics_container_countdown}>
+            <div className={styles.tokenomics_date_box}>
+              <div className={styles.tokenomics_date_box_text}>Days</div>
+              <div className={styles.tokenomics_date_box_number}>{days}</div>
             </div>
 
-            <div className={styles.tokenomics_container_one_b_countdown_box}>
-              <div className={styles.tokenomics_container_one_b_countdown_box_text}>Hours</div>
-              <div className={styles.tokenomics_container_one_b_countdown_box_number}>{hours}</div>
+            <div className={styles.tokenomics_date_box}>
+              <div className={styles.tokenomics_date_box_text}>Hours</div>
+              <div className={styles.tokenomics_date_box_number}>{hours}</div>
             </div>
 
-            <div className={styles.tokenomics_container_one_b_countdown_box}>
-              <div className={styles.tokenomics_container_one_b_countdown_box_text}>Minutes</div>
-              <div className={styles.tokenomics_container_one_b_countdown_box_number}>{minutes}</div>
+            <div className={styles.tokenomics_date_box}>
+              <div className={styles.tokenomics_date_box_text}>Minutes</div>
+              <div className={styles.tokenomics_date_box_number}>{minutes}</div>
             </div>
 
-            <div className={styles.tokenomics_container_one_b_countdown_box}>
-              <div className={styles.tokenomics_container_one_b_countdown_box_text}>Seconds</div>
-              <div className={styles.tokenomics_container_one_b_countdown_box_number}>{seconds}</div>
+            <div className={styles.tokenomics_date_box}>
+              <div className={styles.tokenomics_date_box_text}>Seconds</div>
+              <div className={styles.tokenomics_date_box_number}>{seconds}</div>
             </div>
           </div>
+
+
+
         </div>
+
+
       </div>
 
-      <div className={styles.tokenomics_container_two}>
-        <div className={styles.tokenomics_main_title}>TOKENOMICS</div>
 
-        <div className={styles.tokenomics_container_two_b}>
-          <div className={styles.tokenomics_container_two_box}>
-            <div className={styles.tokenomics_container_two_box_top}>TOKEN NAME</div>
-            <div className={styles.tokenomics_container_two_box_bottom}>$DRPEPE</div>
-          </div>
-          <div className={styles.tokenomics_container_two_box}>
-            <div className={styles.tokenomics_container_two_box_top}>INITIAL MARKET CAP</div>
-            <div className={styles.tokenomics_container_two_box_bottom}>$18.0022</div>
-          </div>
-          <div className={styles.tokenomics_container_two_box}>
-            <div className={styles.tokenomics_container_two_box_top}>FULLY DILUTED</div>
-            <div className={styles.tokenomics_container_two_box_bottom}>$18.0022</div>
-          </div>
-          <div className={styles.tokenomics_container_two_box}>
-            <div className={styles.tokenomics_container_two_box_top}>TOKEN SUPPY</div>
-            <div className={styles.tokenomics_container_two_box_bottom}>1000T</div>
-          </div>
-        </div>
-        <div className={styles.tokenomics_container_two_a}></div>
-      </div>
+
     </div>
   );
 }

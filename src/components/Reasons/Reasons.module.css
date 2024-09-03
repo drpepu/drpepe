@@ -97,7 +97,7 @@
 
     .reason_text_stripe{
         height: 4vw;
-        width: 100vw;
+        max-width: 100vw;
         background-color: var(--tertiary-color);
         margin-bottom: 6vw;
 
