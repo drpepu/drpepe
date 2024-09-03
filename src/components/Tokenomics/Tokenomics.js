@@ -12,11 +12,26 @@ function Tokenomics() {
   const { days, hours, minutes, seconds } = useCountdown(targetDate);
 
   return (
-    <div className={styles.tokenomics_container}>
+    <div className={styles.tokenomics_main_container}>
 
-        <div></div>
 
-        <img src={drpepehi4} className={styles.tokenomics_pepe_image} alt="Tokenomics" />
+
+        <div className={styles.tokenomics_main_info_box}>
+
+
+                <div className={styles.tokenomics_info_box}>
+
+
+                </div>
+
+                <img src={drpepehi4} className={styles.tokenomics_pepe_image} alt="Tokenomics" />
+
+
+        </div>
+
+
+
+
 
       <div className={styles.tokenomics_countdown_main_container}>
 
