@@ -29,7 +29,6 @@
         width: 100%;
         margin-left: 4vw;
     }
- 
     .reason_title{
         width: 100%;
         color: var(--primary-color);
@@ -82,7 +81,6 @@
         padding-top: 1vw;
         padding-bottom: 1vw;
     }
-
     .reason_one_description, .reason_two_description, .reason_three_description{
         width: 100%;
         color: var(--primary-color);
@@ -96,7 +94,6 @@
         align-items: left;
         padding-bottom: 1vw;
     }
-
     .reason_text_stripe{
         height: 4vw;
         max-width: 100vw;
@@ -107,7 +104,6 @@
         flex-direction: row;
         overflow: hidden;
     }
-
     .reason_text_stripe_text{
        color: var(--secondary-color);
        font-size: 1.3vw;
@@ -118,18 +114,16 @@
         margin-left: 0vw;
         
     }
-
-
-      .boxtest{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-right: 2vw;
-        padding-left: 1vw;
-        position: relative;
-        flex-shrink: 0;
-        overflow-x:hidden;
-      }
+    .boxtest{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 2vw;
+    padding-left: 1vw;
+    position: relative;
+    flex-shrink: 0;
+    overflow-x:hidden;
+    }
     .reason_top_label{
     
         width: 15vw;
@@ -148,8 +142,6 @@
         padding-bottom: 2vw;
         border-radius: 0 0 1vw 1vw;
     }
-
-
     .reason_top_label_title{
         width: 100%;
         color: var(--secondary-color);
@@ -173,7 +165,6 @@
 
 
     }
-
     .reason_top_label_img{
         width: 30%;
         height: auto;
