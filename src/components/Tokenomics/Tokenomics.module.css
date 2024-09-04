@@ -1,7 +1,6 @@
 
 /* Desktop */
 
-@media ( width >= 201px ){
 
 .tokenomics_main_container{
     max-width: 100vw;
@@ -52,12 +51,8 @@
     padding: 1.6vw;
 }
 .tokenomics_info_box{
-
-
     width: 45%;
     height: 100%;
-    
-
 }
 .tokenomics_info_title{
     color: var(--secondary-color);
@@ -69,15 +64,10 @@
     font-size: 1.8vw;
     font-weight: 600;
 }
-
 .tokenomics_solana_logo{
- 
     width: 10vw;
     padding-top: 0.4vw;
-  
-
 }
-
 .tokenomics_pepe_image{
     width: 35%;
     position: absolute;
@@ -93,7 +83,6 @@
     flex-direction:column;
     align-items: center;
     position: relative;
-
 }
 .tokenomics_main_countdown_container{
     width: 100%;
@@ -105,15 +94,11 @@
     justify-content:space-around;
     text-align: center;
 }
-.tokenomics_tge_title {
-    
+.tokenomics_tge_title {  
     color: var(--secondary-color);
     font-size: 2.4vw;
     font-weight: 800;
     padding: 0vw;
-
-
-
 }
 .tokenomics_container_countdown{
     width: 50%;
@@ -122,8 +107,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 0vw;
-
-
 }
 .tokenomics_date_box{
     height: 100%;
@@ -139,31 +122,27 @@
     justify-content:center;
     text-align: center;
     padding: 0.9vw;
-
-    
-
 }
 .tokenomics_date_box_number{
     font-size: 2.8vw;
     font-weight: 600;
 }
 
- }
 
  @media ( width <= 500px ){
         .tokenomics_main_container{
+            max-width: 100vw;
             padding: 3vw;
             padding-top: 20vw;
             padding-bottom: 20vw;
-            overflow: hidden;
         }
         .tokenomics_main_info_box{
             height: 100%;
-        
+            width: 100%;
         }
         .tokenomics_info_box_main_container{
-            width: 100%;
-            border: 1vw solid var(--secondary-color);
+            width: 98%;
+            border:1vw solid var(--secondary-color);
         }
         .tokenomics_info_box_container{
             flex-direction: column ;
@@ -179,6 +158,7 @@
         }
         .tokenomics_info_box{
             padding: 3.2vw;
+            width: fit-content;
         }
         .tokenomics_info_title{
             font-size: 4.2vw;
@@ -194,7 +174,7 @@
         .tokenomics_pepe_image_mobile{
             display: block;
             position: absolute;
-            bottom: 23.6vw;
+            bottom: 25.2vw;
             width: 55%;
             right: -1vw;
         }
@@ -210,8 +190,14 @@
             font-size: 8.2vw;
             font-weight: 800;
         }
+        .tokenomics_main_countdown_container{
+            width: 98%;
+            border:1vw solid var(--secondary-color);
+
+        }
         .tokenomics_container_countdown{
             width: 100%;
+            
         }
     
 }
