@@ -48,4 +48,10 @@
         font-weight: 600;
     }
  }
-
+ @media ( width <=500px ){
+    .header_container{
+        height: 5vh;
+        min-width: 100vw;
+        padding-left: 0;
+    }
+ }

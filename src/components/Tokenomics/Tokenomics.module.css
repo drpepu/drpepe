@@ -147,3 +147,10 @@
 
  }
 
+ @media ( width <= 500px ){
+    .tokenomics_main_container{
+        display: none;
+    }
+}
+
+

@@ -10,6 +10,7 @@
         padding: 6vw;
         background-color:var(--secondary-color) ;
         z-index: 8;
+        
     }
     .videoComparison_main_text_one{
         width: 100%;
@@ -106,4 +107,8 @@
 
 }
 
-
+@media ( width <= 500px ){
+    .videoComparison_container{
+        display: none;
+    }
+}

@@ -5,7 +5,6 @@ import horizontalLoop from './seamless-scroll';
 
 import styles from './Reasons.module.css';
 import drpepeheadshot from '../../Assets/DRPEPEVACCINEHEADSHOT.svg'
-import caduceus from '../../Assets/CADUCEUS.svg'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,7 +84,6 @@ function Reasons() {
           
           <div className={styles.reason_top_label_title}>LIVE LONGER</div>
           <div className={styles.reason_top_label_description}>Because outlasting the next bull run isn’t enough—let’s make sure you’re around to spend those gains too.</div>
-          <img src={caduceus} alt='health symbol' className={styles.reason_top_label_img}></img>
           
         </div>
     </div>

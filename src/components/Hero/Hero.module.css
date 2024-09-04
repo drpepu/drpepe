@@ -1,7 +1,5 @@
 /* Desktop */
 
-@media ( width >= 201px ){
-
     .hero_drpepe_image_one{
         position: absolute;
         top: -3.5vw;
@@ -96,14 +94,13 @@
         font-family: "Inter";
 
     }
-
     .hero_buttons_container{
         display: flex;
         flex-direction: row;
         align-items: center;
         padding-top: 1vw;
     }
-   .hero_button_one{
+    .hero_button_one{
         width: fit-content;
         height: fit-content;
         background-color:var(--tertiary-color) ;
@@ -132,4 +129,62 @@
 
     }
 
+@media ( width <=500px ){
+    .hero_drpepe_image_one{
+        display: none;
+    }
+    .hero_main_text_container{
+        height: 20vh;
+        min-width: 100vw;
+        padding: 3vw;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    .hero_main_text_one_container{
+        justify-content: flex-start;
+    }
+    .hero_main_text_one,  
+    .hero_main_text_two,  
+    .hero_main_text_three {
+        font-size: 13.6vw;
+        line-height:13vw;
+
+
+    }
+    .hero_secondary_text_container{
+        height: 20vh;
+        min-width: 100vw;
+        padding: 3vw;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    .hero_secondary_text_one,.hero_secondary_text_two {
+        font-size: 7vw;
+        line-height:8vw;
+        font-weight: 600;
+        letter-spacing: 0.01vw;
+        font-family: "Inter";
+        width: 55%;
+
+    }
+    .hero_drpepe_image_two{
+        width: 38vw;
+        bottom: -6vw;
+        right: 2vw;
+    }
+    .hero_buttons_container{
+        flex-direction: column;
+        padding: 3vw;
+        margin-top: 6vw;
+
+    }
+    .hero_button_one,.hero_button_two{
+        width: 100%;
+        margin-left: 0;
+        font-size: 4.2vw;
+        padding: 2.8vw;
+        text-align: center;
+        margin-bottom:3vw ;
+
+    }
 }

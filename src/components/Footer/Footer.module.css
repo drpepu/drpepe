@@ -98,3 +98,8 @@
 
  }
 
+ @media ( width <= 500px ){
+    .footer_container{
+        display: none;
+    }
+}
