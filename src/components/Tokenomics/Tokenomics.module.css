@@ -159,9 +159,11 @@
         }
         .tokenomics_main_info_box{
             height: 100%;
+        
         }
         .tokenomics_info_box_main_container{
             width: 100%;
+            border: 1vw solid var(--secondary-color);
         }
         .tokenomics_info_box_container{
             flex-direction: column ;
@@ -192,9 +194,9 @@
         .tokenomics_pepe_image_mobile{
             display: block;
             position: absolute;
-            bottom: 23.4vw;
-            width: 61%;
-            right: -6vw;
+            bottom: 23.6vw;
+            width: 55%;
+            right: -1vw;
         }
         .tokenomics_tge_title{
             display: none;
