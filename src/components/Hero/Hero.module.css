@@ -135,10 +135,10 @@
     }
     .hero_main_text_container{
         height: 20vh;
-        min-width: 100vw;
         padding: 3vw;
         padding-bottom: 0;
         padding-top: 0;
+        max-width: 100vw;
     }
     .hero_main_text_one_container{
         justify-content: flex-start;
@@ -146,17 +146,17 @@
     .hero_main_text_one,  
     .hero_main_text_two,  
     .hero_main_text_three {
-        font-size: 13.6vw;
+        font-size: 12.8vw;
         line-height:13vw;
 
 
     }
     .hero_secondary_text_container{
         height: 20vh;
-        min-width: 100vw;
+        max-width: 100vw;
         padding: 3vw;
         padding-bottom: 0;
-        padding-top: 0;
+     
     }
     .hero_secondary_text_one,.hero_secondary_text_two {
         font-size: 7vw;
