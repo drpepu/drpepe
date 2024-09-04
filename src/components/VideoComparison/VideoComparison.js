@@ -29,6 +29,7 @@ function VideoComparison() {
                   ></iframe>
                 </div>
             </div>
+            <div className={styles.videoComparison_vs}>vs.</div>
             <div  className={styles.videoComparison_videos_spacing}></div>
               <div className={styles.videoComparison_video_two_container}>
                   <div className={styles.videoComparison_title_two}>DR. PEPE</div>

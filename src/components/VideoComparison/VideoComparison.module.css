@@ -105,6 +105,9 @@
 
       
     }
+    .videoComparison_vs{
+      display: none;
+    }
 
 }
 
@@ -116,19 +119,26 @@
     }
     .videoComparison_main_text_one, .videoComparison_main_text_two {
         font-size: 4.9vw;
-        line-height:5vw;
+        line-height:6vw;
         text-align: left;
     }
-   .videoComparison_main_text_two {
+    .videoComparison_main_text_two {
         margin-top: 4vw;
-    }
-    .videoComparison_video_two_container{
-        margin-bottom: 4vw;
     }
     .videoComparison_title_one, .videoComparison_title_two {
         font-size: 4vw;
     }
     .videoComparison_videos_container{
         flex-direction: column-reverse;
+    }
+    .videoComparison_vs{
+        display: block;
+        width: 100% ;
+        text-align: center;
+        margin:4vw 0 4vw 0 ;
+        color: var(--primary-color);
+        font-weight: 500;
+        font-size: 4vw;
+        line-height:2vw;
     }
 }

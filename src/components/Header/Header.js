@@ -16,7 +16,7 @@ function Header() {
 
             <div className={styles.header_container_headshot_title}>
               <img src={pepeheadshot} alt='dr pepe headshot'className={styles.mobile_pepe_headshot} ></img>
-              <div className={styles.mobile_pepe_title}>DR PEPE</div>
+              <div className={styles.mobile_pepe_title}>DR. PEPE</div>
             </div>
             <div>
 
