@@ -2,9 +2,10 @@ import React from 'react';
 import styles from './Tokenomics.module.css';
 import drpepehi4 from '../../Assets/DRPEPEHI4.svg';
 import drpepehi4left from '../../Assets/DRPEPEHI4LEFT.svg';
+import solanalogotext from '../../Assets/SOLANALOGOTEXT.svg'
+
 
 import { useCountdown } from './countdown.js';
-
 
 function Tokenomics() {
   // Set the target date for the countdown
@@ -16,11 +17,8 @@ function Tokenomics() {
   return (
     <div className={styles.tokenomics_main_container}>
 
-
-
-            <div className={styles.tokenomics_title}>TOKENOMICS</div>
+        <div className={styles.tokenomics_title}>TOKENOMICS</div>
         <div className={styles.tokenomics_main_info_box}>
-
 
             <div className={styles.tokenomics_info_box_main_container}>
 
@@ -31,7 +29,7 @@ function Tokenomics() {
                   </div>
                   <div className={styles.tokenomics_info_box}>
                     <div className={styles.tokenomics_info_title}>CHAIN</div>
-                    <div className={styles.tokenomics_info_description}>SOLANA</div>
+                    <img src={solanalogotext} alt='Solana Logo' className={styles.tokenomics_solana_logo}></img>
 
 
                   </div>
@@ -51,53 +49,36 @@ function Tokenomics() {
             </div>
         </div>
 
-
-
-
-
       <div className={styles.tokenomics_countdown_main_container}>
-      <img src={drpepehi4} className={styles.tokenomics_pepe_image} alt="Tokenomics" />
-      <img src={drpepehi4left} className={styles.tokenomics_pepe_image_mobile} alt="Tokenomics" />
-
-
-
+        <img src={drpepehi4} className={styles.tokenomics_pepe_image} alt="Tokenomics Pepe" />
+        <img src={drpepehi4left} className={styles.tokenomics_pepe_image_mobile} alt="Tokenomics Pepe" />
 
         <div className={styles.tokenomics_main_countdown_container}>
           <div className={styles.tokenomics_tge_title}>TOKEN GENERATION EVENT</div>
+            <div className={styles.tokenomics_container_countdown}>
+              <div className={styles.tokenomics_date_box}>
+                <div className={styles.tokenomics_date_box_text}>Days</div>
+                <div className={styles.tokenomics_date_box_number}>{days}</div>
+              </div>
 
+              <div className={styles.tokenomics_date_box}>
+                <div className={styles.tokenomics_date_box_text}>Hours</div>
+                <div className={styles.tokenomics_date_box_number}>{hours}</div>
+              </div>
 
+              <div className={styles.tokenomics_date_box}>
+                <div className={styles.tokenomics_date_box_text}>Minutes</div>
+                <div className={styles.tokenomics_date_box_number}>{minutes}</div>
+              </div>
 
-          <div className={styles.tokenomics_container_countdown}>
-            <div className={styles.tokenomics_date_box}>
-              <div className={styles.tokenomics_date_box_text}>Days</div>
-              <div className={styles.tokenomics_date_box_number}>{days}</div>
+              <div className={styles.tokenomics_date_box}>
+                <div className={styles.tokenomics_date_box_text}>Seconds</div>
+                <div className={styles.tokenomics_date_box_number}>{seconds}</div>
+              </div>
             </div>
-
-            <div className={styles.tokenomics_date_box}>
-              <div className={styles.tokenomics_date_box_text}>Hours</div>
-              <div className={styles.tokenomics_date_box_number}>{hours}</div>
-            </div>
-
-            <div className={styles.tokenomics_date_box}>
-              <div className={styles.tokenomics_date_box_text}>Minutes</div>
-              <div className={styles.tokenomics_date_box_number}>{minutes}</div>
-            </div>
-
-            <div className={styles.tokenomics_date_box}>
-              <div className={styles.tokenomics_date_box_text}>Seconds</div>
-              <div className={styles.tokenomics_date_box_number}>{seconds}</div>
-            </div>
-          </div>
-
-
-
         </div>
 
-
       </div>
-
-
-
     </div>
   );
 }
