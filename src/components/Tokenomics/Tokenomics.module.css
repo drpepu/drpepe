@@ -84,6 +84,9 @@
     bottom: 8.1vw;
     right: 2vw;
 }
+.tokenomics_pepe_image_mobile{
+    display: none;
+}
 .tokenomics_countdown_main_container{
     width: 100%;
     display: flex;
@@ -184,9 +187,14 @@
             line-height: 4vw;
         }
         .tokenomics_pepe_image{
-            bottom: 23.1vw;
+          display: none;
+        }
+        .tokenomics_pepe_image_mobile{
+            display: block;
+            position: absolute;
+            bottom: 23.4vw;
             width: 61%;
-            right: -26vw;
+            right: -6vw;
         }
         .tokenomics_tge_title{
             display: none;
