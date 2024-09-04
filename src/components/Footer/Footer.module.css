@@ -159,9 +159,8 @@
         width: fit-content;
         height: fit-content;
         font-size: 4vw;
-        padding: 2vw;
-        padding-top: 1vw;
-        padding-bottom:1vw;
+        padding: 1.5vw 3vw 1.5vw 3vw;
+     
         border-radius: 30vw;
         margin-left: 2vw;
     }
