@@ -30,6 +30,8 @@ function Footer() {
           <div className={styles.footer_social_button}>TELEGRAM</div>
       </div>
 
+      <div className={styles.footer_copywrite}>© 2024 dr Pepe All rights reserved.</div>
+
 
     </div>
   )
