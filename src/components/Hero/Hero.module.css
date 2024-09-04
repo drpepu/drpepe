@@ -118,7 +118,7 @@
         height: fit-content;
         background-color:transparent ;
         color: var(--tertiary-color);
-        border:0.2vw solid var(--tertiary-color);
+        border:1vw solid var(--tertiary-color);
         font-weight: bold;
         font-size: 1.2vw;
         padding: 0.8vw;

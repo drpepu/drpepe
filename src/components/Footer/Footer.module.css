@@ -152,6 +152,8 @@
     .footer_social_button{
         font-size: 3.2vw;
         padding: 3vw;
+        border:  0.8vw solid var(--tertiary-color);
+
     }
     .footer_buttons_container{
         width: 96%;
@@ -175,23 +177,24 @@
     }
     .footer_button_one,  .footer_button_two, .footer_button_three{
         background-color: transparent;
-        border:  0.5vw solid var(--primary-color);
+        border:  0.8vw solid var(--primary-color);
         color: var(--primary-color);
-        font-weight: 600;
+        font-weight: 800;
     }
     .footer_button_one {
         margin-left: 0vw;
     }
    .footer_button_four{
         background-color: transparent;
-        border:  0.5vw solid var(--tertiary-color);
+        border:  0.8vw solid var(--tertiary-color);
         color: var(--tertiary-color);
-        font-weight: 600;
+        font-weight: 800;
     }
     .footer_copywrite{
         display: block;
         color: var(--tertiary-color);
         text-transform: uppercase;   
-        margin-bottom: 12vw; 
+        margin-bottom: 6vw; 
+        font-size: 3vw;
     }
 }

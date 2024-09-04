@@ -42,7 +42,7 @@ function Tokenomics() {
                   </div>
                   <div className={styles.tokenomics_info_box}>
                     <div className={styles.tokenomics_info_title}>TOKEN SUPPLY</div>
-                    <div className={styles.tokenomics_info_description}>1.000.000.000.000.00</div>
+                    <div className={styles.tokenomics_info_description}>1.000.000.000.000.000</div>
                   </div>
               </div>
 
@@ -52,9 +52,11 @@ function Tokenomics() {
       <div className={styles.tokenomics_countdown_main_container}>
         <img src={drpepehi4} className={styles.tokenomics_pepe_image} alt="Tokenomics Pepe" />
         <img src={drpepehi4left} className={styles.tokenomics_pepe_image_mobile} alt="Tokenomics Pepe" />
-
+        <div className={styles.tokenomics_tge_title_mobile}>TOKEN GENERATION EVENT</div>
         <div className={styles.tokenomics_main_countdown_container}>
           <div className={styles.tokenomics_tge_title}>TOKEN GENERATION EVENT</div>
+           
+           
             <div className={styles.tokenomics_container_countdown}>
               <div className={styles.tokenomics_date_box}>
                 <div className={styles.tokenomics_date_box_text}>Days</div>

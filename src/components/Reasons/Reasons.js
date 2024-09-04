@@ -52,7 +52,7 @@ function Reasons() {
 
           <div className={styles.reason_title_container}>
             <div  className={styles.reason_title}>WHY IS DR. PEPE BETTER?</div>
-            <div  className={styles.reason_title_description}>Other agents spit facts; I drop alpha. Want the secret to living long enough to see your bags moon? stick with Dr. Pepe’s Longevity Lab.</div>
+            <div  className={styles.reason_title_description}>Other agents spit facts; Dr. Pepe drop alpha. Want the secret to living long enough to see your bags moon? stick with Dr. Pepe’s Longevity Lab.</div>
           </div>
         </div>
 
@@ -66,7 +66,7 @@ function Reasons() {
           </div>
 
           <div className={styles.reason_two_container}>
-            <div  className={styles.reason_two_title}>Blood Analysis</div>
+            <div  className={styles.reason_two_title}>Blood analysis</div>
             <div  className={styles.reason_two_description}> Upload your blood analysis, and Dr. Pepe’s AI will dive into the data, providing tailored longevity tips based on your unique biomarkers. </div>
           </div>
 
