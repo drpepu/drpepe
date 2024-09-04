@@ -30,8 +30,8 @@ function Tokenomics() {
                   </div>
                   <div className={styles.tokenomics_info_box}>
                     <div className={styles.tokenomics_info_title}>CHAIN</div>
+                    <div className={styles.tokenomics_info_description}>SOLANA</div>
 
-                          <img src={solanalogotext} alt='Solana Logo' className={styles.tokenomics_solana_logo}></img>
 
                   </div>
               </div>

@@ -148,9 +148,62 @@
  }
 
  @media ( width <= 500px ){
-    .tokenomics_main_container{
-        display: none;
-    }
+        .tokenomics_main_container{
+            padding: 3vw;
+            padding-top: 20vw;
+            padding-bottom: 20vw;
+            overflow: hidden;
+        }
+        .tokenomics_main_info_box{
+            height: 100%;
+        }
+        .tokenomics_info_box_main_container{
+            width: 100%;
+        }
+        .tokenomics_info_box_container{
+            flex-direction: column ;
+            width: 100%;
+            align-items: flex-start;
+            padding-bottom: 0vw;
+            padding-top: 0vw;
+        }
+        .tokenomics_title{
+            font-size: 11vw;
+            text-align: center;
+            padding-bottom: 2vw;
+        }
+        .tokenomics_info_box{
+            padding: 3.2vw;
+        }
+        .tokenomics_info_title{
+            font-size: 4.2vw;
+            line-height: 4vw;
+        }
+        .tokenomics_info_description{
+            font-size: 4.2vw;
+            line-height: 4vw;
+        }
+        .tokenomics_pepe_image{
+            bottom: 23.1vw;
+            width: 61%;
+            right: -26vw;
+        }
+        .tokenomics_tge_title{
+            display: none;
+        }
+        .tokenomics_date_box{
+            font-size: 4.2vw;
+            font-weight: 600;
+            padding: 3vw;
+        }
+        .tokenomics_date_box_number{
+            font-size: 8.2vw;
+            font-weight: 800;
+        }
+        .tokenomics_container_countdown{
+            width: 100%;
+        }
+    
 }
 
 
