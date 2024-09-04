@@ -109,6 +109,23 @@
 
 @media ( width <= 500px ){
     .videoComparison_container{
-        display: none;
+       margin-top: 80vw;
+    }
+    .videoComparison_main_text_one, .videoComparison_main_text_two {
+        font-size: 4.9vw;
+        line-height:5vw;
+        text-align: left;
+    }
+   .videoComparison_main_text_two {
+        margin-top: 4vw;
+    }
+    .videoComparison_video_two_container{
+        margin-bottom: 4vw;
+    }
+    .videoComparison_title_one, .videoComparison_title_two {
+        font-size: 4vw;
+    }
+    .videoComparison_videos_container{
+        flex-direction: column-reverse;
     }
 }
