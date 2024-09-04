@@ -110,6 +110,8 @@
 @media ( width <= 500px ){
     .videoComparison_container{
        margin-top: 80vw;
+              
+       padding: 3vw;
     }
     .videoComparison_main_text_one, .videoComparison_main_text_two {
         font-size: 4.9vw;
