@@ -3,7 +3,7 @@ import styles from './Hero.module.css';
 import Header from '../Header/Header';
 import DrPepeVaccine from '../../Assets/DRPEPEVACCINE.svg';
 import DrPepeFat from '../../Assets/DRPEPEFAT.svg';
-import SolanaLogo from '../../Assets/SOLANALOGOWHITEBG.svg';
+import solanapill from '../../Assets/SOLANAPILL.svg';
 
 
 
@@ -23,10 +23,9 @@ function Hero() {
         <div className={styles.hero_main_text_three_container} >
           <div className={styles.hero_main_text_three}>LAB </div>
 
-        <div className={styles.hero_solana_container}>
-          <img src={SolanaLogo} alt=''className={styles.hero_solana_logo}></img>
-          <div className={styles.hero_main_text_solana}> BUILT ON SOLANA </div>
-        </div>
+      
+          <img src={solanapill} alt=''className={styles.hero_solana_logo}></img>
+      
 
         </div>
 
