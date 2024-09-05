@@ -55,9 +55,7 @@
         background-color: var(--tertiary-color);
         color: var(--secondary-color);
         text-align: center;
-    }
-    
-   
+    }    
     .footer_message {
         margin-top: 1vw;
         font-size: 1vw;
@@ -221,6 +219,7 @@
         margin-bottom: 6vw; 
         font-size: 3vw;
         font-weight: 600 !important;
+        font-family: "Inter", sans-serif;
 
     }
 }
