@@ -40,26 +40,31 @@
      
     }
     .footer_newsletter_form{
-
-        font-size: 1.5vw;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+    }
+    .footer_newsletter_input {
+        max-height: 1.5vw;
         width: 20vw;
-        height: fit-content;
-        background-color:var(--tertiary-color); 
-        color: var(--secondary-color);
-        border:0.2vw solid var(--tertiary-color);
-        font-weight:400;
         font-size: 1.2vw;
         padding: 0.8vw;
+        border: 0.2vw solid var(--tertiary-color);
         border-radius: 30vw;
         margin-left: 2vw;
-
-        display: flex;
-        flex-direction: column;
+        background-color: var(--tertiary-color);
+        color: var(--secondary-color);
         text-align: center;
-
+    }
+    
+   
+    .footer_message {
+        margin-top: 1vw;
+        font-size: 1vw;
+        color: green; /* Or any other color you prefer for the message */
     }
     .footer_newsletter_form_button{
-        width: 10vw;
+        width: fit-content;
         height: fit-content;
         background-color:var(--primary-color); 
         color: var(--secondary-color);
@@ -129,7 +134,21 @@
         text-align: center;
         margin-bottom: 3vw;
         margin-left: 0vw;
+        flex-direction: column;
 
+    }
+    .footer_newsletter_input{
+        max-height: 5vw;
+        width: 93%;
+        margin-left: 0;
+        font-size: 4.2vw;
+        padding: 2.8vw;
+        text-align: center;
+        margin-bottom: 3vw;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .footer_newsletter_form_button{
         width: 100%;
@@ -138,6 +157,11 @@
         padding: 2.8vw;
         text-align: center;
         margin-bottom: 3vw;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
     }
     .footer_newsletter_text_container{
         font-size: 6vw;
