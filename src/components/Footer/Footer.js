@@ -2,10 +2,12 @@
 import React, { useState } from 'react';
 import { addSubscriber } from '../../newsletter_service/getResponseService'; // Adjust path if necessary
 import styles from './Footer.module.css';
+import Modal from './NewsletterModal/Modal'; // Import Modal component
 
 function Footer() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [showModal, setShowModal] = useState(false); // New state for modal
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,11 +15,13 @@ function Footer() {
       const listId = 'ZPUUe'; // Correct List Token
       await addSubscriber(listId, email); // Call addSubscriber with email only
       setMessage('Successfully subscribed!');
+      setShowModal(true); // Show modal on success
 
       // Reset the state after successful submission
       setEmail('');
     } catch (error) {
       setMessage('Failed to subscribe. Please try again.');
+      setShowModal(true); // Show modal on failure
     }
   };
 
@@ -57,6 +61,13 @@ function Footer() {
       </div>
 
       <div className={styles.footer_copywrite}>© 2024 dr Pepe All rights reserved.</div>
+
+      {showModal && (
+        <Modal
+          message={message}
+          onClose={() => setShowModal(false)} // Close modal when clicked
+        />
+      )}
     </div>
   );
 }
