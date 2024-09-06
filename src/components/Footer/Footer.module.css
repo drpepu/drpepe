@@ -172,7 +172,7 @@
         margin-bottom: 12vw;
     }
     .footer_social_button{
-        font-size: 3.2vw;
+        font-size: 4vw;
         padding: 3vw;
         border:  0.8vw solid var(--tertiary-color);
 
@@ -191,7 +191,7 @@
     .footer_button{
         width: fit-content;
         height: fit-content;
-        font-size: 3vw;
+        font-size: 4vw;
         padding: 1.8vw 3vw 1.8vw 3vw;
      
         border-radius: 30vw;
@@ -217,7 +217,7 @@
         color: var(--tertiary-color);
         text-transform: uppercase;   
         margin-bottom: 6vw; 
-        font-size: 3vw;
+        font-size: 4vw;
         font-weight: 600 !important;
         font-family: "Inter", sans-serif;
 
