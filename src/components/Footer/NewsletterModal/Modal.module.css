@@ -19,7 +19,7 @@
     text-align: center;
     position: relative;
     padding: 4vw;  
-    border: 2vw solid var(--secondary-color)
+    border: 1vw solid var(--secondary-color)
 
   }
   .modal_text{
