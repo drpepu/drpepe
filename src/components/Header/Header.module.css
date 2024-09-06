@@ -132,14 +132,15 @@
     .header_linksPages{
         display: flex;
         flex-direction: column;
-        margin-top: 7vw;
+        margin-top: 10vw;
         padding: 3vw;
     }
     .header_descriptionContent {
         margin-bottom: 2vw;
       }
     .header_descriptionContent p {
-    font-size: 12px;
+    font-size: 3vw;
+    font-weight: 500;
     color: var(--tertiary-color);
     }
     .hrClass{
