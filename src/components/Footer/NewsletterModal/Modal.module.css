@@ -1,65 +1,106 @@
-/* src/components/Modal.module.css */
-  .modal_overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  }
-  .modal_content {
-    background:var(--tertiary-color);
+    .modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    }
+    .modal_content {
+      background-color: #f5f5f5;
+      background-image: url("https://www.transparenttextures.com/patterns/lined-paper-2.png");
+      border-radius: 8px;
+      font-size: 2vw;
+      text-align: center;
+      position: relative;
+      padding: 2vw; 
+      width: 30vw; 
+      height: 40vw;
 
-    border-radius: 8px;
-    font-size: 2vw;
-    text-align: center;
-    position: relative;
-    padding: 4vw;  
-    border: 1vw solid var(--secondary-color)
+    }
+    .modal_title{
+      font-family: "Inter", sans-serif;
+      color: var(--secondary-color);
+      font-weight: 700;
+      font-size: 2.8vw;
+      text-transform: uppercase;
+      padding-top: 3vw;
+    }
+    .modal_subtitle_one, .modal_subtitle_two{
+      font-family: "Inter", sans-serif;
+      color: var(--secondary-color);
+      font-weight: 600;
+      font-size: 1.4vw;
+      text-transform: uppercase;
+      padding-top: 3vw;
+    }
+    .modal_image_container{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .modal_image{
+      height: 8vw;
+      border: 0.3vw solid var(--secondary-color);
+      border-radius: 100%;
+    }
+    .modal_close {
+      position: absolute;
+      top: 85%;
+      right: 5%;
+      font-size: 3vw;
+      cursor: pointer;
+      color: var(--secondary-color);
+      border: 0.3vw solid var(--secondary-color);
+      height: 4vw;
+      width: 4vw;
+      border-radius: 0.5vw;
 
-  }
-  .modal_text{
-    font-size: 4vw;
-    line-height:4vw;
-    font-weight: 600;
-    font-family: "Inter", sans-serif;
-    margin: 0px;
-    color: var(--secondary-color);
-  }
-  .modal_image{
-    height: 20vw;
-  }
-  .modal_close {
-    position: absolute;
-    top: 0.4vw;
-    right: 2vw;
-    font-size: 4vw;
-    cursor: pointer;
-    color: var(--secondary-color);
-  }
+    }
+    .modal_close:hover {
+      border-color: var(--primary-color);
+      color:var(--primary-color); 
+
+    }
   @media ( width <= 500px ){
 
     .modal_content {
-      padding: 12vw 3vw 12vw 3vw;
-      margin: 3vw;
       font-size: 9vw;
-      border: 3vw solid var(--secondary-color)
+      width: 80vw; 
+      height: 120vw;
+      padding: 6vw; 
     }
     .modal_image{
-      height: 80vw;
+      height: 25vw;
+      border: 0.8vw solid var(--secondary-color);
+
     }
-    .modal_text{
+    .modal_title{
+ 
+      font-weight: 700;
       font-size: 7vw;
-      line-height:7vw;
-   
+    
+      padding-top: 5vw;
     }
+    .modal_subtitle_one, .modal_subtitle_two{
+
+      font-weight: 600;
+      font-size: 4vw;
+  
+      padding-top: 5cqh;
+    }
+
     .modal_close {
-      top: 90%;
+      top: 87%;
       font-size: 9vw;
+      height: 12vw;
+      width: 12vw;
+      border-radius: 1.5vw;
+      border: 0.8vw solid var(--secondary-color);
     }
   }
   

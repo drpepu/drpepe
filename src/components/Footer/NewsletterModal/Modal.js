@@ -2,7 +2,8 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import styles from './Modal.module.css';
-import pepemodal from '../../../Assets/DRPEPEFAT.svg';
+import pepemodal from '../../../Assets/DRPEPEVACCINEHEADSHOT.svg';
+import peperx from '../../../Assets/DRPEPERX.svg';
 
 const Modal = ({ message, onClose }) => {
   const modalRef = useRef(null);
@@ -43,12 +44,24 @@ const Modal = ({ message, onClose }) => {
         <span className={styles.modal_close} onClick={handleClose}>
           &times;
         </span>
-        <img
-          src={pepemodal}
-          alt='PEPE SUCCESS'
-          className={styles.modal_image}
-        />
-        <p className={styles.modal_text}>{message}</p>
+        <div className={styles.modal_image_container}>
+
+                <img
+                  src={peperx}
+                  alt='PEPE SUCCESS'
+                  className={styles.modal_image_rx}
+                />
+                    <img
+                  src={pepemodal}
+                  alt='PEPE SUCCESS'
+                  className={styles.modal_image}
+                />
+
+        </div>
+
+        <div  className={styles.modal_title}>Prescription Filled</div>
+        <div className={styles.modal_subtitle_one}>Welcome to dr.pepe Longetivity Lab newsletter</div>
+        <div className={styles.modal_subtitle_two}>You’re now officially on Dr. Pepe’s regimen for a longer life! Prepare for groundbreaking research, wellness hacks, and the inside scoop on living forever.</div>
       </div>
     </div>
   );
