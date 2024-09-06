@@ -52,7 +52,7 @@ function Reasons() {
 
           <div className={styles.reason_title_container}>
             <div  className={styles.reason_title}>WHY IS DR. PEPE BETTER?</div>
-            <div  className={styles.reason_title_description}>Other agents spit facts; Dr. Pepe drop alpha. Want the secret to living long enough to see your bags moon? stick with Dr. Pepe’s Longetivity Lab.</div>
+            <div  className={styles.reason_title_description}>Other agents spit facts; Dr. Pepe drops alpha. Want the secret to living long enough to see your bags moon? Stick with Dr. Pepe’s Longetivity Lab.</div>
           </div>
         </div>
 
