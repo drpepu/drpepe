@@ -6,13 +6,15 @@ function VideoComparison() {
     <>
       <div className={styles.videoComparison_container}>
       
-        <div className={styles.videoComparison_main_text_one}>Dr. Pepe's longevity lab is Solana’s first AI-driven DeSci protocol, accessible via the DRPEPEAI token, designed to help you achieve a  longer, healthier life.
+      <div className={styles.videoComparison_main_text_container}>
+        <div className={styles.videoComparison_main_text_one}>Dr. Pepe's Longetivity Lab is Solana’s first AI-driven DeSci protocol, accessible via the DRPEPEAI token, designed to help you achieve a longer, healthier life.
         </div>
-     
-
+    
         <div className={styles.videoComparison_main_text_two}>
           Laveraging an elite peer-reviewed research database
         </div>
+
+      </div>
 
         <div className={styles.videoComparison_videos_container}>
 
