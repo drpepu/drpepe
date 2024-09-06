@@ -201,7 +201,7 @@
         background-color: transparent;
         border:  0.8vw solid var(--primary-color);
         color: var(--primary-color);
-        font-weight: 800 !important;
+        font-weight: 500 ;
     }
     .footer_button_one {
         margin-left: 0vw;
@@ -210,7 +210,7 @@
         background-color: transparent;
         border:  0.8vw solid var(--tertiary-color);
         color: var(--tertiary-color);
-        font-weight: 800 !important;
+        font-weight: 500 ;
     }
     .footer_copywrite{
         display: block;
@@ -218,7 +218,7 @@
         text-transform: uppercase;   
         margin-bottom: 6vw; 
         font-size: 4vw;
-        font-weight: 600 !important;
+        font-weight: 500 ;
         font-family: "Inter", sans-serif;
 
     }
