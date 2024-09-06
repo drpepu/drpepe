@@ -62,7 +62,7 @@
 .tokenomics_info_description{
     color: var(--secondary-color);
     font-size: 1.8vw;
-    font-weight: 900;
+    font-weight: 800;
 }
 .tokenomics_solana_logo{
     width: 10vw;
@@ -137,7 +137,7 @@
         .tokenomics_main_container{
             max-width: 100vw;
             padding: 3vw;
-            padding-top: 20vw;
+            padding-top: 10vw;
             padding-bottom: 10vw;
         }
         .tokenomics_main_info_box{
