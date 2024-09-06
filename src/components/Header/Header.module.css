@@ -165,7 +165,7 @@
         margin-bottom: 2vw;
       }
     .header_descriptionContent p {
-    font-size: 16px;
+    font-size: 4vw;
     font-weight: 500;
     color: var(--tertiary-color);
     }
@@ -175,19 +175,19 @@
     }
     .header_sideNavLink{
 
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.8vw;
         text-decoration: none;
         color: var(--tertiary-color);
-        font-size: 32px;
+        font-size: 8vw;
         
           
     }
     .header_sideNavLink_small{
 
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.8vw;
         text-decoration: none;
         color: var(--tertiary-color);
-        font-size: 24px;
+        font-size: 6vw;
         
           
     }
