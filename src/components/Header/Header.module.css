@@ -132,7 +132,7 @@
     .header_linksPages{
         display: flex;
         flex-direction: column;
-        margin-top: 10vw;
+        margin-top: 5vw;
         padding: 3vw;
     }
     .header_descriptionContent {
@@ -152,7 +152,7 @@
         margin-bottom: 0.8rem;
         text-decoration: none;
         color: var(--tertiary-color);
-        font-size: 38px;
+        font-size: 32px;
         
           
     }
@@ -161,7 +161,7 @@
         margin-bottom: 0.8rem;
         text-decoration: none;
         color: var(--tertiary-color);
-        font-size: 16px;
+        font-size: 24px;
         
           
     }
