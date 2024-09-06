@@ -70,12 +70,19 @@
         font-weight: bold;
         font-size: 1.2vw;
         padding: 0.8vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
         border-radius: 30vw;
         margin-left: 1vw;
 
         display: flex;
         flex-direction: column;
         text-align: center;
+        cursor: pointer;
+    }
+    .footer_newsletter_form_button:hover{
+        background-color:var(--secondary-color); 
+        color: var(--primary-color);
     }
     .footer_socials_container{
         width: 30%;
@@ -97,6 +104,11 @@
         padding: 0.8vw;
         border-radius: 30vw;
         margin-left: 2vw;
+        cursor: pointer;
+    }
+    .footer_social_button:hover{
+        background-color:var(--tertiary-color); 
+        color: var(--secondary-color);
     }
     .footer_buttons_container{
         display: none;

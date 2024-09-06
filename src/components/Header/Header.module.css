@@ -36,18 +36,43 @@
         border:  0.2vw solid var(--primary-color);
 
         font-weight: bold;
+        cursor: pointer;
+    }
+    .header_button_one:hover{
+        color:var(--primary-color);
+        background-color: var(--secondary-color);
     }
     .header_button_two, .header_button_three, .header_button_four, .header_button_five, .header_button_six, .header_button_seven, .header_button_eight{
         background-color: transparent;
         border:  0.2vw solid var(--primary-color);
         color: var(--primary-color);
         font-weight: 600;
+        cursor: pointer;
     }
-     .header_button_seven{
+    .header_button_four:hover{
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+    }
+    .header_button_five:hover{
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+    }
+    .header_button_eight:hover{
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+    }
+   
+ 
+    .header_button_seven{
         background-color: transparent;
         border: 0.2vw solid var(--tertiary-color);
         color: var(--tertiary-color);
         font-weight: 600;
+    }
+    .header_button_seven:hover{
+        background-color: var(--tertiary-color);
+        color: var(--secondary-color);
+    
     }
     .mobile_pepe_hamburger{
         display: none;
