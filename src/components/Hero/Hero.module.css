@@ -134,8 +134,9 @@
 
     }
     .hero_button_two:hover{
-       background-color: var(--tertiary-color);
-       color: var(--secondary-color);
+       background-color: transparent;
+       color: var(--primary-color);
+       border-color: var(--primary-color);
     }
 
 @media ( width <=500px ){
