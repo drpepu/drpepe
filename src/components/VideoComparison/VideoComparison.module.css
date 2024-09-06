@@ -124,6 +124,12 @@
               
        padding: 3vw;
     }
+    .videoComparison_main_text_container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
     .videoComparison_main_text_one, .videoComparison_main_text_two {
         font-size: 4.9vw;
         line-height:6vw;
