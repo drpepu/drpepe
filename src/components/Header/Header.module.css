@@ -116,7 +116,7 @@
     }
     .header_closeBtn{
         position: absolute;
-        right: 1.6rem;
+        right: 2.4vw;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -132,11 +132,11 @@
     .header_linksPages{
         display: flex;
         flex-direction: column;
-        margin-top: 5rem;
+        margin-top: 7vw;
         padding: 3vw;
     }
     .header_descriptionContent {
-        margin-bottom: 3rem;
+        margin-bottom: 2vw;
       }
     .header_descriptionContent p {
     font-size: 12px;
