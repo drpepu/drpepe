@@ -188,6 +188,8 @@
     .footer_social_button{
         font-size: 4vw;
         padding: 3vw;
+        border:0.8vw solid var(--tertiary-color);
+
 
     }
     .footer_social_button:hover{
