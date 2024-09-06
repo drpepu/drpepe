@@ -116,8 +116,8 @@
     }
     .hero_button_one:hover{
         background-color: transparent;
-       color: var(--primary-color);
-       border-color: var(--primary-color);
+        color: var(--primary-color);
+        border-color: var(--primary-color);
      }
     .hero_button_two{
         width: fit-content;

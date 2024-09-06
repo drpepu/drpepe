@@ -171,6 +171,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        border: 1vw solid var(--primary-color);
+
 
     }
     .footer_newsletter_text_container{
@@ -186,8 +188,11 @@
     .footer_social_button{
         font-size: 4vw;
         padding: 3vw;
-        border:  0.8vw solid var(--tertiary-color);
 
+    }
+    .footer_social_button:hover{
+        background-color:var(--tertiary-color); 
+        color: var(--secondary-color);
     }
     .footer_buttons_container{
         width: 96%;
