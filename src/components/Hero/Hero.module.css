@@ -115,8 +115,9 @@
 
     }
     .hero_button_one:hover{
-        background-color: var(--secondary-color);
-        color: var(--tertiary-color);
+        background-color: transparent;
+       color: var(--primary-color);
+       border-color: var(--primary-color);
      }
     .hero_button_two{
         width: fit-content;
