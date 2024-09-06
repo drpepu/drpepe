@@ -146,10 +146,10 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 50px;
-        width: 50px;
+        height: 12vw;
+        width: 12vw;
         border: 0.8vw solid var(--tertiary-color);
-        border-radius: 10px;
+        border-radius: 2vw;
         background-color: transparent;
         color: var(--tertiary-color);
         font-weight: 800;
@@ -179,8 +179,7 @@
         text-decoration: none;
         color: var(--tertiary-color);
         font-size: 8vw;
-        
-          
+ 
     }
     .header_sideNavLink_small{
 
@@ -188,8 +187,7 @@
         text-decoration: none;
         color: var(--tertiary-color);
         font-size: 6vw;
-        
-          
+  
     }
     .header_sideNavLink_content{
         display: flex;
@@ -197,4 +195,15 @@
         justify-content: space-between;
     }
  
+ }
+
+ @media ( width <=390px ){
+
+    .header_linksPages{
+ 
+        margin-top: 2vw;
+     
+    }
+
+
  }
