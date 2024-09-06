@@ -148,9 +148,10 @@
         justify-content: center;
         height: 50px;
         width: 50px;
+        border: 0.8vw solid var(--tertiary-color);
         border-radius: 10px;
-        background-color: var(--tertiary-color);
-        color: var(--secondary-color);
+        background-color: transparent;
+        color: var(--tertiary-color);
         font-weight: 800;
 
     }
@@ -170,7 +171,7 @@
     }
     .hrClass{
         margin-top: 0.8rem;
-        border-top: 1px solid var(--tertiary-color);
+        border-top: 0.5vw solid var(--tertiary-color);
     }
     .header_sideNavLink{
 
