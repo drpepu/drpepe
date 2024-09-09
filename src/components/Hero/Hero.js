@@ -37,12 +37,12 @@ function Hero() {
     </div>
 
     <div className={styles.hero_secondary_text_container}>
-        <div className={styles.hero_secondary_text_one}>AN AI-POWERED SMART AGENT  </div>
-        <div className={styles.hero_secondary_text_two}>DESIGNED TO HELP YOU LIVE FOREVER</div>
+        <div className={styles.hero_secondary_text_one}>{t('hero_subtitle_line_one')}</div>
+        <div className={styles.hero_secondary_text_two}>{t('hero_subtitle_line_two')}</div>
 
         <div className={styles.hero_buttons_container}>
           <div className={styles.hero_button_one}>{t('hero_button_one')}</div>
-          <div className={styles.hero_button_two}>SIGN UP FOR NEWSLETTER</div>
+          <div className={styles.hero_button_two}>{t('hero_button_two')}</div>
         </div>
 
 
