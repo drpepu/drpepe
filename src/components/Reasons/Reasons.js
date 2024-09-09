@@ -29,7 +29,7 @@ function Reasons() {
         backgroundColor: gsap.utils.wrap(colors),
       });
 
-      horizontalLoop(boxes, { paused: false, repeat: -5, speed: 0.4 });
+      horizontalLoop(boxes, { paused: false, repeat: -4, speed: 0.8 });
     }
 
 

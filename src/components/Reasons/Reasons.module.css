@@ -107,6 +107,9 @@
        color: var(--secondary-color);
        font-size: 1.3vw;
        font-weight: 600;
+       min-width: 40vw;
+       background-color: aqua;
+       
     }
     .reason_pill{
         margin-right: 2vw;
