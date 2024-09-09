@@ -48,7 +48,12 @@
     "footer_title_line_two": "DR.PEPE NEWSLETTER",
     "footer_email_placeholder": "Enter your email address",
     "footer_email_button": "SUBSCRIBE",
-    "footer_copyrights": "© 2024 DR.PEPE All rights reserved."
+    "footer_copyrights": "© 2024 DR.PEPE All rights reserved.",
+
+    "modal_newsletter_title": "Prescription Filled",
+    "modal_newsletter_subtitle": "Welcome to dr.pepe Longevity Lab newsletter",
+    "modal_newsletter_text": "You’re now officially on Dr. Pepe’s regimen for a longer life! Prepare for groundbreaking research, wellness hacks, and the inside scoop on living forever."
+
 
 
 

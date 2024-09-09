@@ -44,5 +44,9 @@
     "footer_title_line_two": "DR.PEPE 通讯",
     "footer_email_placeholder": "输入您的电子邮件地址",
     "footer_email_button": "订阅",
-    "footer_copyrights": "© 2024 DR.PEPE 保留所有权利。"
+    "footer_copyrights": "© 2024 DR.PEPE 保留所有权利。",
+
+    "modal_newsletter_title": "处方已开具",
+    "modal_newsletter_subtitle": "欢迎订阅 dr.pepe 长寿实验室通讯",
+    "modal_newsletter_text": "你现在正式加入佩佩博士的长寿计划！准备好接受突破性研究、健康小窍门和长寿秘诀吧。"
 }

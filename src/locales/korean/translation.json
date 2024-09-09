@@ -45,7 +45,12 @@
     "footer_title_line_two": "DR.PEPE 뉴스레터",
     "footer_email_placeholder": "이메일 주소 입력",
     "footer_email_button": "구독 신청",
-    "footer_copyrights": "© 2024 DR.PEPE 판권 소유."
+    "footer_copyrights": "© 2024 DR.PEPE 판권 소유.",
+
+
+    "modal_newsletter_title": "처방전 작성",
+    "modal_newsletter_subtitle": "닥터페페 장수 연구소 뉴스레터에 오신 것을 환영합니다.",
+    "modal_newsletter_text": "이제 공식적으로 페페 박사의 장수를 위한 요법을 시작하세요! 획기적인 연구, 건강 비결, 그리고 영원히 살기 위한 내부 특종에 대비하세요."
 
 
 }
