@@ -114,7 +114,7 @@
 }
 .tokenomics_date_box{
     height: 100%;
-    max-width: calc(100% / 4);
+    min-width: calc(100% / 8);
     text-align: center;
     color: var(--secondary-color);
     font-size: 2vw;
@@ -202,9 +202,11 @@
         }
         
         .tokenomics_date_box{
-            font-size: 4.2vw;
+            font-size: 4vw;
             font-weight: 600;
             padding: 3vw;
+
+       
         }
         .tokenomics_date_box_number{
             font-size: 8.2vw;
