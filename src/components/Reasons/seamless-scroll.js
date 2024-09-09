@@ -19,7 +19,7 @@ Features:
 
 
 function horizontalLoop(items, config) {
-    const offsetLeft = '';
+
     items = gsap.utils.toArray(items);
     config = config || {};
     let tl = gsap.timeline({

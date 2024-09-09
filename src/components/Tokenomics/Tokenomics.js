@@ -9,7 +9,7 @@ import { useCountdown } from './countdown.js';
 
 function Tokenomics() {
   // Set the target date for the countdown
-  const targetDate = new Date("Dec 31, 2024 00:00:00").getTime();
+  const targetDate = new Date("Nov 12, 2024 00:00:00").getTime();
 
   // Use the countdown hook to get the time left
   const { days, hours, minutes, seconds } = useCountdown(targetDate);
@@ -25,7 +25,7 @@ function Tokenomics() {
               <div className={styles.tokenomics_info_box_container}>
                   <div className={styles.tokenomics_info_box}>
                     <div className={styles.tokenomics_info_title}>TOKEN TICKER</div>
-                    <div className={styles.tokenomics_info_description}>DRPEPEAI</div>
+                    <div className={styles.tokenomics_info_description}>DRP</div>
                   </div>
                   <div className={styles.tokenomics_info_box}>
                     <div className={styles.tokenomics_info_title}>CHAIN</div>

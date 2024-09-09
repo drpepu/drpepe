@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Reasons() {
 
-  const landingRef = useRef(null);
+
   const wrapperRef = useRef(null);
   const boxesRef = useRef([]);
 
@@ -37,10 +37,7 @@ function Reasons() {
     };
   }, []);
 
-  // Immediately set opacity to 1 once component mounts
-  useEffect(() => {
-    gsap.set(landingRef.current, { opacity: 1 });
-  }, []);
+ 
   return (
     <>
 

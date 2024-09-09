@@ -56,8 +56,8 @@ function Footer() {
       </div>
 
       <div className={styles.footer_socials_container}>
-        <div className={styles.footer_social_button}>X</div>
-        <div className={styles.footer_social_button}>TELEGRAM</div>
+        <a href="https://x.com/drpepe_ai" target="_blank" rel="noopener noreferrer"  className={styles.footer_social_button}>X</a>
+        <a href="https://t.me/+yxh5qd2tKQU2ODIx" target="_blank" rel="noopener noreferrer" className={styles.footer_social_button}>TELEGRAM</a>
       </div>
 
       <div className={styles.footer_copywrite}>© 2024 DR.PEPE All rights reserved.</div>

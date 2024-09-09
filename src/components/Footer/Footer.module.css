@@ -105,6 +105,7 @@
         border-radius: 30vw;
         margin-left: 2vw;
         cursor: pointer;
+        text-decoration: none;
     }
     .footer_social_button:hover{
         background-color:var(--tertiary-color); 
