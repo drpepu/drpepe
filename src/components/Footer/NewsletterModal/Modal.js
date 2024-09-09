@@ -60,7 +60,7 @@ const Modal = ({ message, onClose }) => {
         </div>
 
         <div  className={styles.modal_title}>Prescription Filled</div>
-        <div className={styles.modal_subtitle_one}>Welcome to dr.pepe Longetivity Lab newsletter</div>
+        <div className={styles.modal_subtitle_one}>Welcome to dr.pepe Longevity Lab newsletter</div>
         <div className={styles.modal_subtitle_two}>You’re now officially on Dr. Pepe’s regimen for a longer life! Prepare for groundbreaking research, wellness hacks, and the inside scoop on living forever.</div>
       </div>
     </div>
