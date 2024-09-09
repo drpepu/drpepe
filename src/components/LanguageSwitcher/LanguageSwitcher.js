@@ -12,10 +12,6 @@ const LanguageSwitcher = () => {
 
   return (
     <div className={styles.LanguageSwitcher_Container}>
-
-
-
-
       <div className={`${styles.LanguageSwitcher_button } ${styles.LanguageSwitcher}`} onClick={() => changeLanguage('english')}>English</div>
       <div className={`${styles.LanguageSwitcher_button } ${styles.LanguageSwitcher}`} onClick={() => changeLanguage('chinese')}>Chinese</div>
       <div className={`${styles.LanguageSwitcher_button } ${styles.LanguageSwitcher}`} onClick={() => changeLanguage('korean')}>Korean</div>

@@ -1,6 +1,51 @@
 {
+    "side_navigation_title_one": "내비게이션",
+    "side_navigation_title_two": "언어",
+    "side_navigation_title_three": "소셜",
+    
+    
     "hero_button_one": "커뮤니티에 참여하세요!",
     "hero_button_two": "뉴스레터 구독하기",
     "hero_subtitle_line_one": "인공지능 기반 스마트 에이전트",
-    "hero_subtitle_line_two": "영원히 살 수 있도록 설계된"
+    "hero_subtitle_line_two": "영원히 살 수 있도록 설계된",
+
+    "video_comparison_title": "Dr. Pepe's Longevity Lab 는 솔라나의 첫 번째 AI 기반 DeSci 프로토콜로, DRP 토큰을 통해 액세스할 수 있으며 더 길고 건강한 수명을 달성할 수 있도록 설계되었습니다. ",
+    "video_comparison_subtitle": "엘리트 동료 검토 연구 데이터베이스 활용",
+
+    "reason_title": "왜 DR.PEPE 더 나은가요?",
+    "reason_subtitle": "다른 에이전트는 사실을 뱉습니다; DR.PEPE 알파를 떨어뜨립니다. 가방 달을 볼 수 있을 만큼 오래 사는 비결을 알고 싶으신가요? DR.PEPE LONGEVITY LAB",
+
+    "reason_label_title": "더 오래 살기",
+    "reason_label_subtitle": "다음 상승장에서 오래 버티는 것만으로는 충분하지 않으니, 그 이득을 소비할 수 있도록 준비하세요.",
+    "reason_one_title": "Arweave에 대한 엘리트, 동료 검토 연구",
+    "reason_one_subtitle": "Arweave에 저장된 방대한 동료 검토 연구 데이터베이스로 투명성과 접근성을 보장합니다. 최신 과학이 뒷받침하는 건강 관련 조언을 모두 Solana Blockchain에 안전하게 저장합니다.",
+    "reason_two_title": "혈액 분석",
+    "reason_two_subtitle": "혈액 분석 결과를 업로드하면 DR.PEPE'S AI가 데이터를 분석하여 고유한 바이오마커를 기반으로 맞춤형 수명 연장 팁을 제공합니다.",
+    "reason_three_title": "탈중앙화, 계산형 바이오",
+    "reason_three_subtitle": "중앙 집중식 기관의 간섭 없이 최첨단 건강 인사이트에 직접 액세스할 수 있습니다. 궁극의 자유와 보안을 위해 블록체인을 통해 데이터와 제어권을 강화합니다.",
+
+    "carousel_text_one": "단순한 밈 마술이 아닌 실제 전문가들의 지원",
+    "carousel_text_two": "브로 사이언스는 없습니다: 체육관 친구가 아닌 괴짜들이 검증한 과학 기술",
+    "carousel_text_three": "실제 이익, 한도 없음: 검증된 팁, 허황된 주장 제외",
+    "carousel_text_four": "똑똑한 사람들이 면밀히 조사하므로 다음과 같은 작업을 수행할 필요가 없습니다.",
+
+    "tokenomics_title": "TOKENOMICS",
+    "tokenomics_info_one_title": "토큰 티커",
+    "tokenomics_info_two_title": "체인",
+    "tokenomics_info_three_title": "연락처 주소",
+    "tokenomics_info_four_title": "토큰 공급",
+    "tokenomics_subtitle": "토큰 생성 이벤트”",
+    "tokenomics_days": "일수",
+    "tokenomics_hours": "시간",
+    "tokenomics_minutes": "분",
+    "tokenomics_seconds": "초",
+
+
+    "footer_title_line_one": "최신 소식 받기 ",
+    "footer_title_line_two": "DR.PEPE 뉴스레터",
+    "footer_email_placeholder": "이메일 주소 입력",
+    "footer_email_button": "구독 신청",
+    "footer_copyrights": "© 2024 DR.PEPE 판권 소유."
+
+
 }

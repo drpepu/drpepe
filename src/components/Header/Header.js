@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import styles from './Header.module.css'
 import pepeheadshot from '../../Assets/DRPEPEVACCINEHEADSHOT.svg'
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
 
 
 function Header() {
@@ -12,6 +13,14 @@ function Header() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const { i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+  const { t } = useTranslation();
+
 
   useEffect(() => {
     if (isOpen) {
@@ -45,7 +54,7 @@ function Header() {
           <div className={`${styles.header_button_four } ${styles.header_button}`}>DOCS</div>
           <div className={`${styles.header_button_five } ${styles.header_button}`}>APP</div>
           <div className={`${styles.header_button_eight } ${styles.header_button}`}>DRPEPEAI</div>
-          <LanguageSwitcher />
+          <LanguageSwitcher  />
 
           <div className={styles.header_container_mobile}>
 
@@ -70,7 +79,7 @@ function Header() {
             
             <div className={styles.header_linksPages}>
               <div className={styles.header_descriptionContent}>
-                <p>NAVIGATION</p>
+                <p>{t('side_navigation_title_one')}</p>
                 <hr className={styles.hrClass}></hr>
               </div>
               <a href="/" className={`${styles.header_sideNavLink}`} onClick={toggleMenu}>Home</a>
@@ -81,20 +90,35 @@ function Header() {
 
             <div className={styles.header_linksPages}>
               <div className={styles.header_descriptionContent}>
-                <p>LANGUAGE</p>
+                <p>{t('side_navigation_title_two')}</p>
                 <hr className={styles.hrClass}></hr>
               </div>
               <div className={styles.header_sideNavLink_content}>
-                  <a href="/" className={`${styles.header_sideNavLink_small}`} onClick={toggleMenu}>ENGLISH</a>
-                  <a href="/" className={`${styles.header_sideNavLink_small}`} onClick={toggleMenu}>中文</a>
-                  <a href="/" className={`${styles.header_sideNavLink_small}`} onClick={toggleMenu}>중국어</a>
+                  <button href="/" className={`${styles.header_sideNavLink_small}`}   
+                    onClick={() => {
+                      toggleMenu();
+                      changeLanguage('english'); 
+                    }}>ENGLISH
+                  </button>
+                  <button href="/" className={`${styles.header_sideNavLink_small}`} 
+                    onClick={() => {
+                      toggleMenu();
+                      changeLanguage('chinese'); 
+                    }}>中文
+                  </button>
+                  <button href="/" className={`${styles.header_sideNavLink_small}`} 
+                    onClick={() => {
+                      toggleMenu();
+                      changeLanguage('korean'); 
+                    }}>중국어
+                  </button>
               </div>
 
             </div>
 
             <div className={styles.header_linksPages}>
               <div className={styles.header_descriptionContent}>
-                <p>SOCIALS</p>
+                <p>{t('side_navigation_title_three')}</p>
                 <hr className={styles.hrClass}></hr>
               </div>
               <div className={styles.header_sideNavLink_content}>

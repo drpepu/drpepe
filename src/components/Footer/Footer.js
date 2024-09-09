@@ -1,27 +1,30 @@
-// src/components/Footer.js
+
 import React, { useState } from 'react';
-import { addSubscriber } from '../../newsletter_service/getResponseService'; // Adjust path if necessary
+import { addSubscriber } from '../../newsletter_service/getResponseService'; 
 import styles from './Footer.module.css';
-import Modal from './NewsletterModal/Modal'; // Import Modal component
+import Modal from './NewsletterModal/Modal'; 
+
+import { useTranslation } from 'react-i18next';
 
 function Footer() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [showModal, setShowModal] = useState(false); // New state for modal
+  const [showModal, setShowModal] = useState(false); 
+
+  const { t } = useTranslation();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const listId = 'ZPUUe'; // Correct List Token
-      await addSubscriber(listId, email); // Call addSubscriber with email only
+      const listId = 'ZPUUe'; //  List Token
+      await addSubscriber(listId, email); 
       setMessage('Successfully subscribed!');
-      setShowModal(true); // Show modal on success
-
-      // Reset the state after successful submission
+      setShowModal(true); 
+  
       setEmail('');
     } catch (error) {
       setMessage('Failed to subscribe. Please try again.');
-      setShowModal(true); // Show modal on failure
+      setShowModal(true); 
     }
   };
 
@@ -29,21 +32,21 @@ function Footer() {
     <div className={styles.footer_container}>
       <div className={styles.footer_newsletter_container}>
         <div className={styles.footer_newsletter_text_container}>
-          <div>STAY IN THE LOOP WITH</div>
-          <div>DR. PEPE NEWSLETTER</div>
+          <div>{t('footer_title_line_one')}</div>
+          <div>{t('footer_title_line_two')}</div>
         </div>
 
         <div className={styles.footer_newsletter_form_container}>
           <form className={styles.footer_newsletter_form} onSubmit={handleSubmit}>
             <input
               type="email"
-              placeholder="Enter your email address"
+              placeholder={t('footer_email_placeholder')}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
               className={styles.footer_newsletter_input}
             />
-            <button type="submit" className={styles.footer_newsletter_form_button}>SUBSCRIBE</button>
+            <button type="submit" className={styles.footer_newsletter_form_button}>{t('footer_email_button')}</button>
           </form>
         </div>
       </div>
@@ -52,7 +55,6 @@ function Footer() {
         <div className={`${styles.footer_button_one} ${styles.footer_button}`}>DOCS</div>
         <div className={`${styles.footer_button_two} ${styles.footer_button}`}>APP</div>
         <div className={`${styles.footer_button_three} ${styles.footer_button}`}>DRPEPEAI</div>
-        <div className={`${styles.footer_button_four} ${styles.footer_button}`}>EN</div>
       </div>
 
       <div className={styles.footer_socials_container}>
@@ -60,12 +62,12 @@ function Footer() {
         <a href="https://t.me/+yxh5qd2tKQU2ODIx" target="_blank" rel="noopener noreferrer" className={styles.footer_social_button}>TELEGRAM</a>
       </div>
 
-      <div className={styles.footer_copywrite}>© 2024 DR.PEPE All rights reserved.</div>
+      <div className={styles.footer_copywrite}>{t('footer_copyrights')}</div>
 
       {showModal && (
         <Modal
           message={message}
-          onClose={() => setShowModal(false)} // Close modal when clicked
+          onClose={() => setShowModal(false)} 
         />
       )}
     </div>

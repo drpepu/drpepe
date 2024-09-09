@@ -1,8 +1,59 @@
 {
+   
+   
+   
+    "side_navigation_title_one": "NAVIGATION",
+    "side_navigation_title_two": "LANGUAGE",
+    "side_navigation_title_three": "SOCIALS",
+
+
     "hero_button_one": "JOIN THE COMMUNITY",
     "hero_button_two": "SIGN UP FOR NEWSLETTER",
     "hero_subtitle_line_one": "AN AI-POWERED SMART AGENT",
-    "hero_subtitle_line_two": "DESIGNED TO HELP YOU LIVE FOREVER"
+    "hero_subtitle_line_two": "DESIGNED TO HELP YOU LIVE FOREVER",
+
+    "video_comparison_title": "Dr. Pepe's Longevity Lab is Solana’s first AI-driven DeSci protocol, accessible via the DRP token, designed to help you achieve a longer, healthier life.",
+    "video_comparison_subtitle": "Laveraging an elite peer-reviewed research database",
+
+    "reason_title": "WHY IS DR.PEPE BETTER?",
+    "reason_subtitle": "Other agents spit facts; Dr. Pepe drops alpha. Want the secret to living long enough to see your bags moon? Stick with Dr. Pepe’s Longetivity Lab.",
+
+    "reason_label_title": "LIVE LONGER",
+    "reason_label_subtitle": "Because outlasting the next bull run isn’t enough—let’s make sure you’re around to spend those gains too.",
+    "reason_one_title": "Elite, peer-reviewed research on Arweave",
+    "reason_one_subtitle": "Vast peer-reviewed research database stored on Arweave, ensuring transparency and accessibility. Get health advice backed by the latest science, all stored securely on the Solana Blockchain.",
+    "reason_two_title": "Blood analysis",
+    "reason_two_subtitle": "Upload your blood analysis, and Dr. Pepe’s AI will dive into the data, providing tailored Longetivity tips based on your unique biomarkers.",
+    "reason_three_title": "Decentralized, computational bio",
+    "reason_three_subtitle": "Have direct access to cutting-edge health insights without the interference of centralized entities. Your data, your control—empowered by the blockchain for ultimate freedom and security.",
+
+    "carousel_text_one": "Backed by real experts, not just meme magic",
+    "carousel_text_two": "No Bro Science: Verified by nerds, not your gym buddy",
+    "carousel_text_three": "Real Gains, No Cap: Proven tips, minus the wild claims",
+    "carousel_text_four": "Scrutinized by smart folks so you don’t have to",
+
+
+    "tokenomics_title": "TOKENOMICS",
+    "tokenomics_info_one_title": "TOKEN TICKER",
+    "tokenomics_info_two_title": "CHAIN",
+    "tokenomics_info_three_title": "CONTACT ADDRESS",
+    "tokenomics_info_four_title": "TOKEN SUPPLY",
+    "tokenomics_subtitle": "TOKEN GENERATION EVENT",
+    "tokenomics_days": "Days",
+    "tokenomics_hours": "Hours",
+    "tokenomics_minutes": "Minutes",
+    "tokenomics_seconds": "Seconds",
+
+    "footer_title_line_one": "STAY IN THE LOOP WITH",
+    "footer_title_line_two": "DR.PEPE NEWSLETTER",
+    "footer_email_placeholder": "Enter your email address",
+    "footer_email_button": "SUBSCRIBE",
+    "footer_copyrights": "© 2024 DR.PEPE All rights reserved."
+
+
+
+
+
 
 }
   

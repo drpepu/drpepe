@@ -1,6 +1,48 @@
 {
+    "side_navigation_title_one": "导航",
+    "side_navigation_title_two": "语言",
+    "side_navigation_title_three": "社会",
+    
+    
     "hero_button_one": "加入社区！",
     "hero_button_two": "订阅时事通讯",
     "hero_subtitle_line_one": "由人工智能驱动的智能代理",
-    "hero_subtitle_line_two": "旨在帮助您永生"
+    "hero_subtitle_line_two": "旨在帮助您永生",
+
+    "video_comparison_title": "DR.PEPE LONGEVITY LAB 是 Solana 的首个人工智能驱动的 DeSci 协议，可通过 DRP 令牌访问，旨在帮助您实现更长寿、更健康的生活。",
+    "video_comparison_subtitle": "平均化精英同行评审研究数据库",
+
+    "reason_title": "为什么 DR.PEPE 更好？",
+    "reason_subtitle": "其他特工吐露实情，DR.PEPE。想知道活得足够长以看到你的包包登月的秘诀吗？请访问 DR.PEPE LONGEVITY LAB",
+
+    "reason_label_title": "长寿",
+    "reason_label_subtitle": "因为光是熬过下一轮牛市是不够的，我们还要确保您有能力花掉这些收益。",
+    "reason_one_title": "经同行评审的关于 Arweave 的精英研究",
+    "reason_one_subtitle": "庞大的同行评审研究数据库存储在 Arweave 上，确保透明度和可访问性。获取以最新科学为后盾的健康建议，所有信息均安全地存储在 Solana Blockchain 上。",
+    "reason_two_title": "血液分析",
+    "reason_two_subtitle": "上传您的血液分析结果，DR.PEPE'S AI 将深入研究数据，并根据您独特的生物标记提供量身定制的长效性提示。",
+    "reason_three_title": "分散式计算生物",
+    "reason_three_subtitle": "不受中心化实体的干扰，直接获取最前沿的健康知识。您的数据，您的控制--由区块链赋能，实现终极自由和安全。",
+
+    "carousel_text_one": "有真正的专家支持，而不仅仅是神话魔法",
+    "carousel_text_two": "无兄弟科学： 由书呆子验证，而非你的健身房伙伴",
+    "carousel_text_three": "真正的收益，没有上限： 久经考验的秘诀，去掉夸夸其谈",
+    "carousel_text_four": "由聪明人审查，您就不必这样做",
+
+    "tokenomics_title": "TOKENOMICS",
+    "tokenomics_info_one_title": "TOKEN 代码",
+    "tokenomics_info_two_title": "链条",
+    "tokenomics_info_three_title": "联系地址",
+    "tokenomics_info_four_title": "TOKEN 供应",
+    "tokenomics_subtitle": "TOKEN 生成事件",
+    "tokenomics_days": "日",
+    "tokenomics_hours": "时数",
+    "tokenomics_minutes": " 会议记录",
+    "tokenomics_seconds": "秒",
+
+    "footer_title_line_one": "与我们保持联系",
+    "footer_title_line_two": "DR.PEPE 通讯",
+    "footer_email_placeholder": "输入您的电子邮件地址",
+    "footer_email_button": "订阅",
+    "footer_copyrights": "© 2024 DR.PEPE 保留所有权利。"
 }

@@ -26,3 +26,8 @@
     color: var(--secondary-color);
 
 }
+@media ( width <=500px ){
+    .LanguageSwitcher_Container{
+        display: none;
+    } 
+}

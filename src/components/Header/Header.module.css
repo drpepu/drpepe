@@ -177,6 +177,8 @@
         text-decoration: none;
         color: var(--tertiary-color);
         font-size: 6vw;
+        background-color: transparent;
+        border: none;
   
     }
     .header_sideNavLink_content{

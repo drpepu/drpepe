@@ -23,7 +23,7 @@ function Hero() {
         <div className={styles.hero_main_text_one_container}>
             <div className={styles.hero_main_text_one} >DR. PEPE’S</div>
         </div>
-        <div className={styles.hero_main_text_two}>LONGETIVITY</div>
+        <div className={styles.hero_main_text_two}>LONGEVITY</div>
 
         <div className={styles.hero_main_text_three_container} >
           <div className={styles.hero_main_text_three}>LAB </div>
