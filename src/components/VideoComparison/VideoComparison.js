@@ -30,6 +30,7 @@ function VideoComparison() {
                       loading="lazy"
                       allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                       className={styles.videoComparison_video_iframe}
+                      playsInline
                       title='wokegpt'
 
                   ></iframe>
@@ -48,6 +49,7 @@ function VideoComparison() {
                         loading="lazy"
                         allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                         className={styles.videoComparison_video_iframe}
+                        playsInline
                         title='pepegpt'
 
                     ></iframe>
