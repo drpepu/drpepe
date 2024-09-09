@@ -1,0 +1,28 @@
+.LanguageSwitcher_Container{
+    display: flex;
+    flex-direction: row;
+}
+
+.LanguageSwitcher{
+    width: fit-content;
+    height: fit-content;
+    font-size: 0.8vw;
+    padding: 0.8vw;
+    padding-top: 0.4vw;
+    padding-bottom: 0.4vw;
+    border-radius: 30vw;
+    margin-left: 2vw;
+
+}
+
+.LanguageSwitcher_button{
+    background-color: transparent;
+    border: 0.2vw solid var(--tertiary-color);
+    color: var(--tertiary-color);
+    font-weight: 600;
+}
+.LanguageSwitcher_button:hover{
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
+
+}

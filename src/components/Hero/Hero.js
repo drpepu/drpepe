@@ -5,9 +5,14 @@ import DrPepeVaccine from '../../Assets/DRPEPEVACCINE.svg';
 import DrPepeFat from '../../Assets/DRPEPEFAT.svg';
 import solanapill from '../../Assets/SOLANAPILL.svg';
 
+import { useTranslation } from 'react-i18next';
+
+
 
 
 function Hero() {
+  const { t } = useTranslation();
+
   return (
     <>
 
@@ -36,7 +41,7 @@ function Hero() {
         <div className={styles.hero_secondary_text_two}>DESIGNED TO HELP YOU LIVE FOREVER</div>
 
         <div className={styles.hero_buttons_container}>
-          <div className={styles.hero_button_one}>JOIN THE COMMUNITY</div>
+          <div className={styles.hero_button_one}>{t('hero_button_one')}</div>
           <div className={styles.hero_button_two}>SIGN UP FOR NEWSLETTER</div>
         </div>
 

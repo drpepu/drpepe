@@ -63,17 +63,7 @@
     }
    
  
-    .header_button_seven{
-        background-color: transparent;
-        border: 0.2vw solid var(--tertiary-color);
-        color: var(--tertiary-color);
-        font-weight: 600;
-    }
-    .header_button_seven:hover{
-        background-color: var(--tertiary-color);
-        color: var(--secondary-color);
-    
-    }
+   
     .mobile_pepe_hamburger{
         display: none;
     }

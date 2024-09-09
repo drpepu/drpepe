@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import styles from './Header.module.css'
 import pepeheadshot from '../../Assets/DRPEPEVACCINEHEADSHOT.svg'
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
+
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,11 +40,12 @@ function Header() {
   return (
     <>
       <div className={styles.header_container}>
+
           <div className={`${styles.header_button_one } ${styles.header_button}`}>DR PEPE</div>
           <div className={`${styles.header_button_four } ${styles.header_button}`}>DOCS</div>
           <div className={`${styles.header_button_five } ${styles.header_button}`}>APP</div>
           <div className={`${styles.header_button_eight } ${styles.header_button}`}>DRPEPEAI</div>
-          <div className={`${styles.header_button_seven } ${styles.header_button}`}>EN</div>
+          <LanguageSwitcher />
 
           <div className={styles.header_container_mobile}>
 
@@ -61,47 +64,48 @@ function Header() {
 
 
           </div>
-            <div className={styles.header_sidenav} ref={sideNavRef}>
-              <div className={styles.header_closeBtn} onClick={toggleMenu}>X</div>
-              
-              <div className={styles.header_linksPages}>
-                <div className={styles.header_descriptionContent}>
-                  <p>NAVIGATION</p>
-                  <hr className={styles.hrClass}></hr>
-                </div>
-                <a href="/" className={`${styles.header_sideNavLink}`} onClick={toggleMenu}>Home</a>
-                <a href="/docs" className={`${styles.header_sideNavLink}`} onClick={toggleMenu}>Docs</a>
-                <a href="/app" className={`${styles.header_sideNavLink}`} onClick={toggleMenu}>App</a>
-                <a href="/drpepeai" className={`${styles.header_sideNavLink}`} onClick={toggleMenu}>DRPEPEAI</a>
+
+          <div className={styles.header_sidenav} ref={sideNavRef}>
+            <div className={styles.header_closeBtn} onClick={toggleMenu}>X</div>
+            
+            <div className={styles.header_linksPages}>
+              <div className={styles.header_descriptionContent}>
+                <p>NAVIGATION</p>
+                <hr className={styles.hrClass}></hr>
               </div>
+              <a href="/" className={`${styles.header_sideNavLink}`} onClick={toggleMenu}>Home</a>
+              <a href="/docs" className={`${styles.header_sideNavLink}`} onClick={toggleMenu}>Docs</a>
+              <a href="/app" className={`${styles.header_sideNavLink}`} onClick={toggleMenu}>App</a>
+              <a href="/drpepeai" className={`${styles.header_sideNavLink}`} onClick={toggleMenu}>DRPEPEAI</a>
+            </div>
 
-              <div className={styles.header_linksPages}>
-                <div className={styles.header_descriptionContent}>
-                  <p>LANGUAGE</p>
-                  <hr className={styles.hrClass}></hr>
-                </div>
-                <div className={styles.header_sideNavLink_content}>
-                    <a href="/" className={`${styles.header_sideNavLink_small}`} onClick={toggleMenu}>ENGLISH</a>
-                    <a href="/" className={`${styles.header_sideNavLink_small}`} onClick={toggleMenu}>中文</a>
-                    <a href="/" className={`${styles.header_sideNavLink_small}`} onClick={toggleMenu}>중국어</a>
-                </div>
-
+            <div className={styles.header_linksPages}>
+              <div className={styles.header_descriptionContent}>
+                <p>LANGUAGE</p>
+                <hr className={styles.hrClass}></hr>
               </div>
-
-              <div className={styles.header_linksPages}>
-                <div className={styles.header_descriptionContent}>
-                  <p>SOCIALS</p>
-                  <hr className={styles.hrClass}></hr>
-                </div>
-                <div className={styles.header_sideNavLink_content}>
-                    <a href="/" className={`${styles.header_sideNavLink_small}`} onClick={toggleMenu}>X</a>
-                    <a href="/" className={`${styles.header_sideNavLink_small}`} onClick={toggleMenu}>TELEGRAM</a>
-                </div>
-
+              <div className={styles.header_sideNavLink_content}>
+                  <a href="/" className={`${styles.header_sideNavLink_small}`} onClick={toggleMenu}>ENGLISH</a>
+                  <a href="/" className={`${styles.header_sideNavLink_small}`} onClick={toggleMenu}>中文</a>
+                  <a href="/" className={`${styles.header_sideNavLink_small}`} onClick={toggleMenu}>중국어</a>
               </div>
-
 
             </div>
+
+            <div className={styles.header_linksPages}>
+              <div className={styles.header_descriptionContent}>
+                <p>SOCIALS</p>
+                <hr className={styles.hrClass}></hr>
+              </div>
+              <div className={styles.header_sideNavLink_content}>
+                  <a href="/" className={`${styles.header_sideNavLink_small}`} onClick={toggleMenu}>X</a>
+                  <a href="/" className={`${styles.header_sideNavLink_small}`} onClick={toggleMenu}>TELEGRAM</a>
+              </div>
+
+            </div>
+
+
+          </div>
 
 
       </div>
