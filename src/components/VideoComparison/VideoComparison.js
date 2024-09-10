@@ -1,18 +1,20 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from '../VideoComparison/VideoComparison.module.css';
 import { useTranslation } from 'react-i18next';
 
 function VideoComparison() {
   const { t } = useTranslation();
-
-  // Refs to access the iframe elements
+  
   const videoOneRef = useRef(null);
   const videoTwoRef = useRef(null);
+  const [isSdkLoaded, setIsSdkLoaded] = useState(false);
 
   useEffect(() => {
     // Load the Cloudflare Stream SDK script dynamically
     const script = document.createElement('script');
     script.src = 'https://embed.cloudflarestream.com/embed/sdk.latest.js';
+    script.onload = () => setIsSdkLoaded(true);
+    script.onerror = () => console.error('Failed to load Cloudflare Stream SDK');
     document.body.appendChild(script);
 
     // Clean up the script when the component unmounts
@@ -23,6 +25,12 @@ function VideoComparison() {
 
   // Function to play both videos simultaneously
   const playBothVideos = () => {
+    if (!isSdkLoaded) {
+      console.error('Cloudflare Stream SDK is not loaded.');
+      return;
+    }
+
+    // Ensure the Stream function is available in the window object
     if (window.Stream && videoOneRef.current && videoTwoRef.current) {
       const playerOne = window.Stream(videoOneRef.current);
       const playerTwo = window.Stream(videoTwoRef.current);
@@ -36,6 +44,8 @@ function VideoComparison() {
         playerTwo.muted = true;
         playerTwo.play();
       });
+    } else {
+      console.error('Stream players could not be initialized.');
     }
   };
 
