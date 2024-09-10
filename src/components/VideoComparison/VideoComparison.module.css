@@ -113,10 +113,14 @@
     .videoComparison_vs{
       display: none;
     }
-
+    div.css-6mrf8j.css-1sg2lsz {
+        padding-left: 12vw !important;
+        padding-right: 12vw !important;
+    }
 
 
 @media ( width <= 500px ){
+   
     .videoComparison_container{
        margin-top: 70vw;
               
