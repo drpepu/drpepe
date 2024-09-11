@@ -183,6 +183,7 @@
     }
     .header_sideNavLink_content{
         width: 100%;
+        background-color: black;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
