@@ -182,6 +182,9 @@
         padding: 0;
   
     }
+    .header_sideNavLink_small.active {
+        color: var(--primary-color);
+      }
     .header_sideNavLink_content{
         width: 100%;
         display: flex;

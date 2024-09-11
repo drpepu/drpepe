@@ -8,6 +8,8 @@ import { useTranslation } from 'react-i18next';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeLanguage, setActiveLanguage] = useState('english'); // State to track active language
+
   const sideNavRef = useRef(null);
 
   const toggleMenu = () => {
@@ -18,6 +20,8 @@ function Header() {
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+    setActiveLanguage(lng); // Update the active language state
+
   };
   const { t } = useTranslation();
 
@@ -83,9 +87,9 @@ function Header() {
                 <hr className={styles.hrClass}></hr>
               </div>
               <a href="/" className={`${styles.header_sideNavLink}`} onClick={toggleMenu}>Home</a>
-              <a href="/docs" className={`${styles.header_sideNavLink}`} onClick={toggleMenu}>Docs</a>
-              <a href="/app" className={`${styles.header_sideNavLink}`} onClick={toggleMenu}>App</a>
-              <a href="/drpepeai" className={`${styles.header_sideNavLink}`} onClick={toggleMenu}>DRPEPEAI</a>
+              <a href="/" className={`${styles.header_sideNavLink}`} onClick={toggleMenu}>Docs</a>
+              <a href="/" className={`${styles.header_sideNavLink}`} onClick={toggleMenu}>App</a>
+              <a href="/" className={`${styles.header_sideNavLink}`} onClick={toggleMenu}>DRPEPEAI</a>
             </div>
 
             <div className={styles.header_linksPages}>
@@ -94,19 +98,19 @@ function Header() {
                 <hr className={styles.hrClass}></hr>
               </div>
               <div className={styles.header_sideNavLink_content}>
-                  <button href="/" className={`${styles.header_sideNavLink_small}`}   
+                  <button href="/" className={`${styles.header_sideNavLink_small} ${activeLanguage === 'english' ? styles.active : ''}`}   
                     onClick={() => {
                       toggleMenu();
                       changeLanguage('english'); 
                     }}>ENGLISH
                   </button>
-                  <button href="/" className={`${styles.header_sideNavLink_small}`} 
+                  <button href="/" className={`${styles.header_sideNavLink_small} ${activeLanguage === 'chinese' ? styles.active : ''}`} 
                     onClick={() => {
                       toggleMenu();
                       changeLanguage('chinese'); 
                     }}>中文
                   </button>
-                  <button href="/" className={`${styles.header_sideNavLink_small}`} 
+                  <button href="/" className={`${styles.header_sideNavLink_small} ${activeLanguage === 'korean' ? styles.active : ''}`} 
                     onClick={() => {
                       toggleMenu();
                       changeLanguage('korean'); 
