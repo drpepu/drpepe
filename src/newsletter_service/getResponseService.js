@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://getresponse-proxy-server-drpepe.vercel.app/add-subscriber'; 
+const API_URL = 'https://venerable-hotteok-212a17.netlify.app/add-subscriber'; 
 
 export const addSubscriber = async (listId, email, name) => {
   try {
