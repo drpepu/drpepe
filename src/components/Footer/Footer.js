@@ -53,8 +53,8 @@ function Footer() {
 
       <div className={styles.footer_buttons_container}>
       <a href="https://docs.drpepe.ai/" target="_blank" className={`${styles.footer_button_one} ${styles.footer_button}`}>DOCS</a>
-      <a href="/app" target="_blank" className={`${styles.footer_button_two} ${styles.footer_button}`}>APP</a>
-      <a href="/drpepeai" target="_blank" className={`${styles.footer_button_three} ${styles.footer_button}`}>DRPEPEAI</a>
+      <a href="https://t.me/+yxh5qd2tKQU2ODIx" target="_blank" className={`${styles.footer_button_two} ${styles.footer_button}`}>APP</a>
+      <a className={`${styles.footer_button_three} ${styles.footer_button}`}>DRP</a>
 
       </div>
 
