@@ -106,8 +106,8 @@ function Header() {
               <hr className={styles.hrClass} />
             </div>
             <div className={styles.header_sideNavLink_content}>
-              <a href="/" className={`${styles.header_sideNavLink_small}`} onClick={() => toggleMenu()}>X</a>
-              <a href="/" className={`${styles.header_sideNavLink_small}`} onClick={() => toggleMenu()}>TELEGRAM</a>
+              <a href="https://x.com/drpepeai" className={`${styles.header_sideNavLink_small}`} onClick={() => toggleMenu()}>X</a>
+              <a href="https://t.me/+yxh5qd2tKQU2ODIx" className={`${styles.header_sideNavLink_small}`} onClick={() => toggleMenu()}>TELEGRAM</a>
             </div>
           </div>
         </div>
