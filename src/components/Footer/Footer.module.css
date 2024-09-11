@@ -222,6 +222,7 @@
         border:  0.8vw solid var(--primary-color);
         color: var(--primary-color);
         font-weight: 500 ;
+        text-decoration: none;
     }
     .footer_button_one {
         margin-left: 0vw;

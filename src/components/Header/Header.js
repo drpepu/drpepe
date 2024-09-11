@@ -53,10 +53,11 @@ function Header() {
   return (
     <>
       <div className={styles.header_container}>
-        <div className={`${styles.header_button_one} ${styles.header_button}`}>DR PEPE</div>
-        <div className={`${styles.header_button_four} ${styles.header_button}`}>DOCS</div>
-        <div className={`${styles.header_button_five} ${styles.header_button}`}>APP</div>
-        <div className={`${styles.header_button_eight} ${styles.header_button}`}>DRPEPEAI</div>
+      <a href="/drpepe" target="_blank" className={`${styles.header_button_one} ${styles.header_button}`}>DR PEPE</a>
+      <a href="https://docs.drpepe.ai/" target="_blank" className={`${styles.header_button_four} ${styles.header_button}`}>DOCS</a>
+      <a href="/app" target="_blank" className={`${styles.header_button_five} ${styles.header_button}`}>APP</a>
+      <a href="/drpepeai" target="_blank" className={`${styles.header_button_eight} ${styles.header_button}`}>DRPEPEAI</a>
+
         <LanguageSwitcher />
 
         <div className={styles.header_container_mobile}>
@@ -83,7 +84,7 @@ function Header() {
               <hr className={styles.hrClass} />
             </div>
             <a href="/" className={`${styles.header_sideNavLink} ${activeLink === 'home' ? styles.active : ''}`} onClick={() => toggleMenu('/')}>Home</a>
-            <a href="/" className={`${styles.header_sideNavLink} ${activeLink === 'docs' ? styles.active : ''}`} onClick={() => toggleMenu('docs')}>Docs</a>
+            <a href="https://docs.drpepe.ai/" target='_blank' className={`${styles.header_sideNavLink} ${activeLink === 'docs' ? styles.active : ''}`} onClick={() => toggleMenu('docs')}>Docs</a>
             <a href="/" className={`${styles.header_sideNavLink} ${activeLink === 'app' ? styles.active : ''}`} onClick={() => toggleMenu('app')}>App</a>
             <a href="/" className={`${styles.header_sideNavLink} ${activeLink === 'drpepeai' ? styles.active : ''}`} onClick={() => toggleMenu('drpepeai')}>DRPEPEAI</a>
           </div>
