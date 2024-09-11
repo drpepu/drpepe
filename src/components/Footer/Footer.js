@@ -16,7 +16,7 @@ function Footer() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const listId = 'ZPUUe'; //  List Token
+      const listId = 'jLWBb'; 
       await addSubscriber(listId, email); 
       setMessage('Successfully subscribed!');
       setShowModal(true); 
