@@ -179,11 +179,11 @@
         font-size: 6vw;
         background-color: transparent;
         border: none;
+        padding: 0;
   
     }
     .header_sideNavLink_content{
         width: 100%;
-        background-color: black;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
