@@ -171,6 +171,9 @@
         font-size: 8vw;
  
     }
+    .header_sideNavLink.active {
+        color: var(--primary-color);
+      }
     .header_sideNavLink_small{
 
         margin-bottom: 0.8vw;
