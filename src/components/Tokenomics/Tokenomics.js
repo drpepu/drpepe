@@ -12,7 +12,7 @@ import { useCountdown } from './countdown.js';
 function Tokenomics() {
 
   const { t } = useTranslation();
-  // Set the target date for the countdown
+  // Set the target date for the countdown.
 const targetDate = new Date("Jan 31, 2025 00:00:00").getTime();
 
   // Use the countdown hook to get the time left
