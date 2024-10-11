@@ -46,7 +46,7 @@ const targetDate = new Date("Jan 31, 2025 00:00:00").getTime();
                   </div>
                   <div className={styles.tokenomics_info_box}>
                     <div className={styles.tokenomics_info_title}>{t('tokenomics_info_four_title')}</div>
-                    <div className={styles.tokenomics_info_description}>1.000.000.000.000.000</div>
+                    <div className={styles.tokenomics_info_description}>1.000.000.000.000</div>
                   </div>
               </div>
 
