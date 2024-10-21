@@ -53,6 +53,23 @@
   }
 
 
-@media (max-width: 500px) {
-
+  @media (max-width: 500px) {
+    .confirmReferral_main_container {
+        width: 100%; /* Ensure the container fits within the viewport */
+        max-width: calc(100% - 6vw); /* Prevent the container from exceeding 100% width */
+        margin-left: 3vw;
+        margin-right: 3vw;
+        margin-bottom: 3vw;
+        margin-top: 4vw;
+        box-sizing: border-box; /* Ensure padding and borders are included in the width */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        padding-right: 3vw;
+        padding-left: 3vw;
+    }
+    
+    /* For any text that might overflow */
+    .confirmReferral_main_container p {
+        word-wrap: break-word; /* Break long words */
+        overflow-wrap: break-word; /* Support for older browsers */
+    }
 }

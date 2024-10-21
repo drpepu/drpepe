@@ -18,9 +18,11 @@ function ReferralSystem() {
   return (
     <>
       <Header />
+      <div className={styles.wallet_confirm_container}>
       <ConfirmReferral />
       <div className={styles.walletButton_container}>
         <WalletMultiButton className={styles.walletButton}/> 
+      </div>
       </div>
       <GenerateReferralLink />
       <ReferralLog />
