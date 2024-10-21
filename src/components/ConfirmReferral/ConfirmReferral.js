@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom'; 
+import { useLocation, useNavigate } from 'react-router-dom'; // Add useNavigate for redirection
 import { useWallet } from '@solana/wallet-adapter-react';
 import bs58 from 'bs58';
 import styles from './ConfirmReferral.module.css';
@@ -11,11 +11,11 @@ const ConfirmReferral = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
   const [alreadyConfirmed, setAlreadyConfirmed] = useState(false);
+  const [isVisible, setIsVisible] = useState(true); // New state to control visibility
   const location = useLocation();
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
   const { publicKey, signMessage, connected } = useWallet();
 
-  // Capture the referrer from the URL
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const referrerParam = params.get('referrer');
@@ -24,7 +24,6 @@ const ConfirmReferral = () => {
     }
   }, [location]);
 
-  // Check if the referral has already been confirmed
   useEffect(() => {
     const checkForExistingReferral = async () => {
       if (publicKey) {
@@ -50,7 +49,6 @@ const ConfirmReferral = () => {
       return;
     }
 
-    // Prevent user from referring themselves
     if (referrer === publicKey.toBase58()) {
       setError('You cannot refer yourself.');
       return;
@@ -65,13 +63,11 @@ const ConfirmReferral = () => {
       const message = 'Please sign this message to confirm your referral.';
       const encodedMessage = new TextEncoder().encode(message);
 
-      // Sign the message using the wallet
       const signedMessage = await signMessage(encodedMessage);
       const signature = bs58.encode(signedMessage);
       const userPublicKey = publicKey.toBase58();
       const referrerPublicKey = referrer;
 
-      // Send the data to Firestore
       try {
         await addDoc(collection(db, 'referrals_two'), {
           userPublicKey,
@@ -90,18 +86,17 @@ const ConfirmReferral = () => {
     }
   };
 
-  // Handle close button click
   const handleClose = () => {
-    navigate('/referral-system'); 
+    setIsVisible(false); // Hide the container
+    navigate('/referral-system'); // Redirect to base URL
   };
 
-  if (!referrer) {
+  if (!referrer || !isVisible) {
     return null;
   }
 
   return (
     <div className={styles.confirmReferral_main_container}>
- 
       <button className={styles.close_button} onClick={handleClose}>
         &times;
       </button>

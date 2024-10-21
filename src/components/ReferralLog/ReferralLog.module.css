@@ -67,8 +67,13 @@ tr {
     .referral_log_main_container {
         margin-left: 3vw;
         margin-right: 3vw;
-        border: 1vw solid var(--primary-color);
+        border: 1vw solid var(--tertiary-color);
+        margin-top: 5vw;
+
 
     }
+    .referral_table {
+        margin: 0px 0;
 
+    }
 }
