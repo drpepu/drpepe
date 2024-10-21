@@ -9,7 +9,7 @@ const GenerateReferralLink = () => {
 
   useEffect(() => {
     if (publicKey) {
-      const baseUrl = 'https://solana-react-starter-2.vercel.app/referral';
+      const baseUrl = 'https://www.drpepe.ai/referral-system';
       const link = `${baseUrl}?referrer=${publicKey.toString()}`;
       setReferralLink(link);
     }

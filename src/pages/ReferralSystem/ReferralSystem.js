@@ -8,6 +8,7 @@ import '@solana/wallet-adapter-react-ui/styles.css';
 import GenerateReferralLink from '../../components/GenerateReferralLink/GenerateReferralLink';
 import ReferralLog from '../../components/ReferralLog/ReferralLog';
 import Footer from '../../components/Footer/Footer';
+import ConfirmReferral from '../../components/ConfirmReferral/ConfirmReferral';
 
 
 
@@ -17,6 +18,7 @@ function ReferralSystem() {
   return (
     <>
       <Header />
+      <ConfirmReferral />
       <div className={styles.walletButton_container}>
         <WalletMultiButton className={styles.walletButton}/> 
       </div>
