@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom'; 
 import { useWallet } from '@solana/wallet-adapter-react';
 import bs58 from 'bs58';
 import styles from './ConfirmReferral.module.css';
-import { db } from '../../firebase'; // Import Firebase
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore'; // Import Firestore functions
+import { db } from '../../firebase';
+import { collection, getDocs, query, where, addDoc, serverTimestamp } from 'firebase/firestore';
 
 const ConfirmReferral = () => {
   const [referrer, setReferrer] = useState(null);
   const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(false); // State to track referral confirmation success
+  const [success, setSuccess] = useState(false);
+  const [alreadyConfirmed, setAlreadyConfirmed] = useState(false);
   const location = useLocation();
-  const { publicKey, signMessage, connected } = useWallet(); // useWallet hook for Solana wallet
+  const navigate = useNavigate(); // Hook for navigation
+  const { publicKey, signMessage, connected } = useWallet();
 
   // Capture the referrer from the URL
   useEffect(() => {
@@ -22,6 +24,21 @@ const ConfirmReferral = () => {
     }
   }, [location]);
 
+  // Check if the referral has already been confirmed
+  useEffect(() => {
+    const checkForExistingReferral = async () => {
+      if (publicKey) {
+        const referralsRef = collection(db, 'referrals_two');
+        const q = query(referralsRef, where('userPublicKey', '==', publicKey.toBase58()));
+        const querySnapshot = await getDocs(q);
+        if (!querySnapshot.empty) {
+          setAlreadyConfirmed(true);
+        }
+      }
+    };
+    checkForExistingReferral();
+  }, [publicKey]);
+
   const signAndSubmitReferral = async () => {
     if (!publicKey) {
       setError('Please connect your wallet first.');
@@ -30,6 +47,17 @@ const ConfirmReferral = () => {
 
     if (!referrer) {
       setError('No referrer found in the URL.');
+      return;
+    }
+
+    // Prevent user from referring themselves
+    if (referrer === publicKey.toBase58()) {
+      setError('You cannot refer yourself.');
+      return;
+    }
+
+    if (alreadyConfirmed) {
+      setError('You have already confirmed this referral.');
       return;
     }
 
@@ -43,20 +71,15 @@ const ConfirmReferral = () => {
       const userPublicKey = publicKey.toBase58();
       const referrerPublicKey = referrer;
 
-      // Log values for debugging
-      console.log('User Public Key:', userPublicKey);
-      console.log('Referrer Public Key:', referrerPublicKey);
-      console.log('Signature:', signature);
-
       // Send the data to Firestore
       try {
         await addDoc(collection(db, 'referrals_two'), {
           userPublicKey,
           referrerPublicKey,
           signature,
-          timestamp: serverTimestamp(), // Add a timestamp for when the referral is stored
+          timestamp: serverTimestamp(),
         });
-        setSuccess(true); // Mark the referral as successful
+        setSuccess(true);
       } catch (dbError) {
         console.error('Error storing referral data:', dbError);
         setError('Failed to store referral data.');
@@ -67,46 +90,55 @@ const ConfirmReferral = () => {
     }
   };
 
-  // If there's no referrer in the URL, don't render the component
+  // Handle close button click
+  const handleClose = () => {
+    navigate('/referral-system'); 
+  };
+
   if (!referrer) {
-    return null; // Or you can return a message like: <p>No referral link detected.</p>
+    return null;
   }
 
   return (
-<div className={styles.confirmReferral_main_container}>
+    <div className={styles.confirmReferral_main_container}>
  
-  
-{referrer && (
-    <p>
-      <span style={{ fontWeight: 'bold' }}>Referred by:</span> {referrer}
-    </p>
-  )}{error && <p style={{ color: 'red' }}>{error}</p>}
-  
-  {connected ? (
-    <>
-  <p>
-        <span style={{ fontWeight: 'bold' }}>Connected as:</span> {publicKey.toBase58()}
-      </p>      {!success ? (
-        <button className={styles.btn_confirm} onClick={signAndSubmitReferral}>
-          CONFIRM REFERRAL
-        </button>
-      ) : (
-        <p className={styles.success_confirmed}>REFERRAL CONFIRMED!</p>
+      <button className={styles.close_button} onClick={handleClose}>
+        &times;
+      </button>
+      
+      {referrer && (
+        <p>
+          <span style={{ fontWeight: 'bold' }}>Referred by:</span> {referrer}
+        </p>
       )}
-    </>
-  ) : (
-    <p style={{ fontWeight: 'bold' }}>
-      Connect your Solana wallet to confirm the referral.
-    </p>
-    
-  )}
-   {success && (
-    <p style={{ fontWeight: 'bold' }} >
-      WAGMI, fren! You've been officially shilled and referred to the Dr. Pepe AI fam. LFG!
-    </p>
-  )}
-</div>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
 
+      {connected ? (
+        <>
+          <p style={{ fontWeight: 'bold' }}>Connected as: {publicKey.toBase58()}</p>
+          {alreadyConfirmed ? (
+            <p style={{ color: 'orange', fontWeight: 'bold' }}>
+              You have already confirmed this referral.
+            </p>
+          ) : !success ? (
+            <button className={styles.btn_confirm} onClick={signAndSubmitReferral}>
+              CONFIRM REFERRAL
+            </button>
+          ) : (
+            <p className={styles.success_confirmed}>REFERRAL CONFIRMED!</p>
+          )}
+        </>
+      ) : (
+        <p style={{ fontWeight: 'bold' }}>
+          Connect your Solana wallet to confirm the referral.
+        </p>
+      )}
+      {success && (
+        <p style={{ fontWeight: 'bold' }}>
+          WAGMI, fren! You've been officially shilled and referred to the Dr. Pepe AI fam. LFG!
+        </p>
+      )}
+    </div>
   );
 };
 

@@ -22,6 +22,8 @@
     color: var(--secondary-color);
     text-align: center;
     padding: 0.2vw;
+    padding-right: 1vw;
+    padding-left: 1vw;
     font-size: 1vw;
 }
 

@@ -8,6 +8,7 @@
     border-radius: 1vw;
     width: 40%;
     margin-bottom: -41px;
+    position: relative;
 }
 .btn_confirm{
 
@@ -40,6 +41,16 @@
     width: fit-content;
 
 }
+
+.close_button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
 
 
 @media (max-width: 500px) {
