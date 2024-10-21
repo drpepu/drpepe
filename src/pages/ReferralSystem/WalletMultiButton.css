@@ -1,0 +1,34 @@
+.wallet-adapter-dropdown  {
+    background-color: transparent;
+    border-bottom: 0.2vw solid var(--primary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-left: 2vw;
+    text-decoration: none;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+   
+  .wallet-adapter-button-trigger {
+    background-color: transparent !important;  
+  }
+    
+  .wallet-adapter-button{
+    height: 40px !important;
+  }
+  
+  .wallet-adapter-dropdown-list-active{
+    border-bottom: 0.2vw solid var(--primary-color);
+    border-radius: 0 !important;
+    padding: 0rem !important;
+  
+  }
+  
+  .wallet-adapter-dropdown-list-item{
+    padding-right: 2.65rem !important;
+    padding-left: 2.65rem !important;
+    padding-top: 1.65rem !important;
+    padding-bottom: 1.65rem !important;
+  }

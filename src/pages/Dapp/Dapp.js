@@ -11,7 +11,14 @@ function Dapp() {
     <>
     <Header />
     <div className={styles.dapp_container}>
-        <div>Dapp / Chatbot Page</div>
+
+        <iframe
+          title='chat'
+          src="https://www.chatbase.co/chatbot-iframe/fhra85_xy_9lkMJTxI1P2"
+          width="100%"
+          style={{ height: '100%', minHeight: '700px' }}
+          frameborder="0"
+        ></iframe>
     </div>
     </>
   );
