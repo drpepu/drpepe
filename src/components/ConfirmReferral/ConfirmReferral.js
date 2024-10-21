@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useWallet } from '@solana/wallet-adapter-react';
 import bs58 from 'bs58';
 import styles from './ConfirmReferral.module.css';
-import { db } from '../../config/firebase'; // Import Firebase
+import { db } from '../../firebase'; // Import Firebase
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'; // Import Firestore functions
 
 const ConfirmReferral = () => {
@@ -49,7 +49,7 @@ const ConfirmReferral = () => {
 
       // Send the data to Firestore
       try {
-        await addDoc(collection(db, 'referrals'), {
+        await addDoc(collection(db, 'referrals_two'), {
           userPublicKey,
           referrerPublicKey,
           signature,
