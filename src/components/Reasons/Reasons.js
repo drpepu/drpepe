@@ -83,7 +83,7 @@ function Reasons() {
         <div className={styles.reason_top_label}>
           
           <div className={styles.reason_top_label_title}>{t('reason_label_title')}</div>
-          <div className={styles.reason_top_label_description}>{t('reason_label_subtitle')}..</div>
+          <div className={styles.reason_top_label_description}>{t('reason_label_subtitle')}...</div>
           
         </div>
     </div>
