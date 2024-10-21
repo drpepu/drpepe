@@ -9,8 +9,9 @@ import { collection, addDoc, serverTimestamp } from 'firebase/firestore'; // Imp
 const ConfirmReferral = () => {
   const [referrer, setReferrer] = useState(null);
   const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false); // State to track referral confirmation success
   const location = useLocation();
-  const { publicKey, signMessage, connect, connected } = useWallet(); // useWallet hook for Solana wallet
+  const { publicKey, signMessage, connected } = useWallet(); // useWallet hook for Solana wallet
 
   // Capture the referrer from the URL
   useEffect(() => {
@@ -55,7 +56,7 @@ const ConfirmReferral = () => {
           signature,
           timestamp: serverTimestamp(), // Add a timestamp for when the referral is stored
         });
-        alert('Referral data stored successfully!');
+        setSuccess(true); // Mark the referral as successful
       } catch (dbError) {
         console.error('Error storing referral data:', dbError);
         setError('Failed to store referral data.');
@@ -66,25 +67,46 @@ const ConfirmReferral = () => {
     }
   };
 
+  // If there's no referrer in the URL, don't render the component
+  if (!referrer) {
+    return null; // Or you can return a message like: <p>No referral link detected.</p>
+  }
+
   return (
-    <div className={styles.confirmReferral_main_container}>
-      <h2>Referral Program DR PEPE AI</h2>
-      {referrer && <p>You were referred by: {referrer}</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      
-      {!connected ? (
-        <button className={styles.btn} onClick={connect}>
-          Connect Wallet
+<div className={styles.confirmReferral_main_container}>
+ 
+  
+{referrer && (
+    <p>
+      <span style={{ fontWeight: 'bold' }}>Referred by:</span> {referrer}
+    </p>
+  )}{error && <p style={{ color: 'red' }}>{error}</p>}
+  
+  {connected ? (
+    <>
+  <p>
+        <span style={{ fontWeight: 'bold' }}>Connected as:</span> {publicKey.toBase58()}
+      </p>      {!success ? (
+        <button className={styles.btn_confirm} onClick={signAndSubmitReferral}>
+          CONFIRM REFERRAL
         </button>
       ) : (
-        <>
-          <p>Connected as: {publicKey.toBase58()}</p>
-          <button className={styles.btn} onClick={signAndSubmitReferral}>
-            Confirm Referral
-          </button>
-        </>
+        <p className={styles.success_confirmed}>REFERRAL CONFIRMED!</p>
       )}
-    </div>
+    </>
+  ) : (
+    <p style={{ fontWeight: 'bold' }}>
+      Connect your Solana wallet to confirm the referral.
+    </p>
+    
+  )}
+   {success && (
+    <p style={{ fontWeight: 'bold' }} >
+      WAGMI, fren! You've been officially shilled and referred to the Dr. Pepe AI fam. LFG!
+    </p>
+  )}
+</div>
+
   );
 };
 
