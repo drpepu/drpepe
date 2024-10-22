@@ -52,7 +52,7 @@ const ReferralLog = () => {
       {!loading && !error && referrals.length === 0 && (
   !publicKey ? (
     <p style={{ fontWeight: 'bold', color: 'white' }}>
-      Connect your Wallet to see your referrals.
+      Connect your Solana wallet to view your referral log and activate your personalized referral link!    
     </p>
   ) : (
     <p style={{ fontWeight: 'bold', color: 'white' }}>
