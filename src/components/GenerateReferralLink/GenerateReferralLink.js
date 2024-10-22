@@ -9,7 +9,7 @@ const GenerateReferralLink = () => {
 
   useEffect(() => {
     if (publicKey) {
-      const baseUrl = 'https://www.drpepe.ai/referral-system';
+      const baseUrl = 'https://www.drpepe.ai/referral-program';
       const link = `${baseUrl}?referrer=${publicKey.toString()}`;
       setReferralLink(link);
     }

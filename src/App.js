@@ -25,7 +25,7 @@ function App() {
           <Router>
             <Routes>
               <Route path="/" element={<Landing />} />
-              <Route path="/referral-system" element={<ReferralSystem />} />
+              <Route path="/referral-program" element={<ReferralSystem />} />
               <Route path="/dapp" element={<Dapp />} />
               <Route path="/leaderboard" element={<LeaderboardReferrals />} />
               <Route path="*" element={<NotFound />} />

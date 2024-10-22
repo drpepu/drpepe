@@ -88,7 +88,7 @@ const ConfirmReferral = () => {
 
   const handleClose = () => {
     setIsVisible(false); // Hide the container
-    navigate('/referral-system'); // Redirect to base URL
+    navigate('/referral-program'); // Redirect to base URL
   };
 
   if (!referrer || !isVisible) {
