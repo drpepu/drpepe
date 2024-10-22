@@ -56,7 +56,7 @@ const ReferralLog = () => {
     </p>
   ) : (
     <p style={{ fontWeight: 'bold', color: 'white' }}>
-      Invite your frens and live forever with Dr. Pepe AI.
+      Invite your frens and live forever with DrPepe.ai
     </p>
   )
 )}

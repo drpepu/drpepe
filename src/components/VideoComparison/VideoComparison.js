@@ -38,7 +38,7 @@ function VideoComparison() {
             <div className={styles.videoComparison_vs}>vs.</div>
             <div  className={styles.videoComparison_videos_spacing}></div>
               <div className={styles.videoComparison_video_two_container}>
-                  <div className={styles.videoComparison_title_two}>DR. PEPE</div>
+                  <div className={styles.videoComparison_title_two}>DRPEPE.AI</div>
                       <div className={styles.videoComparison_video_two}>
                       {/*desktop*/}
                       <iframe
