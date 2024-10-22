@@ -10,6 +10,8 @@
 @media ( width <= 500px ){
     .walletButton_container{
         justify-content: center;
+        margin-bottom: 4vw;
+        margin-top: 8vw;
     }
     .wallet_confirm_container{
         display: flex;
