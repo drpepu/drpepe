@@ -3,6 +3,7 @@ import Landing from './pages/Landing/Landing';
 import ReferralSystem from './pages/ReferralSystem/ReferralSystem';
 import NotFound from './pages/NotFound/NotFound';
 import Dapp from './pages/Dapp/Dapp';
+import LeaderboardReferrals from './components/LeaderboardReferrals/LeaderboardReferrals';
 
 // Import Solana wallet adapter components
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
@@ -26,6 +27,7 @@ function App() {
               <Route path="/" element={<Landing />} />
               <Route path="/referral-system" element={<ReferralSystem />} />
               <Route path="/dapp" element={<Dapp />} />
+              <Route path="/leaderboard" element={<LeaderboardReferrals />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Router>
