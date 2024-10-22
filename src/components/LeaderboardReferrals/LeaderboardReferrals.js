@@ -81,7 +81,7 @@ const LeaderboardReferrals = () => {
     <div className={styles.leaderboard_main_container}>
       <div className={styles.leaderboard_container}>
 
-        <div className={styles.leaderboard_title}>DR.PEPE AI REFERRAL PROGRAM LEADERBOARD </div>
+        <div className={styles.leaderboard_title}>DrPepe.ai REFERRAL PROGRAM LEADERBOARD </div>
 
         {loading && <p>Loading leaderboard...</p>}
         {error && <p style={{ color: 'red' }}>{error}</p>}
