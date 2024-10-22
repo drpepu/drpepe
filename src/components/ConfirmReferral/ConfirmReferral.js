@@ -130,7 +130,7 @@ const ConfirmReferral = () => {
       )}
       {success && (
         <p style={{ fontWeight: 'bold' }}>
-          WAGMI, fren! You've been officially shilled and referred to the Dr. Pepe AI fam. LFG!
+          WAGMI, fren! You've been officially shilled and referred to the DrPepe.ai fam. LFG!
         </p>
       )}
     </div>
