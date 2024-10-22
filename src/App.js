@@ -7,17 +7,18 @@ import Dapp from './pages/Dapp/Dapp';
 // Import Solana wallet adapter components
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
+import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom';
 import { clusterApiUrl } from '@solana/web3.js';
 
 import './App.css';
 import './i18n'; 
 
 function App() {
-  // Just use an empty array without the type annotation
-  const wallets = [];
+  const endpoint = clusterApiUrl('devnet'); // Switch to 'mainnet-beta' for production
+  const wallets = [new PhantomWalletAdapter()]; // Phantom wallet adapter
 
   return (
-    <ConnectionProvider endpoint={clusterApiUrl('mainnet-beta')}>
+    <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
           <Router>
