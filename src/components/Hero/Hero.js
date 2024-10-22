@@ -22,32 +22,35 @@ function Hero() {
 
   return (
     <>
-      <Header />
+
+      <div className={styles.header_solana_container}>
+        <Header />
+        <img src={solanapill} alt='' className={`${styles.hero_solana_logo} `} />
+        </div>
 
       <div className={styles.hero_main_text_container}>
-        <img src={DrPepeVaccine} alt='Dr Pepe' className={styles.hero_drpepe_image_one} />
         <div className={styles.hero_main_text_one_container}>
-          <div className={styles.hero_main_text_one}>DR. PEPE’S</div>
-        </div>
-        <div className={styles.hero_main_text_two}>LONGEVITY</div>
-
-        <div className={styles.hero_main_text_three_container}>
-          <div className={styles.hero_main_text_three}>LAB </div>
-          <img src={solanapill} alt='' className={styles.hero_solana_logo} />
+          <div className={styles.hero_main_text_one}>DrPepe.ai</div>
         </div>
       </div>
 
       <div className={styles.hero_secondary_text_container}>
         <div className={styles.hero_secondary_text_one}>{t('hero_subtitle_line_one')}</div>
         <div className={styles.hero_secondary_text_two}>{t('hero_subtitle_line_two')}</div>
+        <img src={solanapill} alt='' className={`${styles.hero_solana_logo_mobile}`} />
 
         <div className={styles.hero_buttons_container}>
-          <button className={styles.hero_button_one}  onClick={goToTelegram}>
-            {t('hero_button_one')}
-          </button>
-          <button className={styles.hero_button_two} onClick={scrollToEnd}>
-            {t('hero_button_two')}
-          </button>
+        <button className={styles.hero_button_one} onClick={() => window.location.href = 'https://t.me/YourTelegramLink'}>
+  {t('hero_button_one')}
+</button>
+
+<button className={styles.hero_button_two} onClick={scrollToEnd}>
+  {t('hero_button_two')}
+</button>
+
+<button className={styles.hero_button_three} onClick={() => window.location.href = 'https://www.drpepe.ai/referral-program'}>
+  {t('hero_button_three')}
+</button>
         </div>
 
         <img src={DrPepeFat} alt='Dr Pepe' className={styles.hero_drpepe_image_two} />
