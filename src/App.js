@@ -17,7 +17,7 @@ function App() {
   const wallets = [];
 
   return (
-    <ConnectionProvider endpoint={clusterApiUrl('devnet')}>
+    <ConnectionProvider endpoint={clusterApiUrl('mainnet-beta')}>
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
           <Router>
