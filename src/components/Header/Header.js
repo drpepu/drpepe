@@ -53,7 +53,7 @@ function Header() {
   return (
     <>
       <div className={styles.header_container}>
-      <a href="/"  className={`${styles.header_button_one} ${styles.header_button}`}>DR.PEPE AI</a>
+      <a href="/"  className={`${styles.header_button_one} ${styles.header_button}`}>DRPEPE.AI</a>
       <a href="https://docs.drpepe.ai/" target="_blank" rel="noreferrer" className={`${styles.header_button_four} ${styles.header_button}`}>DOCS</a>
       <a href="https://t.me/+yxh5qd2tKQU2ODIx" target="_blank"rel="noreferrer" className={`${styles.header_button_five} ${styles.header_button}`}>APP</a>
       <a href="https://t.me/+yxh5qd2tKQU2ODIx" target="_blank"rel="noreferrer" className={`${styles.header_button_five} ${styles.header_button}`}>DRP</a>
