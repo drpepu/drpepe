@@ -104,7 +104,7 @@
     padding-top: 1vw;
 }
 .hero_button_one{
-    width: 23%;
+    width: 25%;
     height: fit-content;
     background-color:var(--tertiary-color) ;
     color: var(--secondary-color);
@@ -243,6 +243,9 @@
      
         border:0.7vw solid var(--primary-color);
      
+    }
+    .hero_button_one{
+        width: 105%;
     }
 
  
