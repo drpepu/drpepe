@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Hero.module.css';
 import Header from '../Header/Header';
-import DrPepeVaccine from '../../Assets/DRPEPEVACCINE.svg';
 import DrPepeFat from '../../Assets/DRPEPEFAT.svg';
 import solanapill from '../../Assets/SOLANAPILL.svg';
 
@@ -10,23 +10,16 @@ import { useTranslation } from 'react-i18next';
 function Hero() {
   const { t } = useTranslation();
 
-
   const scrollToEnd = () => {
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   };
 
-
-  const goToTelegram = () => {
-    window.open('https://t.me/+yxh5qd2tKQU2ODIx', '_blank');
-  };
-
   return (
     <>
-
       <div className={styles.header_solana_container}>
         <Header />
         <img src={solanapill} alt='' className={`${styles.hero_solana_logo} `} />
-        </div>
+      </div>
 
       <div className={styles.hero_main_text_container}>
         <div className={styles.hero_main_text_one_container}>
@@ -40,18 +33,35 @@ function Hero() {
         <img src={solanapill} alt='' className={`${styles.hero_solana_logo_mobile}`} />
 
         <div className={styles.hero_buttons_container}>
-        <button className={styles.hero_button_one} onClick={() => window.open('https://web.telegram.org/a/#-1002428485287', '_blank')}>
-  {t('hero_button_one')}
-</button>
+          {/* Using anchor tag for external link */}
+          <a 
+            href='https://web.telegram.org/a/#-1002428485287' 
+            target='_blank' 
+            rel='noopener noreferrer'
+            className={styles.hero_button_one}
+            style={{ textDecoration: 'none', textAlign: 'center' }}
+          >
+            {t('hero_button_one')}
+          </a>
 
+          {/* Scroll to end action using Link for internal navigation */}
+          <Link 
+            to="#"
+            onClick={scrollToEnd} 
+            className={styles.hero_button_two} 
+            style={{ textDecoration: 'none', textAlign: 'center' }}
+          >
+            {t('hero_button_two')}
+          </Link>
 
-<button className={styles.hero_button_two} onClick={scrollToEnd}>
-  {t('hero_button_two')}
-</button>
-
-<button className={styles.hero_button_three} onClick={() => window.location.href = 'https://www.drpepe.ai/referral-program'}>
-  {t('hero_button_three')}
-</button>
+          {/* Referral program link */}
+          <Link 
+            to='/referral-program' 
+            className={styles.hero_button_three} 
+            style={{ textDecoration: 'none', textAlign: 'center' }}
+            >
+            {t('hero_button_three')}
+          </Link>
         </div>
 
         <img src={DrPepeFat} alt='Dr Pepe' className={styles.hero_drpepe_image_two} />

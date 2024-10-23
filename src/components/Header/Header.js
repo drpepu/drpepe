@@ -57,7 +57,7 @@ function Header() {
       <div className={styles.header_container}>
       <a href="/"  className={`${styles.header_button_one} ${styles.header_button}`}>DRPEPE.AI</a>
       <a href="https://docs.drpepe.ai/" target="_blank" rel="noreferrer" className={`${styles.header_button_four} ${styles.header_button}`}>DOCS</a>
-      <a href="https://t.me/+yxh5qd2tKQU2ODIx" target="_blank"rel="noreferrer" className={`${styles.header_button_five} ${styles.header_button}`}>APP</a>
+      <a href="/dapp" target="_blank"rel="noreferrer" className={`${styles.header_button_five} ${styles.header_button}`}>APP</a>
       <a href="https://t.me/+yxh5qd2tKQU2ODIx" target="_blank"rel="noreferrer" className={`${styles.header_button_five} ${styles.header_button}`}>DRP</a>
 
      
@@ -93,7 +93,7 @@ function Header() {
 
             <a href="https://docs.drpepe.ai/" target='_blank' rel="noreferrer" className={`${styles.header_sideNavLink} ${activeLink === 'docs' ? styles.active : ''}`} onClick={() => toggleMenu('docs')}>Docs</a>
 
-            <a href="https://t.me/+yxh5qd2tKQU2ODIx" className={`${styles.header_sideNavLink} ${activeLink === 'app' ? styles.active : ''}`} onClick={() => toggleMenu('app')}>App</a>
+            <a href="/dapp" className={`${styles.header_sideNavLink} ${activeLink === 'app' ? styles.active : ''}`} onClick={() => toggleMenu('app')}>dApp</a>
 
             <a href="https://t.me/+yxh5qd2tKQU2ODIx" className={`${styles.header_sideNavLink} ${activeLink === 'app' ? styles.active : ''}`} onClick={() => toggleMenu('app')}>DRP</a>
 
