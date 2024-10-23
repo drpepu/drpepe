@@ -14,11 +14,26 @@ function Hero() {
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   };
 
+  const openTelegramLink = () => {
+    const mobileLink = 'tg://resolve?domain=drpepeai'; // Telegram mobile app link
+    const webLink = 'https://web.telegram.org/a/#-1002428485287'; // Telegram web link
+
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+
+      window.location.href = mobileLink;
+    } else {
+
+      window.open(webLink, '_blank', 'noopener noreferrer');
+    }
+  };
+
   return (
     <>
       <div className={styles.header_solana_container}>
         <Header />
-        <img src={solanapill} alt='' className={`${styles.hero_solana_logo} `} />
+        <img src={solanapill} alt='' className={`${styles.hero_solana_logo}`} />
       </div>
 
       <div className={styles.hero_main_text_container}>
@@ -33,18 +48,15 @@ function Hero() {
         <img src={solanapill} alt='' className={`${styles.hero_solana_logo_mobile}`} />
 
         <div className={styles.hero_buttons_container}>
-          {/* Using anchor tag for external link */}
-          <a 
-            href='https://web.telegram.org/a/#-1002428485287' 
-            target='_blank' 
-            rel='noopener noreferrer'
+          <button
+            onClick={openTelegramLink} 
             className={styles.hero_button_one}
-            style={{ textDecoration: 'none', textAlign: 'center' }}
+            style={{ textDecoration: 'none', textAlign: 'center', cursor: 'pointer' }}
           >
             {t('hero_button_one')}
-          </a>
+          </button>
 
-          {/* Scroll to end action using Link for internal navigation */}
+   
           <Link 
             to="#"
             onClick={scrollToEnd} 
@@ -54,12 +66,12 @@ function Hero() {
             {t('hero_button_two')}
           </Link>
 
-          {/* Referral program link */}
+
           <Link 
             to='/referral-program' 
             className={styles.hero_button_three} 
             style={{ textDecoration: 'none', textAlign: 'center' }}
-            >
+          >
             {t('hero_button_three')}
           </Link>
         </div>
