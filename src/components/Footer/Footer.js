@@ -1,9 +1,7 @@
-
 import React, { useState } from 'react';
 import { addSubscriber } from '../../newsletter_service/getResponseService'; 
 import styles from './Footer.module.css';
 import Modal from './NewsletterModal/Modal'; 
-
 import { useTranslation } from 'react-i18next';
 
 function Footer() {
@@ -26,6 +24,25 @@ function Footer() {
       setMessage('Failed to subscribe. Please try again.');
       setShowModal(true); 
     }
+  };
+
+  // Detect if the user is on mobile
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  const openTelegramLink = () => {
+    const mobileLink = 'tg://resolve?domain=drpepeai'; // Telegram mobile link
+    const webLink = 'https://web.telegram.org/a/#-1002428485287'; // Telegram web link
+
+    if (isMobile) {
+      window.location.href = mobileLink;
+    } else {
+      window.open(webLink, '_blank', 'noopener noreferrer');
+    }
+  };
+
+  const openXLink = () => {
+    const webLink = 'https://x.com/drpepeai'; // X web link
+    window.open(webLink, '_blank', 'noopener noreferrer');
   };
 
   return (
@@ -52,17 +69,14 @@ function Footer() {
       </div>
 
       <div className={styles.footer_buttons_container}>
-      <a href="https://docs.drpepe.ai/" target="_blank" rel="noreferrer" className={`${styles.footer_button_one} ${styles.footer_button}`}>DOCS</a>
-
-      <a href="/dapp" target="_blank"rel="noreferrer" className={`${styles.footer_button_two} ${styles.footer_button}`}>APP</a>
-
-      <a href="https://t.me/+yxh5qd2tKQU2ODIx" target="_blank"rel="noreferrer" className={`${styles.footer_button_three} ${styles.footer_button}`}>DRP</a>
-
+        <a href="https://docs.drpepe.ai/" target="_blank" rel="noreferrer" className={`${styles.footer_button_one} ${styles.footer_button}`}>DOCS</a>
+        <a href="/dapp" target="_blank" rel="noreferrer" className={`${styles.footer_button_two} ${styles.footer_button}`}>APP</a>
+        <button onClick={openTelegramLink} className={`${styles.footer_button_three} ${styles.footer_button}`}>DRP</button>
       </div>
 
       <div className={styles.footer_socials_container}>
-        <a href="https://x.com/drpepeai" target="_blank" rel="noopener noreferrer"  className={styles.footer_social_button}>X</a>
-        <a href="https://t.me/+yxh5qd2tKQU2ODIx" target="_blank" rel="noopener noreferrer" className={styles.footer_social_button}>TELEGRAM</a>
+        <button onClick={openXLink} className={styles.footer_social_button}>X</button>
+        <button onClick={openTelegramLink} className={styles.footer_social_button}>TELEGRAM</button>
       </div>
 
       <div className={styles.footer_copywrite}>{t('footer_copyrights')}</div>

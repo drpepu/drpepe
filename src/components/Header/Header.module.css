@@ -71,7 +71,10 @@
     .header_sidenav{
         display: none;
     }
-
+    .activeButton {
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+      }
 
  @media ( width <=500px ){
     .header_container{
@@ -169,7 +172,11 @@
         margin-bottom: 0.8vw;
         text-decoration: none;
         color: var(--tertiary-color);
-        font-size: 8vw;
+        background-color: transparent;
+        border: none;
+        text-align: start;
+        padding: 0;
+        font-size: 12vw;
  
     }
     .header_sideNavLink.active {
