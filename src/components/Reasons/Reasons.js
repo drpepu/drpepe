@@ -1,7 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import horizontalLoop from './seamless-scroll';
 
 import styles from './Reasons.module.css';
 import drpepeheadshot from '../../Assets/DRPEPEVACCINEHEADSHOT.svg'
@@ -15,30 +14,10 @@ function Reasons() {
 
   const { t } = useTranslation();
 
-  const wrapperRef = useRef(null);
-  const boxesRef = useRef([]);
 
 
-  useEffect(() => {
-    const boxes = boxesRef.current;
-    const colors = ['transparent'];
-
-    // Horizontal loop animation initialization
-    if (boxes.length > 0) {
-      gsap.set(boxes, {
-        backgroundColor: gsap.utils.wrap(colors),
-      });
-
-      horizontalLoop(boxes, { paused: false, repeat: -4, speed: 0.6 });
-    }
 
 
-    // Ensure cleanup of animations when component unmounts
-    return () => {
-      gsap.killTweensOf(boxes);
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
 
  
   return (
@@ -87,17 +66,7 @@ function Reasons() {
           
         </div>
     </div>
-        <div className={`${styles.reason_text_stripe } ${styles.wrapper}`} ref={wrapperRef}>
-
-        <div ref={(el) => (boxesRef.current[0] = el)} className={`${styles.reason_text_stripe_text } ${styles.boxtest}`} ><span className={styles.reason_pill}>💊</span> {t('carousel_text_one')}</div>
-        <div ref={(el) => (boxesRef.current[1] = el)} className={`${styles.reason_text_stripe_text } ${styles.boxtest}`} ><span className={styles.reason_pill}>💊</span>{t('carousel_text_two')}</div>
-        <div ref={(el) => (boxesRef.current[2] = el)} className={`${styles.reason_text_stripe_text } ${styles.boxtest}`}><span className={styles.reason_pill}>💊</span>{t('carousel_text_three')}</div>
-        <div ref={(el) => (boxesRef.current[3] = el)} className={`${styles.reason_text_stripe_text } ${styles.boxtest}`}><span className={styles.reason_pill}>💊</span>{t('carousel_text_four')}</div>
-
-
-      
-
-        </div>
+   
     </>
   )
 }
