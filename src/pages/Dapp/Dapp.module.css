@@ -1,5 +1,24 @@
-.app_container{
-    height: 90vh;
-    width: 100%;
 
-}
+.dapp_container {
+    height: auto;
+    padding-top: 4vw;
+    padding-left: 6vw;
+    padding-right: 6vw;
+    padding-bottom: 4vw;
+    background-color: var(--tertiary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
+  .dapp_iframe {
+    width: 100%;
+    height: 60%;
+    min-height: 700px;
+    border: 0.1vw solid var(--secondary-color);
+    border-radius: 0.6vw;
+
+  }
+ 
