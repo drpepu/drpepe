@@ -16,7 +16,7 @@
   .dapp_iframe {
     width: 100%;
     height: 60%;
-    min-height: 700px;
+    min-height: 550px;
     border: 0.1vw solid var(--secondary-color);
     border-radius: 0.6vw;
 
