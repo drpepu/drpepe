@@ -4,6 +4,8 @@ import styles from './Header.module.css';
 import pepeheadshot from '../../Assets/DRPEPEVACCINEHEADSHOT.svg';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,10 +65,12 @@ function Header() {
         <LanguageSwitcher />
 
         <div className={styles.header_container_mobile}>
+        <Link className={styles.header_link} to="/">
           <div className={styles.header_container_headshot_title}>
             <img src={pepeheadshot} alt="dr pepe headshot" className={styles.mobile_pepe_headshot} />
             <div className={styles.mobile_pepe_title}>DR.PEPE AI</div>
           </div>
+        </Link>
 
           <div onClick={() => toggleMenu()}>
             <svg className={styles.mobile_pepe_hamburger} width="40" height="23" viewBox="0 0 40 23" fill="none" xmlns="http://www.w3.org/2000/svg">

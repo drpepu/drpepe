@@ -53,5 +53,34 @@
 
     "modal_newsletter_title": "处方已开具",
     "modal_newsletter_subtitle": "欢迎订阅 DrPepe.ai 长寿实验室通讯",
-    "modal_newsletter_text": "你现在正式加入佩佩博士的长寿计划！准备好接受突破性研究、健康小窍门和长寿秘诀吧。"
+    "modal_newsletter_text": "你现在正式加入佩佩博士的长寿计划！准备好接受突破性研究、健康小窍门和长寿秘诀吧。",
+
+    "referred_by": "推荐人",
+    "connected_as": "已连接为",
+    "already_confirmed": "您已经确认过此推荐。",
+    "confirm_referral": "确认推荐",
+    "referral_confirmed": "推荐已确认！",
+    "connect_wallet": "连接您的 Solana 钱包以确认推荐。",
+    "wagmi_fren": "WAGMI, 朋友！你已经被正式推荐给 DrPepe.ai 家族。LFG！",
+    
+    "copy_referral_link": "复制推荐链接",
+    
+    "leaderboard_title": "DrPepe.ai 推荐计划排行榜",
+    "loading_leaderboard": "正在加载排行榜...",
+    "leaderboard_fren_public_key": "朋友（公钥）",
+    "leaderboard_referrals": "推荐数",
+    "leaderboard_invited_fren": "被邀请的朋友",
+    "leaderboard_tx_hash": "交易哈希",
+    "leaderboard_invite_date": "邀请日期",
+    "no_referrals": "未找到推荐。邀请您的朋友攀登排行榜！",
+    
+    "loading_referrals": "正在加载推荐...",
+    "connect_wallet_view_log": "连接您的 Solana 钱包以查看您的推荐记录并激活您的个性化推荐链接！",
+    "invite_frens_live_forever": "邀请您的朋友，与 DrPepe.ai 一起永生！",
+    "invited_fren": "被邀请的朋友",
+    "inviting_fren": "邀请的朋友（我）",
+    "tx_hash": "交易哈希",
+    "invite_date": "邀请日期"
+   
+      
 }

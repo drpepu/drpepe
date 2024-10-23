@@ -10,7 +10,7 @@
     margin-bottom: 2vw;
     border: 0.3vw solid var(--tertiary-color);
     overflow-x: auto; /* Enable horizontal scroll for responsiveness */
-    min-height: 80vw;
+    height: 85vw;
 }
 
 .referral_table {
@@ -72,9 +72,19 @@ tr {
         margin-top: 5vw;
 
 
+
     }
     .referral_table {
         margin: 0px 0;
 
     }
+}
+@media (min-width: 500px) {
+    .referral_log_main_container {
+       height: 30vw;
+
+
+
+    }
+
 }

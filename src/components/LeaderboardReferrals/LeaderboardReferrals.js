@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { db } from '../../firebase';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import styles from './LeaderboardReferrals.module.css';
+import { useTranslation } from 'react-i18next';
+
 
 const truncatePublicKey = (key) => {
   if (!key) return '';
@@ -9,6 +11,8 @@ const truncatePublicKey = (key) => {
 };
 
 const LeaderboardReferrals = () => {
+  const { t } = useTranslation();
+
   const [leaderboard, setLeaderboard] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -81,9 +85,9 @@ const LeaderboardReferrals = () => {
     <div className={styles.leaderboard_main_container}>
       <div className={styles.leaderboard_container}>
 
-        <div className={styles.leaderboard_title}>DrPepe.ai REFERRAL PROGRAM LEADERBOARD </div>
+        <div className={styles.leaderboard_title}>{t('leaderboard_title')}</div>
 
-        {loading && <p>Loading leaderboard...</p>}
+        {loading && <p>{t('loading_leaderboard')}</p>}
         {error && <p style={{ color: 'red' }}>{error}</p>}
 
         {!loading && leaderboard.length > 0 && (
@@ -91,15 +95,14 @@ const LeaderboardReferrals = () => {
             <thead>
               <tr>
                 <th>#</th>
-                <th>Fren (Public Key)</th>
-                <th>Referrals</th>
+                <th>{t('leaderboard_fren_public_key')}</th>
+                <th>{t('leaderboard_referrals')}</th>
               </tr>
             </thead>
             <tbody>
               {leaderboard.map((referrer, index) => (
                 <React.Fragment key={referrer.referrerPublicKey}>
-                  <tr onClick={() => fetchUserReferrals(referrer.referrerPublicKey)} 
-                  >
+                  <tr onClick={() => fetchUserReferrals(referrer.referrerPublicKey)} >
                     <td>{index + 1}</td>
                     <td>{truncatePublicKey(referrer.referrerPublicKey)}</td>
                     <td>{referrer.referralCount}</td>
@@ -113,9 +116,9 @@ const LeaderboardReferrals = () => {
                           <thead>
                             <tr>
                               <th>#</th>
-                              <th>Invited Fren</th>
-                              <th>Tx Hash</th>
-                              <th>Invite Date</th>
+                              <th>{t('leaderboard_invited_fren')}</th>
+                              <th>{t('leaderboard_tx_hash')}</th>
+                              <th>{t('leaderboard_invite_date')}</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -139,10 +142,9 @@ const LeaderboardReferrals = () => {
         )}
 
         {!loading && leaderboard.length === 0 && (
-          <p>No referrals found. Invite your frens to climb the leaderboard!</p>
+          <p>{t('no_referrals')}</p>
         )}
       </div>
-
     </div>
   );
 };

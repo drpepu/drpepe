@@ -3,6 +3,8 @@ import { db } from '../../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { useWallet } from '@solana/wallet-adapter-react';
 import styles from './ReferralLog.module.css';
+import { useTranslation } from 'react-i18next';
+
 
 const truncatePublicKey = (key) => {
   if (!key) return '';
@@ -10,6 +12,8 @@ const truncatePublicKey = (key) => {
 };
 
 const ReferralLog = () => {
+  const { t } = useTranslation();
+
   const { publicKey } = useWallet();
   const [referrals, setReferrals] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -46,46 +50,46 @@ const ReferralLog = () => {
 
   return (
     <div className={styles.referral_log_main_container}>
-      {loading && <p>Loading referrals...</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+    {loading && <p>{t('loading_referrals')}</p>}
+    {error && <p style={{ color: 'red' }}>{error}</p>}
 
-      {!loading && !error && referrals.length === 0 && (
-  !publicKey ? (
-    <p style={{ fontWeight: 'bold', color: 'white' }}>
-      Connect your Solana wallet to view your referral log and activate your personalized referral link!    
-    </p>
-  ) : (
-    <p style={{ fontWeight: 'bold', color: 'white' }}>
-      Invite your frens and live forever with DrPepe.ai
-    </p>
-  )
-)}
+    {!loading && !error && referrals.length === 0 && (
+      !publicKey ? (
+        <p style={{ fontWeight: 'bold', color: 'white' }}>
+          {t('connect_wallet_view_log')}
+        </p>
+      ) : (
+        <p style={{ fontWeight: 'bold', color: 'white' }}>
+          {t('invite_frens_live_forever')}
+        </p>
+      )
+    )}
 
-      {!loading && referrals.length > 0 && (
-        <table className={styles.referral_table}>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Invited Fren</th>
-              <th>Inviting Fren (me)</th>
-              <th>Tx Hash</th>
-              <th>Invite Date</th>
+    {!loading && referrals.length > 0 && (
+      <table className={styles.referral_table}>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>{t('invited_fren')}</th>
+            <th>{t('inviting_fren')}</th>
+            <th>{t('tx_hash')}</th>
+            <th>{t('invite_date')}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {referrals.map((referral, index) => (
+            <tr key={referral.id}>
+              <td>{index + 1}</td>
+              <td>{truncatePublicKey(referral.userPublicKey)}</td>
+              <td>{truncatePublicKey(referral.referrerPublicKey)}</td>
+              <td>{truncatePublicKey(referral.signature)}</td>
+              <td>{new Date(referral.timestamp?.seconds * 1000).toLocaleString()}</td>
             </tr>
-          </thead>
-          <tbody>
-            {referrals.map((referral, index) => (
-              <tr key={referral.id}>
-                <td>{index + 1}</td>
-                <td>{truncatePublicKey(referral.userPublicKey)}</td>
-                <td>{truncatePublicKey(referral.referrerPublicKey)}</td>
-                <td>{truncatePublicKey(referral.signature)}</td>
-                <td>{new Date(referral.timestamp?.seconds * 1000).toLocaleString()}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
-    </div>
+          ))}
+        </tbody>
+      </table>
+    )}
+  </div>
   );
 };
 

@@ -53,7 +53,36 @@
 
     "modal_newsletter_title": "처방전 작성",
     "modal_newsletter_subtitle": "닥터페페 장수 연구소 뉴스레터에 오신 것을 환영합니다.",
-    "modal_newsletter_text": "이제 공식적으로 페페 박사의 장수를 위한 요법을 시작하세요! 획기적인 연구, 건강 비결, 그리고 영원히 살기 위한 내부 특종에 대비하세요."
+    "modal_newsletter_text": "이제 공식적으로 페페 박사의 장수를 위한 요법을 시작하세요! 획기적인 연구, 건강 비결, 그리고 영원히 살기 위한 내부 특종에 대비하세요.",
+
+    "referred_by": "추천인",
+    "connected_as": "연결됨",
+    "already_confirmed": "이 추천은 이미 확인되었습니다.",
+    "confirm_referral": "추천 확인",
+    "referral_confirmed": "추천이 확인되었습니다!",
+    "connect_wallet": "추천을 확인하려면 Solana 지갑을 연결하세요.",
+    "wagmi_fren": "WAGMI, 친구! 당신은 공식적으로 DrPepe.ai 가족에게 추천되었습니다. LFG!",
+    
+    "copy_referral_link": "추천 링크 복사",
+    
+    "leaderboard_title": "DrPepe.ai 추천 프로그램 리더보드",
+    "loading_leaderboard": "리더보드를 불러오는 중...",
+    "leaderboard_fren_public_key": "친구 (공개 키)",
+    "leaderboard_referrals": "추천 수",
+    "leaderboard_invited_fren": "초대한 친구",
+    "leaderboard_tx_hash": "트랜잭션 해시",
+    "leaderboard_invite_date": "초대 날짜",
+    "no_referrals": "추천이 없습니다. 친구를 초대하고 리더보드에 오르세요!",
+    
+    "loading_referrals": "추천을 불러오는 중...",
+    "connect_wallet_view_log": "추천 로그를 확인하고 개인 추천 링크를 활성화하려면 Solana 지갑을 연결하세요!",
+    "invite_frens_live_forever": "친구를 초대하고 DrPepe.ai와 함께 영생하세요.",
+    "invited_fren": "초대한 친구",
+    "inviting_fren": "초대하는 친구(나)",
+    "tx_hash": "트랜잭션 해시",
+    "invite_date": "초대 날짜"
+      
+      
 
 
 }
