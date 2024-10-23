@@ -56,13 +56,36 @@
 
     "modal_newsletter_title": "Prescription Filled",
     "modal_newsletter_subtitle": "Welcome to DrPepe.ai newsletter",
-    "modal_newsletter_text": "You’re now officially on DrPepe.ai regimen for a longer life! Prepare for groundbreaking research, wellness hacks, and the inside scoop on living forever."
+    "modal_newsletter_text": "You’re now officially on DrPepe.ai regimen for a longer life! Prepare for groundbreaking research, wellness hacks, and the inside scoop on living forever.",
 
 
+    "referred_by": "Referred by",
+    "connected_as": "Connected as",
+    "already_confirmed": "You have already confirmed this referral.",
+    "confirm_referral": "CONFIRM REFERRAL",
+    "referral_confirmed": "REFERRAL CONFIRMED!",
+    "connect_wallet": "Connect your Solana wallet to confirm the referral.",
+    "wagmi_fren": "WAGMI, fren! You've been officially shilled and referred to the DrPepe.ai fam. LFG!",
 
+    "copy_referral_link": "COPY REFERRAL LINK",
 
+    "leaderboard_title": "DrPepe.ai REFERRAL PROGRAM LEADERBOARD",
+    "loading_leaderboard": "Loading leaderboard...",
+    "leaderboard_fren_public_key": "Fren (Public Key)",
+    "leaderboard_referrals": "Referrals",
+    "leaderboard_invited_fren": "Invited Fren",
+    "leaderboard_tx_hash": "Tx Hash",
+    "leaderboard_invite_date": "Invite Date",
+    "no_referrals": "No referrals found. Invite your frens to climb the leaderboard!",
 
-
-
+    "loading_referrals": "Loading referrals...",
+    "connect_wallet_view_log": "Connect your Solana wallet to view your referral log and activate your personalized referral link!",
+    "invite_frens_live_forever": "Invite your frens and live forever with DrPepe.ai",
+    "invited_fren": "Invited Fren",
+    "inviting_fren": "Inviting Fren (me)",
+    "tx_hash": "Tx Hash",
+    "invite_date": "Invite Date"
+      
+      
 }
   

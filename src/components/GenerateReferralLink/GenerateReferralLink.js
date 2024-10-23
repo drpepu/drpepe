@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useWallet } from '@solana/wallet-adapter-react';
 import styles from './GenerateReferralLink.module.css';
+import { useTranslation } from 'react-i18next';
+
 
 const GenerateReferralLink = () => {
+  const { t } = useTranslation();
+
   const { publicKey } = useWallet();
   const [referralLink, setReferralLink] = useState('');
 
@@ -30,7 +34,7 @@ const GenerateReferralLink = () => {
             }}
             disabled={!publicKey} // Disable button if publicKey is not available
           >
-            COPY REFERRAL LINK
+               {t('copy_referral_link')}
           </button>
         </div>
     </div>

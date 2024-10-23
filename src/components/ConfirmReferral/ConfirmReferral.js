@@ -5,8 +5,13 @@ import bs58 from 'bs58';
 import styles from './ConfirmReferral.module.css';
 import { db } from '../../firebase';
 import { collection, getDocs, query, where, addDoc, serverTimestamp } from 'firebase/firestore';
+import { useTranslation } from 'react-i18next';
+
 
 const ConfirmReferral = () => {
+
+  const { t } = useTranslation();
+
   const [referrer, setReferrer] = useState(null);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
@@ -97,43 +102,43 @@ const ConfirmReferral = () => {
 
   return (
     <div className={styles.confirmReferral_main_container}>
-      <button className={styles.close_button} onClick={handleClose}>
-        &times;
-      </button>
-      
-      {referrer && (
-        <p>
-          <span style={{ fontWeight: 'bold' }}>Referred by:</span> {referrer}
-        </p>
-      )}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+    <button className={styles.close_button} onClick={handleClose}>
+      &times;
+    </button>
+    
+    {referrer && (
+      <p>
+        <span style={{ fontWeight: 'bold' }}>{t('referred_by')}:</span> {referrer}
+      </p>
+    )}
+    {error && <p style={{ color: 'red' }}>{error}</p>}
 
-      {connected ? (
-        <>
-          <p style={{ fontWeight: 'bold' }}>Connected as: {publicKey.toBase58()}</p>
-          {alreadyConfirmed ? (
-            <p style={{ color: 'orange', fontWeight: 'bold' }}>
-              You have already confirmed this referral.
-            </p>
-          ) : !success ? (
-            <button className={styles.btn_confirm} onClick={signAndSubmitReferral}>
-              CONFIRM REFERRAL
-            </button>
-          ) : (
-            <p className={styles.success_confirmed}>REFERRAL CONFIRMED!</p>
-          )}
-        </>
-      ) : (
-        <p style={{ fontWeight: 'bold' }}>
-          Connect your Solana wallet to confirm the referral.
-        </p>
-      )}
-      {success && (
-        <p style={{ fontWeight: 'bold' }}>
-          WAGMI, fren! You've been officially shilled and referred to the DrPepe.ai fam. LFG!
-        </p>
-      )}
-    </div>
+    {connected ? (
+      <>
+        <p style={{ fontWeight: 'bold' }}>{t('connected_as')}: {publicKey.toBase58()}</p>
+        {alreadyConfirmed ? (
+          <p style={{ color: 'orange', fontWeight: 'bold' }}>
+            {t('already_confirmed')}
+          </p>
+        ) : !success ? (
+          <button className={styles.btn_confirm} onClick={signAndSubmitReferral}>
+            {t('confirm_referral')}
+          </button>
+        ) : (
+          <p className={styles.success_confirmed}>{t('referral_confirmed')}</p>
+        )}
+      </>
+    ) : (
+      <p style={{ fontWeight: 'bold' }}>
+        {t('connect_wallet')}
+      </p>
+    )}
+    {success && (
+      <p style={{ fontWeight: 'bold' }}>
+        {t('wagmi_fren')}
+      </p>
+    )}
+  </div>
   );
 };
 

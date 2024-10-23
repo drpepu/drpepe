@@ -16,6 +16,9 @@
         padding-left: 6vw;
         padding-right: 6vw;
     }
+    .header_link  {
+        text-decoration: none;
+      }
     .header_container_mobile{
         display: none;
     }
@@ -61,10 +64,7 @@
     .header_button_eight:hover{
         background-color: var(--primary-color);
         color: var(--secondary-color);
-    }
-   
- 
-   
+    } 
     .mobile_pepe_hamburger{
         display: none;
     }
@@ -205,6 +205,5 @@
         margin-top: 2vw;
      
     }
-
 
  }

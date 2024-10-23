@@ -40,9 +40,10 @@ function Hero() {
         <img src={solanapill} alt='' className={`${styles.hero_solana_logo_mobile}`} />
 
         <div className={styles.hero_buttons_container}>
-        <button className={styles.hero_button_one} onClick={() => window.location.href = 'https://t.me/YourTelegramLink'}>
+        <button className={styles.hero_button_one} onClick={() => window.open('https://web.telegram.org/a/#-1002428485287', '_blank')}>
   {t('hero_button_one')}
 </button>
+
 
 <button className={styles.hero_button_two} onClick={scrollToEnd}>
   {t('hero_button_two')}
