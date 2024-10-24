@@ -6,9 +6,13 @@ import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import '@solana/wallet-adapter-react-ui/styles.css';
 import GenerateReferralLink from '../../components/GenerateReferralLink/GenerateReferralLink';
 import ReferralLog from '../../components/ReferralLog/ReferralLog';
-import Footer from '../../components/Footer/Footer';
+import FooterSimple from '../../components/FooterSimple/FooterSimple';
 import ConfirmReferral from '../../components/ConfirmReferral/ConfirmReferral';
 import ReferralHeader from '../../components/ReferralHeader/ReferralHeader';
+import { Link } from 'react-router-dom'; 
+import { useTranslation } from 'react-i18next';
+
+
 
 function ReferralSystem() {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -20,6 +24,8 @@ function ReferralSystem() {
       document.querySelector('.wallet-adapter-button').click();
     }
   };
+  const { t } = useTranslation();
+
 
   return (
     <>
@@ -32,8 +38,19 @@ function ReferralSystem() {
         </div>
       </div>
       <GenerateReferralLink />
+ 
       <ReferralLog />
-      <Footer />
+      <div className={styles.leaderboard_cta_container}>
+        <Link
+            to="/leaderboard"
+            className={styles.leaderboard_cta}
+          >
+          {t('leaderboard_CTA') } 
+          </Link>
+      </div>
+
+
+      <FooterSimple />
     </>
   );
 }

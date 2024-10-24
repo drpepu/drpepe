@@ -118,6 +118,7 @@
         display: none;
       
     }
+    
 
 
 
@@ -221,7 +222,7 @@
         background-color: transparent;
         border:  0.8vw solid var(--primary-color);
         color: var(--primary-color);
-        font-weight: 500 ;
+        font-weight: bold ;
         text-decoration: none;
     }
     .footer_button_one {

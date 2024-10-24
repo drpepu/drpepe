@@ -3,6 +3,7 @@ import { addSubscriber } from '../../newsletter_service/getResponseService';
 import styles from './Footer.module.css';
 import Modal from './NewsletterModal/Modal'; 
 import { useTranslation } from 'react-i18next';
+import { Link, useLocation } from 'react-router-dom'; // Import Link and useLocation for routing
 
 function Footer() {
   const [email, setEmail] = useState('');
@@ -10,6 +11,7 @@ function Footer() {
   const [showModal, setShowModal] = useState(false); 
 
   const { t } = useTranslation();
+  const location = useLocation(); // Get the current route
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,6 +47,9 @@ function Footer() {
     window.open(webLink, '_blank', 'noopener noreferrer');
   };
 
+  // Helper function to determine if the link is active
+  const isActive = (path) => location.pathname === path;
+
   return (
     <div className={styles.footer_container}>
       <div className={styles.footer_newsletter_container}>
@@ -70,8 +75,20 @@ function Footer() {
 
       <div className={styles.footer_buttons_container}>
         <a href="https://docs.drpepe.ai/" target="_blank" rel="noreferrer" className={`${styles.footer_button_one} ${styles.footer_button}`}>DOCS</a>
-        <a href="/dapp" target="_blank" rel="noreferrer" className={`${styles.footer_button_two} ${styles.footer_button}`}>APP</a>
-        <button onClick={openTelegramLink} className={`${styles.footer_button_three} ${styles.footer_button}`}>DRP</button>
+
+        <Link 
+          to="/agent" 
+          className={`${styles.footer_button_two} ${styles.footer_button} ${isActive('/agent') ? styles.active : ''}`}
+        >
+          ASK DR.PEPE
+        </Link>
+        <Link 
+          to="/referral-program" 
+          className={`${styles.footer_button_three} ${styles.footer_button} ${isActive('/referral-program') ? styles.active : ''}`}
+        >
+         FRENS
+        </Link>
+
       </div>
 
       <div className={styles.footer_socials_container}>
