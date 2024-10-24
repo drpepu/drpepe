@@ -76,11 +76,16 @@ function Header() {
     <>
 
       <div className={styles.header_container}>
+      <Link
+          to="/"
+          className={`${styles.header_button_five} ${styles.header_button} ${
+            location.pathname === '/' ? styles.activeButton : ''
+          }`}
+          >
+         DRPEPE.AI
+        </Link>
 
-
-        <a href="https://docs.drpepe.ai/" target="_blank" rel="noreferrer" className={`${styles.header_button_four} ${styles.header_button}`}>
-          DOCS
-        </a>
+       
         <Link
           to="/dapp"
           className={`${styles.header_button_five} ${styles.header_button} ${
@@ -90,10 +95,17 @@ function Header() {
           ASK DR.PEPE
         </Link>
 
-        {/* Button to open Telegram */}
-        <button onClick={openTelegramLink} className={`${styles.header_button_five} ${styles.header_button}`}>
-          DRP
-        </button>
+        <Link
+          to="/referral-program"
+          className={`${styles.header_button_five} ${styles.header_button} ${
+            location.pathname === '/referral-program' ? styles.activeButton : ''
+          }`}
+          >
+          FRENS
+        </Link>
+        <a href="https://docs.drpepe.ai/" target="_blank" rel="noreferrer" className={`${styles.header_button_four} ${styles.header_button}`}>
+          DOCS
+        </a>
 
         <LanguageSwitcher />
 
