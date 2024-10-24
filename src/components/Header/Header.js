@@ -92,7 +92,7 @@ function Header() {
             location.pathname === '/agent' ? styles.activeButton : ''
           }`}
           >
-          ASK DR.PEPE
+          ASK DRPEPE.AI
         </Link>
 
         <Link
@@ -114,7 +114,7 @@ function Header() {
           <Link className={styles.header_link} to="/">
             <div className={styles.header_container_headshot_title}>
               <img src={pepeheadshot} alt="dr pepe headshot" className={styles.mobile_pepe_headshot} />
-              <div className={styles.mobile_pepe_title}>DR.PEPE AI</div>
+              <div className={styles.mobile_pepe_title}>DrPepe.ai</div>
             </div>
           </Link>
 
@@ -156,7 +156,7 @@ function Header() {
               className={`${styles.header_sideNavLink} ${location.pathname === '/agent' ? styles.active : ''}`}
               onClick={() => toggleMenu('app')}
             >
-              Ask Dr.Pepe
+              Ask DrPepe.ai
             </Link>
 
             <Link

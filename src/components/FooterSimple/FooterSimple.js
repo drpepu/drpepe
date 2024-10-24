@@ -41,7 +41,7 @@ function FooterSimple() {
           to="/agent"
           className={`${styles.footer_button_two} ${styles.footer_button} ${isActive('/agent') ? styles.active : ''}`}
         >
-          ASK DR.PEPE
+          ASK DRPEPE.AI
         </Link>
 
         <Link
