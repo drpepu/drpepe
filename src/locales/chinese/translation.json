@@ -66,7 +66,7 @@
     "leaderboard_title": "DrPepe.ai 推荐计划排行榜",
     "loading_leaderboard": "正在加载排行榜...",
     "leaderboard_fren_public_key": "朋友（公钥）",
-    "leaderboard_referrals": "推荐数",
+   "leaderboard_referrals": "推荐 / 积分",
     "leaderboard_invited_fren": "被邀请的朋友",
     "leaderboard_tx_hash": "交易哈希",
     "leaderboard_invite_date": "邀请日期",
@@ -82,5 +82,10 @@
    
     "referral_header_text_one": "推荐计划与奖励",
     "referral_header_text_two": "为好友和好友的好友",
-    "referral_header_text_three": "通过邀请好友开始赚取积分，赚取 $DRP"
+    "referral_header_text_three": "通过邀请好友开始赚取积分，赚取 $DRP",
+
+    "leaderboard_referral_header_text_one": "推荐排行榜",
+    "leaderboard_referral_header_text_two": "跟踪顶尖表现者，看看你排在哪里。",
+    "leaderboard_referral_header_text_three": "推荐为你赚取积分，积分转换为 $DRP 奖励。"
+
 }
