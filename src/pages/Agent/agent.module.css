@@ -1,5 +1,5 @@
 
-.dapp_container {
+.agent_container {
     height: auto;
     padding-top: 4vw;
     padding-left: 6vw;
@@ -13,7 +13,7 @@
   }
 
   
-  .dapp_iframe {
+  .agent_iframe {
     width: 100%;
     height: 60%;
     min-height: 550px;
@@ -22,3 +22,13 @@
 
   }
  
+  @media ( width <=500px ){
+    .agent_container {
+      padding-left: 3vw;
+      padding-right: 3vw;
+    }
+    .agent_iframe {
+      border:none;
+
+    }
+  }

@@ -6,16 +6,42 @@
     padding-left:6vw ;
     padding-right: 6vw;
 }
+.leaderboard_cta_container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.leaderboard_cta{
+    color: var(--secondary-color);
+    font-weight: bold;
+    background-color: var(--primary-color);
+    padding: 1.6rem;
+    border-radius: 30vw;
+    text-decoration: none;
+    cursor: pointer;
+
+ 
+}
+.leaderboard_cta:hover{
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
+}
 
 @media ( width <= 500px ){
     .walletButton_container{
         justify-content: center;
         margin-bottom: 4vw;
-        margin-top: 8vw;
+        margin-top: 3rem;
     }
     .wallet_confirm_container{
         display: flex;
         flex-direction: column-reverse;
+    }
+    .leaderboard_cta{
+        margin-top: 10vw;
+        padding: 4vw;
+
     }
     
 }

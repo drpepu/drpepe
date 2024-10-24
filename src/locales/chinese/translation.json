@@ -86,6 +86,7 @@
 
     "leaderboard_referral_header_text_one": "推荐排行榜",
     "leaderboard_referral_header_text_two": "跟踪顶尖表现者，看看你排在哪里。",
-    "leaderboard_referral_header_text_three": "推荐为你赚取积分，积分转换为 $DRP 奖励。"
+    "leaderboard_referral_header_text_three": "推荐为你赚取积分，积分转换为 $DRP 奖励。",
 
+    "leaderboard_CTA": "查看推荐排行榜"
 }

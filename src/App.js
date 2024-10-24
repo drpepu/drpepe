@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from './pages/Landing/Landing';
 import ReferralSystem from './pages/ReferralSystem/ReferralSystem';
 import NotFound from './pages/NotFound/NotFound';
-import Dapp from './pages/Dapp/Dapp';
+import Agent from './pages/Agent/Agent';
 import LeaderboardReferrals from './components/LeaderboardReferrals/LeaderboardReferrals';
 
 // Import Solana wallet adapter components
@@ -26,7 +26,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Landing />} />
               <Route path="/referral-program" element={<ReferralSystem />} />
-              <Route path="/dapp" element={<Dapp />} />
+              <Route path="/agent" element={<Agent />} />
               <Route path="/leaderboard" element={<LeaderboardReferrals />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

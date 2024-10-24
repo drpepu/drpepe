@@ -87,9 +87,9 @@ function Header() {
 
        
         <Link
-          to="/dapp"
+          to="/agent"
           className={`${styles.header_button_five} ${styles.header_button} ${
-            location.pathname === '/dapp' ? styles.activeButton : ''
+            location.pathname === '/agent' ? styles.activeButton : ''
           }`}
           >
           ASK DR.PEPE
@@ -147,13 +147,13 @@ function Header() {
               Home
             </Link>
 
-            <a href="https://docs.drpepe.ai/" target="_blank" rel="noreferrer" className={`${styles.header_sideNavLink} ${activeLink === 'docs' ? styles.active : ''}`} onClick={() => toggleMenu('docs')}>
+            <a href="https://docs.drpepe.ai/" target="_blank" rel="noreferrer" className={`${styles.header_sideNavLink} `} onClick={() => toggleMenu('docs')}>
               Docs
             </a>
 
             <Link
-              to="/dapp"
-              className={`${styles.header_sideNavLink} ${location.pathname === '/dapp' ? styles.active : ''}`}
+              to="/agent"
+              className={`${styles.header_sideNavLink} ${location.pathname === '/agent' ? styles.active : ''}`}
               onClick={() => toggleMenu('app')}
             >
               Ask Dr.Pepe
