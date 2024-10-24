@@ -78,7 +78,9 @@
     "invited_fren": "被邀请的朋友",
     "inviting_fren": "邀请的朋友（我）",
     "tx_hash": "交易哈希",
-    "invite_date": "邀请日期"
+    "invite_date": "邀请日期",
    
-      
+    "referral_header_text_one": "推荐计划与奖励",
+    "referral_header_text_two": "为好友和好友的好友",
+    "referral_header_text_three": "通过邀请好友开始赚取积分，赚取 $DRP"
 }

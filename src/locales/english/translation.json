@@ -81,7 +81,12 @@
     "invited_fren": "Invited Fren",
     "inviting_fren": "Inviting Fren (me)",
     "tx_hash": "Tx Hash",
-    "invite_date": "Invite Date"
+    "invite_date": "Invite Date",
+
+    "referral_header_text_one":"REFERRAL PROGRAM AND REWARDS",
+    "referral_header_text_two":"FOR FRENS AND FRENS OF FRENS",
+    "referral_header_text_three":"Start earning points by inviting your frens. Earn $DRP"
+
       
       
 }

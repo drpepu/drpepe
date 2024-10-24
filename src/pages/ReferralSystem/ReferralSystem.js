@@ -8,6 +8,7 @@ import GenerateReferralLink from '../../components/GenerateReferralLink/Generate
 import ReferralLog from '../../components/ReferralLog/ReferralLog';
 import Footer from '../../components/Footer/Footer';
 import ConfirmReferral from '../../components/ConfirmReferral/ConfirmReferral';
+import ReferralHeader from '../../components/ReferralHeader/ReferralHeader';
 
 function ReferralSystem() {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -23,6 +24,7 @@ function ReferralSystem() {
   return (
     <>
       <Header />
+      <ReferralHeader />
       <div className={styles.wallet_confirm_container}>
         <ConfirmReferral />
         <div className={styles.walletButton_container}>
