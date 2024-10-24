@@ -65,7 +65,7 @@
     "leaderboard_title": "DrPepe.ai 추천 프로그램 리더보드",
     "loading_leaderboard": "리더보드를 불러오는 중...",
     "leaderboard_fren_public_key": "친구 (공개 키)",
-    "leaderboard_referrals": "추천 수",
+    "leaderboard_referrals": "추천 / 포인트",
     "leaderboard_invited_fren": "초대한 친구",
     "leaderboard_tx_hash": "트랜잭션 해시",
     "leaderboard_invite_date": "초대 날짜",
@@ -81,7 +81,11 @@
 
     "referral_header_text_one": "추천 프로그램 및 보상",
     "referral_header_text_two": "친구와 친구의 친구들을 위한",
-    "referral_header_text_three": "친구를 초대하여 포인트를 적립하세요. $DRP를 적립하세요"
+    "referral_header_text_three": "친구를 초대하여 포인트를 적립하세요. $DRP를 적립하세요",
+
+    "leaderboard_referral_header_text_one": "추천 리더보드",
+    "leaderboard_referral_header_text_two": "최고의 성과를 추적하고 당신의 순위를 확인하세요.",
+    "leaderboard_referral_header_text_three": "추천으로 포인트를 얻고, 포인트는 $DRP 보상으로 전환됩니다."
       
       
 

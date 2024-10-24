@@ -159,9 +159,13 @@ function Header() {
               Ask Dr.Pepe
             </Link>
 
-            <button onClick={openTelegramLink} className={`${styles.header_sideNavLink} ${activeLink === 'drp' ? styles.active : ''}`}>
-              DRP
-            </button>
+            <Link
+              to="/referral-program"
+              className={`${styles.header_sideNavLink} ${location.pathname === '/referral-program' ? styles.active : ''}`}
+              onClick={() => toggleMenu('referral-program')}
+            >
+              Frens
+            </Link>
 
 
 

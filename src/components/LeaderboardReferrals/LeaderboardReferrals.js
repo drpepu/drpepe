@@ -3,6 +3,9 @@ import { db } from '../../firebase';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import styles from './LeaderboardReferrals.module.css';
 import { useTranslation } from 'react-i18next';
+import Header from '../Header/Header'
+import LeaderboardReferralHeader from '../LeaderboardReferralHeader/LeaderboardReferralHeader';
+import Footer from '../Footer/Footer'
 
 
 const truncatePublicKey = (key) => {
@@ -56,6 +59,25 @@ const LeaderboardReferrals = () => {
     fetchReferrals();
   }, []);
 
+
+  useEffect(() => {
+    // Add a click event listener to collapse the expanded row if clicking outside
+    const handleClickOutside = (event) => {
+      if (expandedUser) {
+        setExpandedUser(null); // Collapse the row
+        setSelectedReferrals({}); // Clear selected referrals
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [expandedUser]);
+
+
   // Fetch the referrals of the selected user
   const fetchUserReferrals = async (referrerPublicKey) => {
     if (expandedUser === referrerPublicKey) {
@@ -82,10 +104,13 @@ const LeaderboardReferrals = () => {
   };
 
   return (
+    <>
+    
+    <Header />
+    <LeaderboardReferralHeader />
     <div className={styles.leaderboard_main_container}>
       <div className={styles.leaderboard_container}>
 
-        <div className={styles.leaderboard_title}>{t('leaderboard_title')}</div>
 
         {loading && <p>{t('loading_leaderboard')}</p>}
         {error && <p style={{ color: 'red' }}>{error}</p>}
@@ -93,41 +118,44 @@ const LeaderboardReferrals = () => {
         {!loading && leaderboard.length > 0 && (
           <table className={styles.leaderboard_table}>
             <thead>
-              <tr>
-                <th>#</th>
-                <th>{t('leaderboard_fren_public_key')}</th>
-                <th>{t('leaderboard_referrals')}</th>
+              <tr >
+                <th className={`${styles.leaderboard_table_th} ${styles.leaderboard_table_space}`}>Position</th>
+                <th className={styles.leaderboard_table_th}>{t('leaderboard_fren_public_key')}</th>
+                <th className={styles.leaderboard_table_th}>{t('leaderboard_referrals')}</th>
               </tr>
             </thead>
             <tbody>
               {leaderboard.map((referrer, index) => (
                 <React.Fragment key={referrer.referrerPublicKey}>
-                  <tr onClick={() => fetchUserReferrals(referrer.referrerPublicKey)} >
-                    <td>{index + 1}</td>
-                    <td>{truncatePublicKey(referrer.referrerPublicKey)}</td>
-                    <td>{referrer.referralCount}</td>
-                  </tr>
+               <tr 
+                  onClick={() => fetchUserReferrals(referrer.referrerPublicKey)} 
+                  className={expandedUser === referrer.referrerPublicKey ? styles.expandedRow : ''}
+                >
+                  <td className={`${styles.leaderboard_table_td}`}>{index + 1}</td>
+                  <td className={styles.leaderboard_table_td}>{truncatePublicKey(referrer.referrerPublicKey)}</td>
+                  <td className={styles.leaderboard_table_td}>{referrer.referralCount}</td>
+                </tr>
 
                   {/* Show the details of the selected user's referrals */}
                   {expandedUser === referrer.referrerPublicKey && selectedReferrals[referrer.referrerPublicKey] && (
                     <tr>
-                      <td colSpan="3">
+                      <td className={styles.leaderboard_inner_td} colSpan="3">
                         <table className={styles.sub_table}>
                           <thead>
                             <tr>
-                              <th>#</th>
-                              <th>{t('leaderboard_invited_fren')}</th>
-                              <th>{t('leaderboard_tx_hash')}</th>
-                              <th>{t('leaderboard_invite_date')}</th>
+                              <th className={`${styles.leaderboard_table_th} ${styles.leaderboard_subtable}`}>#</th>
+                              <th className={`${styles.leaderboard_table_th} ${styles.leaderboard_subtable}`}>{t('leaderboard_invited_fren')}</th>
+                              <th className={`${styles.leaderboard_table_th} ${styles.leaderboard_subtable}`}>{t('leaderboard_tx_hash')}</th>
+                              <th className={`${styles.leaderboard_table_th} ${styles.leaderboard_subtable}`}>{t('leaderboard_invite_date')}</th>
                             </tr>
                           </thead>
                           <tbody>
                             {selectedReferrals[referrer.referrerPublicKey].map((referral, i) => (
                               <tr key={referral.id}>
-                                <td>{i + 1}</td>
-                                <td>{truncatePublicKey(referral.userPublicKey)}</td>
-                                <td>{truncatePublicKey(referral.signature)}</td>
-                                <td>{new Date(referral.timestamp?.seconds * 1000).toLocaleString()}</td>
+                                <td className={styles.leaderboard_table_td}>{i + 1}</td>
+                                <td className={styles.leaderboard_table_td}>{truncatePublicKey(referral.userPublicKey)}</td>
+                                <td className={styles.leaderboard_table_td}>{truncatePublicKey(referral.signature)}</td>
+                                <td className={styles.leaderboard_table_td}>{new Date(referral.timestamp?.seconds * 1000).toLocaleString()}</td>
                               </tr>
                             ))}
                           </tbody>
@@ -146,6 +174,10 @@ const LeaderboardReferrals = () => {
         )}
       </div>
     </div>
+    <div className={styles.leaderboard_footer_container}>
+      <Footer/>
+    </div>
+    </>
   );
 };
 

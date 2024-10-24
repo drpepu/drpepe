@@ -69,7 +69,7 @@
     "leaderboard_title": "DrPepe.ai REFERRAL PROGRAM LEADERBOARD",
     "loading_leaderboard": "Loading leaderboard...",
     "leaderboard_fren_public_key": "Fren (Public Key)",
-    "leaderboard_referrals": "Referrals",
+    "leaderboard_referrals": "Referrals / Points",
     "leaderboard_invited_fren": "Invited Fren",
     "leaderboard_tx_hash": "Tx Hash",
     "leaderboard_invite_date": "Invite Date",
@@ -85,8 +85,11 @@
 
     "referral_header_text_one":"REFERRAL PROGRAM AND REWARDS",
     "referral_header_text_two":"FOR FRENS AND FRENS OF FRENS",
-    "referral_header_text_three":"Start earning points by inviting your frens. Earn $DRP"
+    "referral_header_text_three":"Start earning points by inviting your frens. Earn $DRP",
 
+    "leaderboard_referral_header_text_one":"REFERRAL LEADERBOARD",
+    "leaderboard_referral_header_text_two":"TRACK THE TOP PERFORMERS AND SEE WHERE YOU RANK. ",
+    "leaderboard_referral_header_text_three":"Referrals earn you points, and points convert into $DRP rewards."
       
       
 }
