@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://getresponse-proxy.vercel.app/add-subscriber';
+const API_URL = 'https://getresponse-proxy.vercel.app/api/add-subscriber';
 ; 
 
 export const addSubscriber = async (listId, email, name) => {
