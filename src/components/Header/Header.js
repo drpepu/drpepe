@@ -86,14 +86,7 @@ function Header() {
         </Link>
 
        
-        <Link
-          to="/agent"
-          className={`${styles.header_button_five} ${styles.header_button} ${
-            location.pathname === '/agent' ? styles.activeButton : ''
-          }`}
-          >
-          ASK DRPEPE.AI
-        </Link>
+    
 
         <Link
           to="/referral-program"
@@ -151,13 +144,7 @@ function Header() {
               Docs
             </a>
 
-            <Link
-              to="/agent"
-              className={`${styles.header_sideNavLink} ${location.pathname === '/agent' ? styles.active : ''}`}
-              onClick={() => toggleMenu('app')}
-            >
-              Ask DrPepe.ai
-            </Link>
+       
 
             <Link
               to="/referral-program"
