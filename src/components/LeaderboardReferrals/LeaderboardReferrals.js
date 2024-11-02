@@ -63,7 +63,7 @@ const LeaderboardReferrals = () => {
           const leaderboardData = Object.keys(referralCountMap).map(referrerPublicKey => ({
             referrerPublicKey,
             referralCount: referralCountMap[referrerPublicKey],
-          })).sort((a, b) => b.referralCount - a.referralCount).slice(0, 50);
+          })).sort((a, b) => b.referralCount - a.referralCount).slice(0,25);
 
           // Set state and cache the result
           setLeaderboard(leaderboardData);
