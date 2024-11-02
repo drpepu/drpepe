@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { db } from '../../firebase';
-import { collection, getDocs, query, where } from 'firebase/firestore';
+import { collection, getDocs, query, where, enableIndexedDbPersistence } from 'firebase/firestore';
 import styles from './LeaderboardReferrals.module.css';
 import { useTranslation } from 'react-i18next';
 import Header from '../Header/Header';
 import LeaderboardReferralHeader from '../LeaderboardReferralHeader/LeaderboardReferralHeader';
 import Footer from '../Footer/Footer';
+
+// Enable Firestore persistence for offline caching
+enableIndexedDbPersistence(db).catch((err) => {
+  console.error("Could not enable persistence:", err);
+});
 
 const truncatePublicKey = (key) => {
   if (!key) return '';
@@ -29,7 +34,7 @@ const LeaderboardReferrals = () => {
     const fetchReferrals = async () => {
       try {
         const cachedData = localStorage.getItem(CACHE_KEY);
-        const cacheExpiry = localStorage.getItem(CACHE_EXPIRY_KEY);
+        const cacheExpiry = parseInt(localStorage.getItem(CACHE_EXPIRY_KEY), 10);
         const isCacheValid = cacheExpiry && Date.now() < cacheExpiry;
 
         if (cachedData && isCacheValid) {
@@ -99,6 +104,9 @@ const LeaderboardReferrals = () => {
       // If already expanded, collapse the row
       setExpandedUser(null);
       setSelectedReferrals({});
+    } else if (selectedReferrals[referrerPublicKey]) {
+      // Use cached referrals if they exist
+      setExpandedUser(referrerPublicKey);
     } else {
       try {
         const q = query(collection(db, 'referrals_two'), where('referrerPublicKey', '==', referrerPublicKey));
@@ -108,6 +116,7 @@ const LeaderboardReferrals = () => {
           ...doc.data(),
         }));
         setSelectedReferrals({
+          ...selectedReferrals,
           [referrerPublicKey]: userReferrals,
         });
         setExpandedUser(referrerPublicKey); // Set the expanded user
@@ -163,10 +172,10 @@ const LeaderboardReferrals = () => {
                             <tbody>
                               {selectedReferrals[referrer.referrerPublicKey].map((referral, idx) => (
                                 <tr key={referral.id}>
-                                  <td className={styles.leaderboard_table_td}>{idx + 1}</td>
-                                  <td className={styles.leaderboard_table_td}>{truncatePublicKey(referral.invitedPublicKey)}</td>
-                                  <td className={styles.leaderboard_table_td}>{truncatePublicKey(referral.txHash)}</td>
-                                  <td className={styles.leaderboard_table_td}>{referral.inviteDate}</td>
+                                  <td>{idx + 1}</td>
+                                  <td>{truncatePublicKey(referral.invitedPublicKey)}</td>
+                                  <td>{truncatePublicKey(referral.txHash)}</td>
+                                  <td>{new Date(referral.inviteDate).toLocaleDateString()}</td>
                                 </tr>
                               ))}
                             </tbody>
