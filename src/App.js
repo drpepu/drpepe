@@ -3,6 +3,8 @@ import Landing from './pages/Landing/Landing';
 import ReferralSystem from './pages/ReferralSystem/ReferralSystem';
 import NotFound from './pages/NotFound/NotFound';
 import Agent from './pages/Agent/Agent';
+import ReferralGraph from './pages/ReferralGraph/ReferralGraph';
+
 import LeaderboardReferrals from './components/LeaderboardReferrals/LeaderboardReferrals';
 
 // Import Solana wallet adapter components
@@ -26,6 +28,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Landing />} />
               <Route path="/referral-program" element={<ReferralSystem />} />
+              <Route path="/referral-graph" element={<ReferralGraph/>} />
               <Route path="/agent" element={<Agent />} />
               <Route path="/leaderboard" element={<LeaderboardReferrals />} />
               <Route path="*" element={<NotFound />} />

@@ -17,7 +17,13 @@ html {
     --tertiary-color: #f5f5f5;
     --quaternary-color: #181C2D;
 
+    --quaternary-color: #4ed0e1;
+
   
+    
+  }  
   
-  }
+  .recharts-cartesian-axis-tick-value {
+    color: red !important;
+      }
 
