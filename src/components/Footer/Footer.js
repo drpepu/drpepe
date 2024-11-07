@@ -77,10 +77,10 @@ function Footer() {
         <a href="https://docs.drpepe.ai/" target="_blank" rel="noreferrer" className={`${styles.footer_button_one} ${styles.footer_button}`}>DOCS</a>
 
         <Link 
-          to="/agent" 
-          className={`${styles.footer_button_two} ${styles.footer_button} ${isActive('/agent') ? styles.active : ''}`}
+          to="/leaderboard" 
+          className={`${styles.footer_button_two} ${styles.footer_button} ${isActive('/leaderboard') ? styles.active : ''}`}
         >
-          ASK DRPEPE.AI
+          LEADERBOARD
         </Link>
         <Link 
           to="/referral-program" 

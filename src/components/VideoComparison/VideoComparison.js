@@ -13,9 +13,7 @@ function VideoComparison() {
         <div className={styles.videoComparison_main_text_one}>{t('video_comparison_title')}
         </div>
     
-        <div className={styles.videoComparison_main_text_two}>
-        {t('video_comparison_subtitle')}
-        </div>
+    
 
       </div>
 
