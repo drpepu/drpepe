@@ -1,0 +1,150 @@
+.SocialTaskTelegram_main_container {
+    background-color: var(--tertiary-color);
+    margin-left: 6vw;
+    margin-right: 6vw;
+    padding: 1vw;
+    border-radius: 1.5vw;
+    border: 0.3vw solid var(--tertiary-color);
+    margin-top: 2vw;
+    display: flex;
+    flex-direction: row;
+}
+.SocialTaskTelegram_visible_drop{
+    width: 100%;
+    margin-left: 6vw;
+    margin-right: 6vw;
+}
+.SocialTaskTelegram_visible{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 1.2vw;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+.SocialTaskTelegram_input_button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.SocialTaskTelegram_input{
+    padding: 1vw;
+    border-radius: 30vw;
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
+    border: 0.2vw solid var(--secondary-color);
+    margin-right: 1vw;
+    text-align: center;
+    font-size: 1vw;
+    font-weight: 600;
+
+
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.SocialTaskTelegram_button{
+    padding: 1vw;
+    border-radius: 30vw;
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+    border: 0.2vw solid var(--secondary-color);
+    font-size: 1vw;
+    margin-right: 1vw;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+}
+.checkmarkIcon{
+    width: 2vw;
+}
+.SocialTaskTelegram_button:hover{
+
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 0.2vw solid var(--primary-color);
+
+
+}
+.SocialTaskTelegram_dropdown{
+    color: var(--secondary-color);
+}
+.SocialTaskTelegram_p{
+    font-size: 1vw;
+}
+.SocialTaskTelegram_ul {
+    list-style-type: none;
+    font-size: 1vw;
+}
+.SocialTaskTelegram_li{
+    padding-bottom: 0.5vw;
+    font-size: 1vw;
+}
+.SocialTaskTelegram_link:visited {
+    color: inherit; 
+}
+
+@media ( width <=500px ){
+    .SocialTaskTelegram_main_container {
+
+        margin-left: 3vw;
+        margin-right: 3vw;
+        padding:3vw;
+        padding-top: 5vw;
+
+    }
+    .SocialTaskTelegram_visible{
+        flex-direction: column;
+        font-size: 4.8vw;
+    }
+    .SocialTaskTelegram_input_button{
+
+        flex-direction: column;
+        width: 100%;
+    }
+    .SocialTaskTelegram_input{
+        width: 98%;
+        font-size: 4.8vw;
+        margin-right: 0;
+        margin-top: 5vw;
+        margin-bottom: 5vw;
+        padding-top: 5vw;
+        padding-bottom: 5vw;
+    }
+    .SocialTaskTelegram_button{
+        width: 100%;
+        font-size: 4.8vw;
+        margin-right: 0;
+        padding-top: 5vw;
+        padding-bottom: 5vw;
+
+    }
+    .checkmarkIcon{
+        width: 10vw;
+        margin-top: 5vw;
+        margin-bottom: 4vw;
+    }
+
+    .SocialTaskTelegram_p{
+        font-size: 3.8vw;
+
+    }
+    .SocialTaskTelegram_ul {
+        font-size: 3.8vw;
+        padding-left: 0; 
+        margin-left: 0; 
+    }
+    .SocialTaskTelegram_li{
+        font-size: 3.8vw;
+        padding-left: 0; 
+        margin-left: 0; 
+        margin-bottom: 2vw;
+    }
+
+}
