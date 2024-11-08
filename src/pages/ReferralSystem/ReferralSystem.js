@@ -5,6 +5,7 @@ import Header from '../../components/Header/Header';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import '@solana/wallet-adapter-react-ui/styles.css';
 import GenerateReferralLink from '../../components/GenerateReferralLink/GenerateReferralLink';
+import SocialTaskTelelegram from '../../components/SocialTaskTelegram/SocialTaskTelegram'
 import ReferralLog from '../../components/ReferralLog/ReferralLog';
 import FooterSimple from '../../components/FooterSimple/FooterSimple';
 import ConfirmReferral from '../../components/ConfirmReferral/ConfirmReferral';
@@ -39,6 +40,7 @@ function ReferralSystem() {
       </div>
       <GenerateReferralLink />
  
+      <SocialTaskTelelegram />
       <ReferralLog />
       <div className={styles.leaderboard_cta_container}>
         <Link
