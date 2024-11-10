@@ -18,13 +18,14 @@
 .generateReferralLink_input {
     width: 60%;
     border-radius: 30vw;
-    border: 2px solid var(--secondary-color);
+    border: var(--border-container-width) solid var(--secondary-color);
     color: var(--secondary-color);
     text-align: center;
     padding: 0.2vw;
     padding-right: 1vw;
     padding-left: 1vw;
     font-size: 1vw;
+    font-weight: 600;
 }
 
 .generateReferralLink_button {
@@ -40,10 +41,10 @@
     padding: 0.2vw;
 }
 .generateReferralLink_button:disabled {
-    background-color: #ccc; 
+    background-color: var(--tertiary-color-hover); 
     cursor: not-allowed; 
-    border: 2px solid #ccc; 
-    color: #8b8b8b;
+    border: 2px solid var(--tertiary-color-hover); 
+    color: var(--tertiary-color-hover-text);
   }
   
 @media (max-width: 500px) {

@@ -6,21 +6,18 @@ html {
   
   }
 
-
-
-  
   :root {
 
   
     --primary-color: #ADFF00;
     --secondary-color: #0075FF;
     --tertiary-color: #f5f5f5;
-    --quaternary-color: #181C2D;
+    --tertiary-color-hover: #eceaea;
+    --tertiary-color-hover-text: #c3c3c3;
 
-    --quaternary-color: #4ed0e1;
 
-  
-    
+    --border-container-width: 2px;
+
   }  
   
   .recharts-cartesian-axis-tick-value {
