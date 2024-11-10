@@ -21,7 +21,7 @@ const GenerateReferralLink = () => {
   return (
     <div className={styles.generateReferralLink_main_container}>
         <div className={styles.generateReferralLink_container}>
-          <input type="text" value={referralLink} readOnly className={styles.generateReferralLink_input} />
+          <input type="text" placeholder="CONNECT YOUR WALLET"value={referralLink} readOnly className={styles.generateReferralLink_input} />
           
           {/* Disable button if the wallet is not connected (publicKey is null) */}
           <button

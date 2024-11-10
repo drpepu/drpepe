@@ -9,6 +9,7 @@
     display: flex;
     flex-direction: row;
 }
+
 .SocialTaskTelegram_visible_drop{
     width: 100%;
     margin-left: 6vw;
@@ -25,6 +26,7 @@
     color: var(--secondary-color);
     font-weight: 600;
 }
+
 .SocialTaskTelegram_input_button{
     display: flex;
     flex-direction: row;
@@ -36,7 +38,7 @@
     border-radius: 30vw;
     background-color: var(--tertiary-color);
     color: var(--secondary-color);
-    border: 0.2vw solid var(--secondary-color);
+    border: var(  --border-container-width) solid var(--secondary-color);
     margin-right: 1vw;
     text-align: center;
     font-size: 1vw;
@@ -54,7 +56,7 @@ input[type="number"]::-webkit-inner-spin-button {
     border-radius: 30vw;
     background-color: var(--secondary-color);
     color: var(--tertiary-color);
-    border: 0.2vw solid var(--secondary-color);
+
     font-size: 1vw;
     margin-right: 1vw;
     cursor: pointer;
@@ -64,14 +66,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .checkmarkIcon{
     width: 2vw;
 }
-.SocialTaskTelegram_button:hover{
 
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    border: 0.2vw solid var(--primary-color);
-
-
-}
 .SocialTaskTelegram_dropdown{
     color: var(--secondary-color);
 }
