@@ -70,6 +70,10 @@ tr {
         margin-right: 3vw;
         border: 1vw solid var(--tertiary-color);
         margin-top: 5vw;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
 
 

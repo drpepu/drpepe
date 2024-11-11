@@ -34,7 +34,7 @@
     align-items: center;
 }
 .SocialTaskTelegram_input{
-    padding: 1vw;
+    padding: var(--padding-button-input-mobile);
     border-radius: 30vw;
     background-color: var(--tertiary-color);
     color: var(--secondary-color);
@@ -58,7 +58,7 @@ input[type="number"]::-webkit-inner-spin-button {
     color: var(--tertiary-color);
 
     font-size: 1vw;
-    margin-right: 1vw;
+
     cursor: pointer;
     font-weight: 600;
     width: 100%;
@@ -90,34 +90,34 @@ input[type="number"]::-webkit-inner-spin-button {
 
         margin-left: 3vw;
         margin-right: 3vw;
-        padding:3vw;
-        padding-top: 5vw;
+        padding: var(--padding-small-mobile);
 
     }
     .SocialTaskTelegram_visible{
         flex-direction: column;
-        font-size: 4.8vw;
+        font-size: var(--font-size-medium-mobile);
+    }
+    .SocialTaskTelegram_visible_drop{
+        margin: 0;
     }
     .SocialTaskTelegram_input_button{
-
         flex-direction: column;
         width: 100%;
+
     }
     .SocialTaskTelegram_input{
-        width: 98%;
-        font-size: 4.8vw;
-        margin-right: 0;
-        margin-top: 5vw;
-        margin-bottom: 5vw;
-        padding-top: 5vw;
-        padding-bottom: 5vw;
+        width: 86.5%;
+        margin: 0;
+        font-size: var(--font-size-medium-mobile);
+        padding: var( --padding-button-input-mobile) !important;
+        margin-top: var(--padding-small-mobile);
+        margin-bottom: var(--padding-small-mobile);
     }
     .SocialTaskTelegram_button{
         width: 100%;
-        font-size: 4.8vw;
+        font-size: var(--font-size-medium-mobile);
         margin-right: 0;
-        padding-top: 5vw;
-        padding-bottom: 5vw;
+        padding: var(--padding-button-input-mobile);
 
     }
     .checkmarkIcon{
@@ -126,9 +126,8 @@ input[type="number"]::-webkit-inner-spin-button {
         margin-bottom: 4vw;
     }
     .SocialTaskTelegram_dropdown{
-       padding-top: 2rem;
+       padding-top: var(--padding-small-mobile);
     }
-
     .SocialTaskTelegram_p{
         font-size: 3.8vw;
 

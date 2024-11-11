@@ -51,27 +51,27 @@
     .generateReferralLink_main_container {
         margin-left: 3vw;
         margin-right: 3vw;
+        padding: var(--padding-small-mobile);
     }
     .generateReferralLink_container {
         flex-direction: column;
         align-items: center;
-        gap: 1rem; /* Add some space between the input and button */
+        gap: var(--padding-small-mobile); 
     }
 
     .generateReferralLink_input,
     .generateReferralLink_button {
-        width: 100%; /* Ensure both input and button take full width */
-        box-sizing: border-box; /* Prevents padding and border from overflowing */
+        width: 100%; 
+        box-sizing: border-box; 
     }
 
     .generateReferralLink_button {
-        height: auto; /* Allow the button height to adjust based on content */
-        padding: 1rem; /* Adjust padding to make it more touch-friendly */
-        font-size: 1.2rem; /* Increase font size for better readability on mobile */
-    }
+        height: auto; 
+        padding: var( --padding-button-input-mobile);
+        font-size: var(--font-size-medium-mobile);    }
 
     .generateReferralLink_input {
-        font-size: 1.2rem; /* Increase font size to match button */
-        padding: 1rem;
+        font-size: var(--font-size-medium-mobile);        
+        padding: var( --padding-button-input-mobile)
     }
 }
