@@ -34,7 +34,7 @@
     align-items: center;
 }
 .SocialTaskTelegram_input{
-    padding: var(--padding-button-input-mobile);
+    padding: 1vw;
     border-radius: 30vw;
     background-color: var(--tertiary-color);
     color: var(--secondary-color);
@@ -109,7 +109,7 @@ input[type="number"]::-webkit-inner-spin-button {
         width: 86.5%;
         margin: 0;
         font-size: var(--font-size-medium-mobile);
-        padding: var( --padding-button-input-mobile) !important;
+        padding: var( --padding-button-input-mobile);
         margin-top: var(--padding-small-mobile);
         margin-bottom: var(--padding-small-mobile);
     }
