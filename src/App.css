@@ -17,6 +17,10 @@ html {
 
 
     --border-container-width: 2px;
+    --padding-button-input-mobile: 5.2vw;
+    --padding-small-mobile:4vw;
+
+    --font-size-medium-mobile: 4vw;
 
   }  
   

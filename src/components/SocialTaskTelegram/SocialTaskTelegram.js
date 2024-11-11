@@ -3,7 +3,7 @@ import axios from 'axios';
 import gsap from 'gsap';
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { useWallet } from '@solana/wallet-adapter-react';
-import { db } from '../../firebase'; // Assuming db is configured in a separate file
+import { db } from '../../firebase'; 
 import styles from './SocialTaskTelegram.module.css';
 import checkmark_green from '../../Assets/CHECKMARK_ICON_GREEN.svg';
 import checkmark_grey from '../../Assets/CHECKMARK_ICON_GREY.svg';
@@ -14,26 +14,25 @@ const SocialTaskTelegram = () => {
     const [loading, setLoading] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [membershipStatus, setMembershipStatus] = useState('grey');
-    const [isWalletConnected, setIsWalletConnected] = useState(false); // To track wallet connection status
-    const [verifiedTelegramId, setVerifiedTelegramId] = useState(''); // To store verified Telegram ID
+    const [isWalletConnected, setIsWalletConnected] = useState(false); 
+    const [verifiedTelegramId, setVerifiedTelegramId] = useState(''); 
     const dropdownRef = useRef(null);
 
-    const { publicKey } = useWallet(); // Get the public key from the connected wallet
+    const { publicKey } = useWallet(); 
 
-    // This effect will run every time the publicKey changes
     useEffect(() => {
         if (publicKey) {
             setIsWalletConnected(true);
-            fetchTelegramVerification(); // Fetch verification status when wallet is connected
+            fetchTelegramVerification(); 
         } else {
-            // Reset state when wallet is disconnected
+          
             setIsWalletConnected(false);
-            setVerifiedTelegramId(''); // Reset verified Telegram ID
-            setMembershipStatus('grey'); // Reset membership status
+            setVerifiedTelegramId(''); 
+            setMembershipStatus('grey'); 
         }
     }, [publicKey]);
 
-    // Function to retrieve verification status from Firestore
+    
     const fetchTelegramVerification = async () => {
         if (!publicKey) return;
 
@@ -57,31 +56,30 @@ const SocialTaskTelegram = () => {
         }
     
         setLoading(true);
-        setMembershipStatus('grey'); // Reset to grey state when starting the verification
+        setMembershipStatus('grey'); 
     
         try {
-            // Check if the Telegram ID is already associated with another wallet
-            const telegramIdCheckRef = doc(db, 'social_verifications', userId); // Use userId as the document ID
+            
+            const telegramIdCheckRef = doc(db, 'social_verifications', userId); 
             const telegramIdCheckSnap = await getDoc(telegramIdCheckRef);
     
             if (telegramIdCheckSnap.exists()) {
-                // If the Telegram ID already exists, set membership status to red
+            
                 setMembershipStatus('red');
                 setVerifiedTelegramId('');
                 alert("This Telegram ID is already associated with another wallet.");
                 return;
             }
-    
-            // Call the backend API to check Telegram membership
+
             const response = await axios.post('https://social-task-telegram-server.onrender.com/check-membership', { userId });
             const isMember = response.data.isMember;
     
-            // Update membership status based on the response
+
             if (isMember) {
                 setMembershipStatus('green');
-                setVerifiedTelegramId(userId); // Store the verified Telegram ID
+                setVerifiedTelegramId(userId); 
     
-                // Write the verification status to Firestore under the user's publicKey
+               
                 const userDocRef = doc(db, 'social_verifications', publicKey.toBase58());
                 await setDoc(userDocRef, {
                     publicKey: publicKey.toBase58(),
@@ -92,7 +90,7 @@ const SocialTaskTelegram = () => {
                     }
                 }, { merge: true });
     
-                // Also write the Telegram ID as the document ID to prevent other wallets from using it
+               
                 await setDoc(telegramIdCheckRef, {
                     publicKey: publicKey.toBase58(),
                     telegramUserId: userId,
@@ -103,9 +101,9 @@ const SocialTaskTelegram = () => {
             }
         } catch (error) {
             console.error('Error checking membership:', error);
-            setMembershipStatus('red'); // Set red if there was an error
+            setMembershipStatus('red'); 
         } finally {
-            setLoading(false); // Stop loading spinner
+            setLoading(false); 
         }
     };
     
@@ -121,11 +119,11 @@ const SocialTaskTelegram = () => {
 
     const getMembershipIcon = () => {
         if (membershipStatus === 'green') {
-            return checkmark_green; // Only show green checkmark if verified
+            return checkmark_green; 
         } else if (membershipStatus === 'red') {
-            return xmark_red; // Show red X if not verified
+            return xmark_red; 
         } else {
-            return checkmark_grey; // Default grey checkmark
+            return checkmark_grey; 
         }
     };
 
@@ -146,11 +144,11 @@ const SocialTaskTelegram = () => {
                             onClick={(e) => e.stopPropagation()}
                             onChange={(e) => setUserId(e.target.value)}
                             className={styles.SocialTaskTelegram_input}
-                            disabled={!isWalletConnected || membershipStatus === 'green'} // Disable input if wallet is not connected or user is verified
+                            disabled={!isWalletConnected || membershipStatus === 'green'} 
                         />
                         <button
                             onClick={(e) => { e.stopPropagation(); handleCheckMembership(); }}
-                            disabled={loading || !publicKey || membershipStatus === 'green'} // Disable button if no wallet connected, loading, or user is verified
+                            disabled={loading || !publicKey || membershipStatus === 'green'} 
                             className={styles.SocialTaskTelegram_button}
                             style={{
                                 backgroundColor: publicKey && membershipStatus !== 'green' ? 'var(--secondary-color)' : 'var(--tertiary-color-hover)',
@@ -163,13 +161,13 @@ const SocialTaskTelegram = () => {
                             {loading ? 'VERIFYING...' : 'VERIFY TELEGRAM'}
                         </button>
 
-                        {/* Display checkmark or red X based on membership status */}
+                  
                         {(membershipStatus === 'green' || membershipStatus === 'red') && (
                             <img src={getMembershipIcon()} alt="membership status" className={styles.checkmarkIcon} />
                         )}
                     </div>
 
-                    {/* Display Telegram ID and Green Checkmark if Verified */}
+
                     {verifiedTelegramId && membershipStatus === 'green' && (
                         <div className={styles.SocialTaskTelegram_verified}>
                             Verified Telegram ID: {verifiedTelegramId}

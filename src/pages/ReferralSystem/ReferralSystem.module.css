@@ -40,8 +40,19 @@
     }
     .leaderboard_cta{
         margin-top: 10vw;
-        padding: 4vw;
+        padding: var(--padding-button-input-mobile);
+        width: 100%;
+        text-align: center;
+        font-size: var(--font-size-medium-mobile);
 
+
+    }
+    .leaderboard_cta_container{
+        padding: var(--padding-small-mobile);
+        margin: 0rem;
+        margin-left: 3vw;
+        margin-right: 3vw;
+        width: auto;
     }
     
 }
