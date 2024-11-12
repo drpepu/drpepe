@@ -6,7 +6,8 @@
     padding-top: 3vw;
     padding-bottom: 3vw;
     border-radius: 1.5vw;
-    margin-top: 2vw;
+    margin-top: var(--margin-small-desktop);
+    margin-bottom: var(--margin-small-desktop);
 }
 
 .generateReferralLink_container {
