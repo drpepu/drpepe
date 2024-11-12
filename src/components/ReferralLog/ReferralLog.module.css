@@ -8,24 +8,22 @@
     border-radius: 1.5vw;
     margin-top: 2vw;
     margin-bottom: 2vw;
-    overflow-x: auto; /* Enable horizontal scroll for responsiveness */
+    overflow-x: auto; 
     height: 85vw;
+    text-align: center;
 }
-
 .referral_table {
     width: 100%;
     border-collapse: separate;
     margin: 20px 0;
     border-spacing: 1rem 2rem;
-    min-width: 600px; /* Ensure table has a minimum width for scrolling on smaller screens */
+    min-width: 600px; 
 }
-
 th, td {
     padding: 12px;
     text-align: center;
-    white-space: nowrap; /* Prevent wrapping of text to ensure it scrolls */
+    white-space: nowrap; 
 }
-
 th {
     background-color: #f2f2f2;
     font-weight: bold;
@@ -33,7 +31,6 @@ th {
     border-bottom: 1px solid #ddd;
     color: var(--secondary-color);
 }
-
 td {
     border: 3px solid var(--tertiary-color);
     border-radius: 30vw;
@@ -42,12 +39,11 @@ td {
     color: var(--tertiary-color);
     font-weight: 600;
 }
-
 tr {
     margin-bottom: 3rem;
 }
 
-/* Scrollbar styling for a cleaner look */
+
 .referral_log_main_container::-webkit-scrollbar {
     height: 8px;
 }

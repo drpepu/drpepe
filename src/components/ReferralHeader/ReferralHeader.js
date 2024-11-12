@@ -11,6 +11,7 @@ function ReferralHeader() {
   const { t } = useTranslation();
 
 
+
   return (
     <>
     <div className={styles.referral_header_main_container}>
@@ -18,8 +19,9 @@ function ReferralHeader() {
             <img src={drpepeheadshot} alt='dr pepe headshot'className={styles.referral_drpepe_img} ></img>
             <div className={styles.referral_header_text_container}>
                 <div className={styles.referral_header_text_one}>{t('referral_header_text_one')}</div>
-                <div className={styles.referral_header_text_two} >{t('referral_header_text_two')}</div>
-                <div className={styles.referral_header_text_three}>{t('referral_header_text_three')}</div>
+                <div className={styles.referral_header_text_two} >{t('referral_header_text_two_a')} 
+                <span style={{ fontWeight: 'bold' }}> 1X </span>{t('referral_header_text_two_b')}</div>
+                <div className={styles.referral_header_text_three}>{t('referral_header_text_three_a')} <span style={{ fontWeight: 'bold' }}> 10X </span>{t('referral_header_text_three_b')}</div>
             </div>
         </div>
     </div>

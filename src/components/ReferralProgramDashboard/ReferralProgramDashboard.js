@@ -83,15 +83,6 @@ const ReferralProgramDashboard = () => {
 
                 <div className={styles.referral_program_dashboard_box}>
                     <div className={styles.referral_program_dashboard_box_description}>
-                        Total Referrals
-                    </div>
-                    <div className={styles.referral_program_dashboard_box_total}>
-                        {totalReferrals}
-                    </div>
-                </div>
-
-                <div className={styles.referral_program_dashboard_box}>
-                    <div className={styles.referral_program_dashboard_box_description}>
                         X (Twitter) Points
                     </div>
                     <div className={styles.referral_program_dashboard_box_total}>
@@ -107,6 +98,15 @@ const ReferralProgramDashboard = () => {
                         {publicKey ? (telegramVerified ? 10 : 0) : 0}  {/* Add 10 points if Telegram is verified */}
                     </div>
                 </div> 
+
+                <div className={styles.referral_program_dashboard_box}>
+                    <div className={styles.referral_program_dashboard_box_description}>
+                        Total Referrals
+                    </div>
+                    <div className={styles.referral_program_dashboard_box_total}>
+                        {totalReferrals}
+                    </div>
+                </div>
 
                 <div className={styles.referral_program_dashboard_box}>
                     <div className={styles.referral_program_dashboard_box_description}>

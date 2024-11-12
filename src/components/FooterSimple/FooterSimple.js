@@ -38,10 +38,10 @@ function FooterSimple() {
 
         {/* Apply styles conditionally based on active route */}
         <Link
-          to="/agent"
-          className={`${styles.footer_button_two} ${styles.footer_button} ${isActive('/agent') ? styles.active : ''}`}
+          to="/leaderboard"
+          className={`${styles.footer_button_two} ${styles.footer_button} ${isActive('/leaderboard') ? styles.active : ''}`}
         >
-          ASK DRPEPE.AI
+          LEADERBOARD
         </Link>
 
         <Link
