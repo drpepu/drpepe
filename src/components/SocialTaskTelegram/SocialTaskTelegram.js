@@ -135,7 +135,7 @@ const SocialTaskTelegram = () => {
         >
             <div className={styles.SocialTaskTelegram_visible_drop}>
                 <div className={styles.SocialTaskTelegram_visible}>
-                    <div>Join DrPepe.ai on Telegram</div>
+                    <div className={styles.SocialTaskTelegram_title}>Join DrPepe.ai on Telegram</div>
                     <div className={styles.SocialTaskTelegram_input_button}>
                         <input
                             type="number"
@@ -170,7 +170,7 @@ const SocialTaskTelegram = () => {
 
                     {verifiedTelegramId && membershipStatus === 'green' && (
                         <div className={styles.SocialTaskTelegram_verified}>
-                            Verified Telegram ID: {verifiedTelegramId}
+                            VERIFIED
                         </div>
                     )}
                 </div>
