@@ -83,8 +83,11 @@
     "invite_date": "Invite Date",
 
     "referral_header_text_one":"REFERRAL PROGRAM AND REWARDS",
-    "referral_header_text_two":"CREATE AND SHARE YOUR REFERRAL LINK FOR 1X DRP POINTS.",
-    "referral_header_text_three":"Verify your Telegram and X accounts for 10X points each.",
+    "referral_header_text_two_a":"CREATE AND SHARE YOUR REFERRAL LINK FOR",
+    "referral_header_text_two_b":"DRP POINTS.",
+    "referral_header_text_three_a":"Verify your Telegram and X accounts for ",
+    "referral_header_text_three_b":"points each.",
+
 
     "leaderboard_referral_header_text_one":"REFERRAL LEADERBOARD",
     "leaderboard_referral_header_text_two":"TRACK THE TOP PERFORMERS AND SEE WHERE YOU RANK. ",
