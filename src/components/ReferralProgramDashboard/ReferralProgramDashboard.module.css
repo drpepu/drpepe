@@ -23,9 +23,10 @@
 }
 .referral_program_dashboard_box{
 
-    flex: 1 1 220px; 
-    max-width: 250px; 
-    min-width: 150px; 
+    flex: 1 1 0px; 
+  
+
+   
     padding: 16px;
 
     text-align: center;
@@ -60,8 +61,8 @@
     }
     .referral_program_dashboard_box {
         
-        max-width: 100px;
-        min-width: 100px;
+        max-width: 95px;
+        min-width: 95px;
  
     }
     .referral_program_dashboard_box_description{
