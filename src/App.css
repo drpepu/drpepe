@@ -20,7 +20,19 @@ html {
     --padding-button-input-mobile: 5.2vw;
     --padding-small-mobile:4vw;
 
+    --margin-small-desktop: 2vw;
+    --margin-big-desktop:6vw;
+
+    --margin-big-mobile:10vw;
+
+    --font-size-small-desktop: 1vw;
+    --font-size-big-big-desktop: 4vw;
+
+    --font-size-small-mobile: 2vw;
     --font-size-medium-mobile: 4vw;
+    --font-size-big-mobile: 6vw;
+
+    --font-size-big-big-mobile: 15vw;
 
   }  
   
