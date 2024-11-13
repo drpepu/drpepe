@@ -152,6 +152,8 @@ const SocialTaskTwitter = () => {
 
 
                 </div>
+                <div className={styles.SocialTaskTwitter_read_instructions}>📖</div>
+
             </div>
         </div>
     );

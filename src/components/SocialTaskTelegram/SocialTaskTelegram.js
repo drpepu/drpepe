@@ -195,9 +195,9 @@ const SocialTaskTelegram = () => {
 
                         <li className={styles.SocialTaskTelegram_li}>{t('social_task_telegram_step_3')}<strong><a className={styles.SocialTaskTelegram_link} href="https://telegram.me/userinfobot" target="_blank" rel="noopener noreferrer">this Telegram bot</a></strong> {t('social_task_telegram_step_3_1')}</li>
                         <li className={styles.SocialTaskTelegram_li}>{t('social_task_telegram_step_4')}</li>
-
                     </ul>
                 </div>
+                <div className={styles.SocialTaskTelegram_read_instructions}>📖</div>
             </div>
         </div>
     );
