@@ -88,6 +88,31 @@
     "referral_header_text_three_a":"Verify your Telegram and X accounts for ",
     "referral_header_text_three_b":"points each.",
 
+    "referral_program_title":"GENERATE REFERRAL LINK",
+    "social_task_title":"SOCIAL TASKS",
+
+
+
+    "social_task_telegram_guide_description": "Description",
+    "social_task_telegram_guide_description_text": "Join DrPepe.ai on Telegram and earn points that convert to $DRP.",
+    "social_task_telegram_guide_guide": "Guide",
+    "social_task_telegram_step_1": "1. Join ",
+    "social_task_telegram_step_2": "2. Enter your Telegram ID to confirm your membership.",
+    "social_task_telegram_step_3": "3. If you don't know your Telegram ID, use ",
+    "social_task_telegram_step_3_1": "to get your ID.",
+    "social_task_telegram_step_4": "4. Green arrow = member & points. Grey = check ID & follow. Red X = invalid ID or not following.",
+
+
+    "social_task_twitter_guide_description": "Description",
+    "social_task_twitter_guide_description_text_1": "Follow",
+    "social_task_twitter_guide_description_text_2": "and earn points that convert to $DRP.",
+    "social_task_twitter_guide_guide": "Guide",
+    "social_task_twitter_step_1": "1. Enter your X handle in the input box.",
+    "social_task_twitter_step_2": "2. Ensure your wallet is connected.",
+    "social_task_twitter_step_3": "3. Click \"Verify X\" to link your X handle to your wallet.",
+    "social_task_twitter_step_4": "4. Points will be granted automatically after you save your handle.",
+    "social_task_twitter_step_5": "5. If you unfollow, the points will be removed.",
+
 
     "leaderboard_referral_header_text_one":"REFERRAL LEADERBOARD",
     "leaderboard_referral_header_text_two":"TRACK THE TOP PERFORMERS AND SEE WHERE YOU RANK. ",

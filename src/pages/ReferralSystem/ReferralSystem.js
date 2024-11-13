@@ -39,11 +39,11 @@ function ReferralSystem() {
           <WalletMultiButton className={styles.walletButton} onClick={handleWalletClick} /> 
         </div>
       </div>
-<ReferralProgramDashboard />
-      <div className={styles.referralSystem_block_titles}>GENERATE REFERRAL LINK</div>
+      <ReferralProgramDashboard />
+      <div className={styles.referralSystem_block_titles}>{t('referral_program_title')}</div>
       <GenerateReferralLink />
  
-        <div className={styles.referralSystem_block_titles}>SOCIAL TASKS</div>
+        <div className={styles.referralSystem_block_titles}>{t('social_task_title')}</div>
       <SocialTaskTelelegram />
       <SocialTaskTwitter />
       <div className={styles.leaderboard_cta_container}>

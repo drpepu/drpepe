@@ -7,6 +7,9 @@ import styles from './SocialTaskTwitter.module.css';
 import checkmark_green from '../../Assets/CHECKMARK_ICON_GREEN.svg';
 import checkmark_grey from '../../Assets/CHECKMARK_ICON_GREY.svg';
 
+import { useTranslation } from 'react-i18next';
+
+
 const SocialTaskTwitter = () => {
     const [twitterHandle, setTwitterHandle] = useState('');
     const [loading, setLoading] = useState(false);
@@ -15,6 +18,9 @@ const SocialTaskTwitter = () => {
     const [handleStatus, setHandleStatus] = useState('grey');
     const dropdownRef = useRef(null);
     const { publicKey } = useWallet();
+
+    const { t } = useTranslation();
+
 
     useEffect(() => {
         if (publicKey) {
@@ -130,18 +136,18 @@ const SocialTaskTwitter = () => {
                     className={styles.SocialTaskTwitter_dropdown}
                     style={{ height: 0, overflow: 'hidden' }}
                 >
-                    <strong className={styles.SocialTaskTwitter_p}>Description</strong>
+                    <strong className={styles.SocialTaskTwitter_p}>{t('social_task_twitter_guide_description')}</strong>
                     <ul className={styles.SocialTaskTwitter_ul}>
-                    <li>Follow <strong><a className={styles.SocialTaskTwitter_link} href="https://x.com/drpepeai" target="_blank" rel="noopener noreferrer">DrPepe.ai on X</a></strong>  and earn points that convert to $DRP.</li>
+                    <li>{t('social_task_twitter_guide_description_text_1')}<strong><a className={styles.SocialTaskTwitter_link} href="https://x.com/drpepeai" target="_blank" rel="noopener noreferrer">DrPepe.ai on X</a></strong> {t('social_task_twitter_guide_description_text_2')}.</li>
                         
                     </ul>
-                    <strong className={styles.SocialTaskTwitter_p}>Guide</strong>
+                    <strong className={styles.SocialTaskTwitter_p}>{t('social_task_twitter_guide_guide')}</strong>
                         <ul className={styles.SocialTaskTwitter_ul}>
-                        <li className={styles.SocialTaskTwitter_li}>1 .Enter your X handle in the input box.</li>
-                        <li className={styles.SocialTaskTwitter_li}>2. Ensure your wallet is connected.</li>
-                        <li className={styles.SocialTaskTwitter_li}>3. Click "Save Handle" to link your X handle to your wallet.</li>
-                        <li className={styles.SocialTaskTwitter_li}>4. Points will be granted automatically after you save your handle.</li> 
-                        <li className={styles.SocialTaskTwitter_li}>5. If you unfollow, the points will be removed.</li> 
+                        <li className={styles.SocialTaskTwitter_li}>{t('social_task_twitter_step_1')}</li>
+                        <li className={styles.SocialTaskTwitter_li}>{t('social_task_twitter_step_2')}</li>
+                        <li className={styles.SocialTaskTwitter_li}>{t('social_task_twitter_step_3')}.</li>
+                        <li className={styles.SocialTaskTwitter_li}>{t('social_task_twitter_step_4')}</li> 
+                        <li className={styles.SocialTaskTwitter_li}>{t('social_task_twitter_step_5')}</li> 
                         </ul>
 
 

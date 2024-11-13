@@ -5,7 +5,7 @@ import NotFound from './pages/NotFound/NotFound';
 import Agent from './pages/Agent/Agent';
 import ReferralGraph from './pages/ReferralGraph/ReferralGraph';
 
-import LeaderboardReferrals from './components/LeaderboardReferrals/LeaderboardReferrals';
+import LeaderboardReferrals2 from './components/LeaderboardReferrals/LeaderboardReferrals2'
 
 // Import Solana wallet adapter components
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
@@ -30,7 +30,7 @@ function App() {
               <Route path="/referral-program" element={<ReferralSystem />} />
               <Route path="/referral-graph" element={<ReferralGraph/>} />
               <Route path="/agent" element={<Agent />} />
-              <Route path="/leaderboard" element={<LeaderboardReferrals />} />
+              <Route path="/leaderboard" element={<LeaderboardReferrals2 />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Router>

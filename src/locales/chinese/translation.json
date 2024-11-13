@@ -78,9 +78,34 @@
     "tx_hash": "交易哈希",
     "invite_date": "邀请日期",
    
-    "referral_header_text_one": "推荐计划与奖励",
-    "referral_header_text_two": "为好友和好友的好友",
-    "referral_header_text_three": "通过邀请好友开始赚取积分，赚取 $DRP",
+    "referral_header_text_one":"推荐计划和奖励",
+    "referral_header_text_two_a":"创建并分享您的推荐链接以获取",
+    "referral_header_text_two_b":"DRP积分",
+    "referral_header_text_three_a":"验证您的Telegram和X账号，获得",
+    "referral_header_text_three_b":"点数奖励",
+
+    
+    "referral_program_title": "生成推荐链接",
+    "social_task_title": "社交任务",
+
+    "social_task_telegram_guide_description": "描述",
+    "social_task_telegram_guide_description_text": "加入 DrPepe.ai 的 Telegram 频道，并赚取可转换为 $DRP 的积分。",
+    "social_task_telegram_guide_guide": "指南",
+    "social_task_telegram_step_1": "1. 加入",
+    "social_task_telegram_step_2": "2. 输入您的 Telegram ID 来确认您的会员资格。",
+    "social_task_telegram_step_3": "3. 如果您不知道您的 Telegram ID，可以使用",
+    "social_task_telegram_step_3_1": "来获取您的 ID。",
+    "social_task_telegram_step_4": "4. 绿色箭头 = 会员 & 积分，灰色 = 检查 ID & 跟随，红色 X = 无效的 ID 或未跟随。",
+
+    "social_task_twitter_guide_description": "描述",
+    "social_task_twitter_guide_description_text_1": "关注",
+    "social_task_twitter_guide_description_text_2": "并赚取可转换为 $DRP 的积分。",
+    "social_task_twitter_guide_guide": "指南",
+    "social_task_twitter_step_1": "1. 在输入框中输入您的X用户名。",
+    "social_task_twitter_step_2": "2. 确保您的钱包已连接。",
+    "social_task_twitter_step_3": "3. 点击“验证X”将您的X用户名链接到钱包。",
+    "social_task_twitter_step_4": "4. 保存用户名后，积分将自动发放。",
+    "social_task_twitter_step_5": "5. 如果取消关注，积分将被移除。",
 
     "leaderboard_referral_header_text_one": "推荐排行榜",
     "leaderboard_referral_header_text_two": "跟踪顶尖表现者，看看你排在哪里。",
