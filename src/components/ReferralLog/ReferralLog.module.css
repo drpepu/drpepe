@@ -9,8 +9,8 @@
     margin-top: 2vw;
     margin-bottom: 2vw;
     overflow-x: auto; 
-    height: 85vw;
     text-align: center;
+    height: 100%;
 }
 .referral_table {
     width: 100%;
@@ -61,14 +61,26 @@ tr {
 @media (max-width: 500px) {
 
     .referral_log_main_container {
-        margin-left: 3vw;
-        margin-right: 3vw;
+
         border: 1vw solid var(--tertiary-color);
         margin-top: 5vw;
         text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+
+
+        background-color: transparent;
+        margin-left: 0vw;
+        margin-right: 0vw;
+        padding: 6vw;
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+        border-radius: 1.5vw;
+        margin-top: 10vw;
+        margin-bottom: 2vw;
+        overflow-x: auto; 
+        text-align: center;
+        height: 100%;
+        
+   
 
 
 
@@ -78,12 +90,5 @@ tr {
 
     }
 }
-@media (min-width: 500px) {
-    .referral_log_main_container {
-       height: 30vw;
 
 
-
-    }
-
-}
