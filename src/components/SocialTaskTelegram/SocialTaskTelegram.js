@@ -8,6 +8,7 @@ import styles from './SocialTaskTelegram.module.css';
 import checkmark_green from '../../Assets/CHECKMARK_ICON_GREEN.svg';
 import checkmark_grey from '../../Assets/CHECKMARK_ICON_GREY.svg';
 import xmark_red from '../../Assets/XMARK_ICON.svg';
+import { useTranslation } from 'react-i18next';
 
 const SocialTaskTelegram = () => {
     const [userId, setUserId] = useState('');
@@ -17,6 +18,9 @@ const SocialTaskTelegram = () => {
     const [isWalletConnected, setIsWalletConnected] = useState(false); 
     const [verifiedTelegramId, setVerifiedTelegramId] = useState(''); 
     const dropdownRef = useRef(null);
+
+    const { t } = useTranslation();
+
 
     const { publicKey } = useWallet(); 
 
@@ -180,16 +184,18 @@ const SocialTaskTelegram = () => {
                     className={styles.SocialTaskTelegram_dropdown}
                     style={{ height: 0, overflow: 'hidden' }}
                 >
-                            <strong className={styles.SocialTaskTelegram_p}>Description</strong>
+                    <strong className={styles.SocialTaskTelegram_p}>{t('social_task_telegram_guide_description')}</strong>
                     <ul className={styles.SocialTaskTelegram_ul}>
-                        <li>Join DrPepe.ai on Telegram and earn points that convert to $DRP.</li>
+                        <li>{t('social_task_telegram_guide_description_text')}</li>
                     </ul>
-                    <strong className={styles.SocialTaskTelegram_p}>Guide:</strong>
+                    <strong className={styles.SocialTaskTelegram_p}>{t('social_task_telegram_guide_guide')}</strong>
                     <ul className={styles.SocialTaskTelegram_ul}>
-                        <li className={styles.SocialTaskTelegram_li}>1. Join <strong><a className={styles.SocialTaskTelegram_link} href="https://web.telegram.org/a/#-1002168191894" target="_blank" rel="noopener noreferrer">DrPepe.ai on Telegram</a></strong>.</li>
-                        <li className={styles.SocialTaskTelegram_li}>2. Enter your Telegram ID to confirm your membership.</li>
-                        <li className={styles.SocialTaskTelegram_li}>3. If you don't know your Telegram ID, use <strong><a className={styles.SocialTaskTelegram_link} href="https://telegram.me/userinfobot" target="_blank" rel="noopener noreferrer">this Telegram bot</a></strong> to get your ID.</li>
-                        <li className={styles.SocialTaskTelegram_li}>4. Green arrow = member & points. Grey = check ID & follow. Red X = invalid ID or not following</li>
+                        <li className={styles.SocialTaskTelegram_li}>{t('social_task_telegram_step_1')}<strong><a className={styles.SocialTaskTelegram_link} href="https://web.telegram.org/a/#-1002168191894" target="_blank" rel="noopener noreferrer">DrPepe.ai on Telegram</a></strong>.</li>
+                        <li className={styles.SocialTaskTelegram_li}>{t('social_task_telegram_step_2')}</li>
+
+                        <li className={styles.SocialTaskTelegram_li}>{t('social_task_telegram_step_3')}<strong><a className={styles.SocialTaskTelegram_link} href="https://telegram.me/userinfobot" target="_blank" rel="noopener noreferrer">this Telegram bot</a></strong> {t('social_task_telegram_step_3_1')}</li>
+                        <li className={styles.SocialTaskTelegram_li}>{t('social_task_telegram_step_4')}</li>
+
                     </ul>
                 </div>
             </div>
