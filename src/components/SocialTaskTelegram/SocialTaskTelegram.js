@@ -190,7 +190,7 @@ const SocialTaskTelegram = () => {
                     </ul>
                     <strong className={styles.SocialTaskTelegram_p}>{t('social_task_telegram_guide_guide')}</strong>
                     <ul className={styles.SocialTaskTelegram_ul}>
-                        <li className={styles.SocialTaskTelegram_li}>{t('social_task_telegram_step_1')}<strong><a className={styles.SocialTaskTelegram_link} href="https://web.telegram.org/a/#-1002168191894" target="_blank" rel="noopener noreferrer">DrPepe.ai on Telegram</a></strong>.</li>
+                        <li className={styles.SocialTaskTelegram_li}>{t('social_task_telegram_step_1')}<strong><a className={styles.SocialTaskTelegram_link} href="https://web.telegram.org/a/#-1002428485287" target="_blank" rel="noopener noreferrer">DrPepe.ai on Telegram</a></strong>.</li>
                         <li className={styles.SocialTaskTelegram_li}>{t('social_task_telegram_step_2')}</li>
 
                         <li className={styles.SocialTaskTelegram_li}>{t('social_task_telegram_step_3')}<strong><a className={styles.SocialTaskTelegram_link} href="https://telegram.me/userinfobot" target="_blank" rel="noopener noreferrer">this Telegram bot</a></strong> {t('social_task_telegram_step_3_1')}</li>
