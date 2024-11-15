@@ -11,8 +11,8 @@ function FooterSimple() {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   const openTelegramLink = () => {
-    const mobileLink = 'tg://resolve?domain=drpepeai'; // Telegram mobile link
-    const webLink = 'https://web.telegram.org/a/#-1002428485287'; // Telegram web link
+    const mobileLink = 'tg://resolve?domain=-1002428485287'; 
+    const webLink = 'https://web.telegram.org/a/#-1002428485287'; 
 
     if (isMobile) {
       window.location.href = mobileLink;
