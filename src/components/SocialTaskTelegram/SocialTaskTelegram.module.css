@@ -126,7 +126,10 @@ input[type="number"]::-webkit-inner-spin-button {
         text-align: center;
         width: 100%;
     }
-  
+    .social_task_telegram_link{
+
+        font-size: var(--font-size-medium-mobile);
+    }
     .SocialTaskTelegram_input{
         width: 86.5%;
         margin: 0;
