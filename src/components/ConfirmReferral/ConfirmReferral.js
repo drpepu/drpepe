@@ -33,7 +33,7 @@ const ConfirmReferral = () => {
     const checkForExistingReferral = async () => {
       if (publicKey) {
         const referralsRef = collection(db, 'referrals_two');
-        const q = query(referralsRef, where('userPublicKey', '==', publicKey.toBase58()));
+        const q = query(referralsRef, where('referredPublicKey', '==', publicKey.toBase58()));
         const querySnapshot = await getDocs(q);
         if (!querySnapshot.empty) {
           setAlreadyConfirmed(true);
@@ -70,12 +70,12 @@ const ConfirmReferral = () => {
 
       const signedMessage = await signMessage(encodedMessage);
       const signature = bs58.encode(signedMessage);
-      const userPublicKey = publicKey.toBase58();
+      const referredPublicKey = publicKey.toBase58();
       const referrerPublicKey = referrer;
 
       try {
         await addDoc(collection(db, 'referrals_two'), {
-          userPublicKey,
+          referredPublicKey,
           referrerPublicKey,
           signature,
           timestamp: serverTimestamp(),

@@ -164,7 +164,7 @@ const LeaderboardReferrals = () => {
                               {selectedReferrals[referrer.referrerPublicKey].map((referral, i) => (
                                 <tr key={referral.id}>
                                   <td className={styles.leaderboard_table_td}>{i + 1}</td>
-                                  <td className={styles.leaderboard_table_td}>{truncatePublicKey(referral.userPublicKey)}</td>
+                                  <td className={styles.leaderboard_table_td}>{truncatePublicKey(referral.referredPublicKey)}</td>
                                   <td className={styles.leaderboard_table_td}>{truncatePublicKey(referral.signature)}</td>
                                   <td className={styles.leaderboard_table_td}>{new Date(referral.timestamp?.seconds * 1000).toLocaleString()}</td>
                                 </tr>

@@ -64,7 +64,7 @@
     
     "leaderboard_title": "DrPepe.ai 추천 프로그램 리더보드",
     "loading_leaderboard": "리더보드를 불러오는 중...",
-    "leaderboard_fren_public_key": "친구 (공개 키)",
+    "leaderboard_fren_public_key": "참조자",
     "leaderboard_referrals": "추천 / 포인트",
     "leaderboard_invited_fren": "초대한 친구",
     "leaderboard_tx_hash": "트랜잭션 해시",

@@ -80,7 +80,7 @@ const ReferralLog = () => {
           {referrals.map((referral, index) => (
             <tr key={referral.id}>
               <td>{index + 1}</td>
-              <td>{truncatePublicKey(referral.userPublicKey)}</td>
+              <td>{truncatePublicKey(referral.referredPublicKey)}</td>
               <td>{truncatePublicKey(referral.referrerPublicKey)}</td>
               <td>{truncatePublicKey(referral.signature)}</td>
               <td>{new Date(referral.timestamp?.seconds * 1000).toLocaleString()}</td>

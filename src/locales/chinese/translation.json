@@ -63,7 +63,7 @@
     
     "leaderboard_title": "DrPepe.ai 推荐计划排行榜",
     "loading_leaderboard": "正在加载排行榜...",
-    "leaderboard_fren_public_key": "朋友（公钥）",
+    "leaderboard_fren_public_key": "推荐人",
    "leaderboard_referrals": "推荐 / 积分",
     "leaderboard_invited_fren": "被邀请的朋友",
     "leaderboard_tx_hash": "交易哈希",
