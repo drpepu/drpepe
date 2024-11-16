@@ -4,7 +4,6 @@ import Header from '../../components/Header/Header';
 import FooterSimple from '../../components/FooterSimple/FooterSimple';
 import ReferralGraphLineChart from './ReferralGraphLineChart';
 import ReferralGraphsHeader from '../../components/ReferralGraphsHeader/ReferralGraphsHeader';
-import ReferralLinksList from '../../components/ReferralLinkList/ReferralLinkList'
 
 
 
@@ -24,7 +23,8 @@ function ReferralGraph() {
     
       <div className={styles.chartContainer}>
         <ReferralGraphLineChart />
-        <ReferralLinksList />
+
+
 
       </div>
       <FooterSimple />
