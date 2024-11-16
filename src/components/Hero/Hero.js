@@ -15,7 +15,7 @@ function Hero() {
   };
 
   const openTelegramLink = () => {
-    const mobileLink = 'tg://resolve?domain=-DrPepe.ai'; 
+    const mobileLink = 'tg://resolve?domain=drpepeaiOFFICIAL'; 
     const webLink = 'https://web.telegram.org/a/#-1002428485287'; // Telegram web link
 
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
