@@ -111,7 +111,6 @@ const SocialTaskTelegram = () => {
         }
     };
     
-
     const toggleDropdown = () => {
         if (isDropdownOpen) {
             gsap.to(dropdownRef.current, { height: 0, duration: 0.5, ease: 'power3.inOut' });
@@ -129,6 +128,23 @@ const SocialTaskTelegram = () => {
         } else {
             return checkmark_grey; 
         }
+    };
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    const openTelegramLink = () => {
+        const mobileLink = 'tg://resolve?domain=drpepeaiOFFICIAL'; 
+        const webLink = 'https://web.telegram.org/a/#-1002428485287'; 
+
+        if (isMobile) {
+        window.location.href = mobileLink;
+        } else {
+        window.open(webLink, '_blank', 'noopener noreferrer');
+        }
+    };
+
+    const openXLink = () => {
+        const webLink = 'https://x.com/drpepeai'; 
+        window.open(webLink, '_blank', 'noopener noreferrer');
     };
 
     return (
@@ -190,7 +206,14 @@ const SocialTaskTelegram = () => {
                     </ul>
                     <strong className={styles.SocialTaskTelegram_p}>{t('social_task_telegram_guide_guide')}</strong>
                     <ul className={styles.SocialTaskTelegram_ul}>
-                        <li className={styles.SocialTaskTelegram_li}>{t('social_task_telegram_step_1')}<strong><a className={styles.SocialTaskTelegram_link} href="https://web.telegram.org/a/#-1002428485287" target="_blank" rel="noopener noreferrer">DrPepe.ai on Telegram</a></strong>.</li>
+                        <li className={styles.SocialTaskTelegram_li}>{t('social_task_telegram_step_1')}
+                            
+                        <button onClick={openTelegramLink} className={styles.social_task_telegram_link} aria-label="Open Telegram chat">DrPepe.ai on Telegram</button>
+
+                            
+                            
+                            
+                         .</li>
                         <li className={styles.SocialTaskTelegram_li}>{t('social_task_telegram_step_2')}</li>
 
                         <li className={styles.SocialTaskTelegram_li}>{t('social_task_telegram_step_3')}<strong><a className={styles.SocialTaskTelegram_link} href="https://telegram.me/userinfobot" target="_blank" rel="noopener noreferrer">this Telegram bot</a></strong> {t('social_task_telegram_step_3_1')}</li>
