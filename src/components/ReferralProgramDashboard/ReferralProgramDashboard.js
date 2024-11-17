@@ -5,6 +5,7 @@ import { db } from '../../firebase';
 import gsap from 'gsap';
 import styles from './ReferralProgramDashboard.module.css';
 import ReferralLog from '../ReferralLog/ReferralLog';
+import pepebestfren from '../../Assets/DRPEPEBESTFREN.svg';
 
 const ReferralProgramDashboard = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -115,6 +116,7 @@ const ReferralProgramDashboard = () => {
                     <div className={styles.referral_program_dashboard_box_total}>
                         {publicKey ? totalDRPPoints : 0}  {/* Sum the points */}
                     </div>
+                    <img src={pepebestfren} alt='pepebestfren' className={styles.referral_program_dashboard_img_bestfren}></img>
                 </div>
 
             </div>

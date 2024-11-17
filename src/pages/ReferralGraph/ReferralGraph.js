@@ -2,8 +2,11 @@ import React from 'react';
 import styles from './referral_graph.module.css';
 import Header from '../../components/Header/Header';
 import FooterSimple from '../../components/FooterSimple/FooterSimple';
-import ReferralGraphLineChart from './ReferralGraphLineChart';
+import DailyReferralsGraph from './ReferralsDaily';
 import ReferralGraphsHeader from '../../components/ReferralGraphsHeader/ReferralGraphsHeader';
+import ReferralLinksList from '../../components/ReferralLinkList/ReferralLinkList';
+import CumulativeReferralsGraph from './ReferralsCumulative'
+
 
 
 
@@ -22,7 +25,9 @@ function ReferralGraph() {
       </div>
     
       <div className={styles.chartContainer}>
-        <ReferralGraphLineChart />
+        <ReferralLinksList />
+        <DailyReferralsGraph />
+        <CumulativeReferralsGraph />
 
 
 

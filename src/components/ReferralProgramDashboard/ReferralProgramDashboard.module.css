@@ -6,7 +6,7 @@
     padding-right: 6vw;
 
     border-bottom: 0.3vw solid var(--tertiary-color);
-    margin-top: var(--margin-small-desktop);
+    margin-top:7vw;
     margin-bottom: var(--margin-big-desktop);
 }
 .referral_program_dashboard_main_container:hover{
@@ -25,16 +25,12 @@
     justify-content: center;
 }
 .referral_program_dashboard_box{
-
-    flex: 1 1 0px; 
-  
-
-   
+    flex: 1 1 0px;
     padding: 16px;
-
     text-align: center;
     display: flex;
     flex-direction: column-reverse;
+    position: relative;
 }
 .referral_program_dashboard_box_description{
     font-size: var( --font-size-small-desktop);
@@ -44,6 +40,13 @@
     font-size:var(  --font-size-big-big-desktop);
     color: var(--primary-color);
     font-weight: bold;
+}
+.referral_program_dashboard_img_bestfren{
+    width: 10vw;
+    height: auto;
+    position: absolute;
+    bottom: -5px;
+    right: -40px;
 }
 
 
@@ -76,6 +79,9 @@
     .referral_program_dashboard_box_total{
         font-size:var(  --font-size-big-big-mobile);
      
+    }
+    .referral_program_dashboard_img_bestfren{
+  display: none;
     }
 
 }

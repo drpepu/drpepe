@@ -3,6 +3,7 @@
     margin-top: 2vw;
     overflow-x: auto; 
     margin-bottom: 2vw;
+
 }
 .sub_table{
     width: 100%;
@@ -43,12 +44,25 @@
 .leaderboard_table_th{
     border-radius: 0 ;
     border: 1px solid rgb(227, 227, 227);
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
+    padding: 12px;
 
 }
 .leaderboard_inner_td {
     border: 0;
     padding: 0;
+    background-color: var(--secondary-color) ;
+    color:var(--tertiary-color) ;
 
+
+}
+.leaderboard_table_td{
+    background-color: var(--secondary-color) ;
+    color:var(--tertiary-color) ;
+    padding: 12px;
+    font-weight: 600;
+    text-align: center;
 }
 .leaderboard_main_container::-webkit-scrollbar {
     height: 8px;

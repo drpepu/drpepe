@@ -149,9 +149,9 @@ const LeaderboardReferrals2 = () => {
                   <tr>
                     <th className={`${styles.leaderboard_table_th} ${styles.leaderboard_table_space}`}>Position</th>
                     <th className={styles.leaderboard_table_th}>{t('leaderboard_fren_public_key')}</th>
-                    <th className={styles.leaderboard_table_th}>{t('leaderboard_referrals')}</th>
-                    <th className={styles.leaderboard_table_th}>Telegram Points</th>
                     <th className={styles.leaderboard_table_th}>Twitter Points</th>
+                    <th className={styles.leaderboard_table_th}>Telegram Points</th>
+                    <th className={styles.leaderboard_table_th}>{t('leaderboard_referrals')}</th>
                     <th className={styles.leaderboard_table_th}>Total Points</th>
                   </tr>
                 </thead>
@@ -160,9 +160,9 @@ const LeaderboardReferrals2 = () => {
                     <tr key={referrer.referrerPublicKey}>
                       <td className={styles.leaderboard_table_td}>{index + 1}</td>
                       <td className={styles.leaderboard_table_td}>{truncatePublicKey(referrer.referrerPublicKey)}</td>
-                      <td className={styles.leaderboard_table_td}>{referrer.referralCount}</td>
                       <td className={styles.leaderboard_table_td}>{referrer.telegramVerified ? 10 : 0}</td>
                       <td className={styles.leaderboard_table_td}>{referrer.twitterVerified ? 10 : 0}</td>
+                      <td className={styles.leaderboard_table_td}>{referrer.referralCount}</td>
                       <td className={styles.leaderboard_table_td}>{referrer.points}</td>
                     </tr>
                   ))}
