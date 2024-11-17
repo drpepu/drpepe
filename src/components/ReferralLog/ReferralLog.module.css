@@ -19,19 +19,19 @@
     border-spacing: 1rem 2rem;
     min-width: 600px; 
 }
-th, td {
+.referral_log_th, .referral_log_td {
     padding: 12px;
     text-align: center;
     white-space: nowrap; 
 }
-th {
+.referral_log_th {
     background-color: #f2f2f2;
     font-weight: bold;
     border-radius: 30vw;
     border-bottom: 1px solid #ddd;
     color: var(--secondary-color);
 }
-td {
+.referral_log_td {
     border: 3px solid var(--tertiary-color);
     border-radius: 30vw;
     padding: 12px;
@@ -39,7 +39,7 @@ td {
     color: var(--tertiary-color);
     font-weight: 600;
 }
-tr {
+.referral_log_tr {
     margin-bottom: 3rem;
 }
 
