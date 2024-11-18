@@ -5,7 +5,10 @@ import FooterSimple from '../../components/FooterSimple/FooterSimple';
 import DailyReferralsGraph from './ReferralsDaily';
 import ReferralGraphsHeader from '../../components/ReferralGraphsHeader/ReferralGraphsHeader';
 import ReferralLinksList from '../../components/ReferralLinkList/ReferralLinkList';
-import CumulativeReferralsGraph from './ReferralsCumulative'
+import CumulativeReferralsGraph from './ReferralsCumulative';
+
+import ReferralNetwork2 from './ReferralNetwork2';
+
 
 
 
@@ -28,6 +31,8 @@ function ReferralGraph() {
         <ReferralLinksList />
         <DailyReferralsGraph />
         <CumulativeReferralsGraph />
+      
+        <ReferralNetwork2 />
 
 
 

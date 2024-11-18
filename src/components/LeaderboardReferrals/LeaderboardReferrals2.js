@@ -39,7 +39,7 @@ const LeaderboardReferrals2 = () => {
   const [leaderboard, setLeaderboard] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [visibleCount, setVisibleCount] = useState(10); // Number of items to display initially
+  const [visibleCount, setVisibleCount] = useState(10); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -159,7 +159,7 @@ const LeaderboardReferrals2 = () => {
                   {leaderboardToShow.map((referrer, index) => (
                     <tr key={referrer.referrerPublicKey}>
                       <td className={styles.leaderboard_table_td}>{index + 1}</td>
-                      <td className={styles.leaderboard_table_td}>{truncatePublicKey(referrer.referrerPublicKey)}</td>
+                      <td className={styles.leaderboard_table_td}>{referrer.referrerPublicKey}</td>
                       <td className={styles.leaderboard_table_td}>{referrer.telegramVerified ? 10 : 0}</td>
                       <td className={styles.leaderboard_table_td}>{referrer.twitterVerified ? 10 : 0}</td>
                       <td className={styles.leaderboard_table_td}>{referrer.referralCount}</td>
