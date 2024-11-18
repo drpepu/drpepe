@@ -69,7 +69,87 @@
 }
 
 
- 
+
+
+.referral_network_container{
+  margin-left: 6vw;
+  margin-right: 6vw;
+}
+.referral_network_title{
+  color: var(--primary-color);
+  font-size: 1.4vw;
+}
+.input_btn_referral_network_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.input_container{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+.searchBar {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.general_btn{
+
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-left: 1rem;
+
+}
+.referral_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.referral_table th,
+.referral_table td {
+  border: 1px solid #ddd;
+  padding: 4px 8px; /* Reduced padding for tight content */
+  text-align: left;
+  white-space: nowrap; /* Prevent content from wrapping */
+  overflow: hidden; /* Hide overflowing content */
+  text-overflow: ellipsis; /* Show ellipsis (...) for overflowing text */
+  width: 1%; /* Allow columns to shrink-wrap around the content */
+}
+
+.referral_table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  width: 1%; /* Ensure header cells adjust to content width */
+}
+
+.referral_table tr {
+  background-color: #ebebeb;
+}
+
+.referral_table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.referral_list_pagination {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+
+
+
+
+
+
  
   @media ( width <= 500px ){
     .referral_graph_container {
@@ -82,6 +162,13 @@
     }
     .chartContainer {
       margin-top:300px; 
+    }
+    .referral_network_container {
+      display: none;
+    }
+    #network {
+      width: 100%;
+      height: 100%; 
     }
     
   }
