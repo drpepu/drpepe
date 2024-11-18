@@ -25,9 +25,12 @@ const fetchReferralTree = async (rootReferrer, nodes, edges, addedNodeIds, setPo
     });
 
     let totalPoints = 0;
-    let levelCounts = [0, 0, 0]; // Level 1, Level 2, Level 3+
+    let levelCounts = [0, 0]; // Level 1, Level 2
+    const level2ReferralsSet = new Set(); // Set to track unique Level 2 referrals
 
     const addNodesAndEdges = (referrer, level = 0) => {
+      if (level > 1) return; // Stop adding nodes and edges after Level 2
+
       const referredList = referralMap.get(referrer) || [];
 
       referredList.forEach((referredPublicKey) => {
@@ -62,16 +65,14 @@ const fetchReferralTree = async (rootReferrer, nodes, edges, addedNodeIds, setPo
           width: 2,
         });
 
-        // Calculate points and count referrals at each level
+        // Adjust the points calculation for each level
         if (level === 0) {
           totalPoints += 1; // Level 1: 1 point
           levelCounts[0] += 1;
-        } else if (level === 1) {
-          totalPoints += 1; // Level 2: 1 points
+        } else if (level === 1 && !level2ReferralsSet.has(referredPublicKey)) {
+          totalPoints += 0.5; // Level 2: 0.5 points
           levelCounts[1] += 1;
-        } else {
-          totalPoints += 1; // Level 3+: 1 points
-          levelCounts[2] += 1;
+          level2ReferralsSet.add(referredPublicKey); // Track this referral
         }
 
         addNodesAndEdges(referredPublicKey, level + 1);
@@ -91,7 +92,8 @@ const fetchReferralTree = async (rootReferrer, nodes, edges, addedNodeIds, setPo
 
     addNodesAndEdges(rootReferrer);
 
-    setPointsAndCounts({ totalPoints, levelCounts });
+    setPointsAndCounts({ totalPoints, levelCounts: [...levelCounts] });
+
   } catch (error) {
     console.error('Error fetching referral tree:', error);
   }
@@ -138,12 +140,11 @@ const createReferralNetwork = async (rootReferrer, setPointsAndCounts, networkRe
       },
       physics: false,
       interaction: {
-        zoomView: false, 
-        dragView: true, 
-      }
+        zoomView: false,
+        dragView: true,
+      },
     };
 
- 
     const network = new Network(container, data, options);
     networkRef.current = network;
 
@@ -153,11 +154,13 @@ const createReferralNetwork = async (rootReferrer, setPointsAndCounts, networkRe
         const fullPublicKey = nodeIdToFullKeyMap.get(nodeId);
 
         if (fullPublicKey) {
-          navigator.clipboard.writeText(fullPublicKey).then(() => {
-            alert(`Public key copied: ${fullPublicKey}`);
-          }).catch((err) => {
-            console.error('Failed to copy public key: ', err);
-          });
+          navigator.clipboard.writeText(fullPublicKey)
+            .then(() => {
+              alert(`Public key copied: ${fullPublicKey}`);
+            })
+            .catch((err) => {
+              console.error('Failed to copy public key: ', err);
+            });
         }
       }
     });
@@ -168,8 +171,8 @@ const createReferralNetwork = async (rootReferrer, setPointsAndCounts, networkRe
 
 const ReferralNetwork = () => {
   const [referrerKey, setReferrerKey] = useState('DVU7D8q9VFhbv8ZYH5rixTknrxQwg2JALxDdVwiLcqtu');
-  const [pointsAndCounts, setPointsAndCounts] = useState({ totalPoints: 0, levelCounts: [0, 0, 0] });
-  const networkRef = useRef(null); 
+  const [pointsAndCounts, setPointsAndCounts] = useState({ totalPoints: 0, levelCounts: [0, 0] });
+  const networkRef = useRef(null);
 
   const handleInputChange = (event) => {
     setReferrerKey(event.target.value);
@@ -183,75 +186,69 @@ const ReferralNetwork = () => {
   const handleZoomIn = () => {
     if (networkRef.current) {
       const scale = networkRef.current.getScale();
-      networkRef.current.moveTo({ scale: scale * 1.2 }); 
+      networkRef.current.moveTo({ scale: scale * 1.2 });
     }
   };
 
   const handleZoomOut = () => {
     if (networkRef.current) {
       const scale = networkRef.current.getScale();
-      networkRef.current.moveTo({ scale: scale / 1.2 }); 
+      networkRef.current.moveTo({ scale: scale / 1.2 });
     }
   };
 
   useEffect(() => {
     createReferralNetwork(referrerKey, setPointsAndCounts, networkRef);
-  }, []);
+  }, [referrerKey, setPointsAndCounts]);
 
   return (
     <div className={styles.referral_network_container}>
       <h2 className={styles.referral_network_title}>REFERRAL MULTILEVEL REWARDS</h2>
 
       <div className={styles.input_btn_referral_network_container}>
+        <div className={styles.input_container}>
+          <input
+            type="text"
+            value={referrerKey}
+            onChange={handleInputChange}
+            placeholder="Enter referrer public key"
+            className={styles.searchBar}
+          />
+          <button onClick={handleGenerateGraph} className={styles.general_btn}>
+            Generate Graph
+          </button>
+        </div>
 
-            <div className={styles.input_container}>
-              <input
-                type="text"
-                value={referrerKey}
-                onChange={handleInputChange}
-                placeholder="Enter referrer public key"
-                className={styles.searchBar}
-              />
-              <button onClick={handleGenerateGraph} className={styles.general_btn}>
-                Generate Graph
-              </button>
-            </div>
-
-            <div className={styles.zoom_controls}>
-              <button onClick={handleZoomIn} className={styles.general_btn}>
-                Zoom In
-              </button>
-              <button onClick={handleZoomOut} className={styles.general_btn}>
-                Zoom Out
-              </button>
-            </div>
-
+        <div className={styles.zoom_controls}>
+          <button onClick={handleZoomIn} className={styles.general_btn}>
+            Zoom In
+          </button>
+          <button onClick={handleZoomOut} className={styles.general_btn}>
+            Zoom Out
+          </button>
+        </div>
       </div>
 
       <div id="network" style={{ width: '100%', height: '500px', border: '1px solid #ADFF00' }}></div>
-      
+
       <div className="customTableContainer">
-          <table className={styles.referral_table}>
+        <table className={styles.referral_table}>
           <thead>
             <tr>
               <th>Level 1 Referrals</th>
               <th>Level 2 Referrals</th>
-              <th>Level 3+ Referrals</th>
               <th>Total Points</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>{pointsAndCounts.levelCounts[0]} (1 point each)</td>
-              <td>{pointsAndCounts.levelCounts[1]} (1 points each)</td>
-              <td>{pointsAndCounts.levelCounts[2]} (1 points each)</td>
+              <td>{pointsAndCounts.levelCounts[1]} (0.5 points each)</td>
               <td>{pointsAndCounts.totalPoints}</td>
             </tr>
           </tbody>
         </table>
-
       </div>
-
     </div>
   );
 };
