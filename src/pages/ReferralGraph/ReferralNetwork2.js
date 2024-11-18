@@ -242,8 +242,8 @@ const ReferralNetwork = () => {
           </thead>
           <tbody>
             <tr>
-              <td>{pointsAndCounts.levelCounts[0]} (1 point each)</td>
-              <td>{pointsAndCounts.levelCounts[1]} (0.5 points each)</td>
+              <td> (1 point each)</td>
+              <td> (0.5 points each)</td>
               <td>{pointsAndCounts.totalPoints}</td>
             </tr>
           </tbody>
