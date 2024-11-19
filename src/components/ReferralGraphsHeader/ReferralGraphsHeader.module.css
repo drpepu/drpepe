@@ -1,41 +1,45 @@
-.leaderboard_referral_header_main_container{
+.referral_graph_referral_header_main_container{
     display: flex;
     flex-direction: row;
     padding-left:6vw ;
     padding-right: 6vw;
 }
-.leaderboard_referral_header_container{
+.referral_graph_referral_header_container{
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.leaderboard_referral_drpepe_img{
+.referral_graph_referral_drpepe_img{
     width: 7vw;
     border: 0.24vw solid var(--primary-color);
     border-radius: 30vw;
 }
-.leaderboard_referral_header_text_container{
+.referral_graph_referral_header_text_container{
     margin-left: 1.6vw;
 }
-.leaderboard_referral_header_text_one, .leaderboard_referral_header_text_two{
+.referral_graph_referral_header_text_one, .referral_graph_referral_header_text_two{
     color: var(--primary-color);
 }
-.leaderboard_referral_header_text_one{
+.referral_graph_referral_header_text_one{
     font-size: 2vw;
     font-weight: 600;
 }
-.leaderboard_referral_header_text_two{
+.referral_graph_referral_header_text_two{
     font-size: 1.2vw;
     font-weight: 500;
+
+
 }
-.leaderboard_referral_header_text_three{
+.referral_graph_referral_header_text_three{
     color: var(--tertiary-color);
     margin-top: 1vw;
     font-size: 1vw;
     font-weight: 500;
 
 }
+
+
 .referralheadermetric{
     color:var(--tertiary-color) !important;
     font-size: 16px;
@@ -47,18 +51,18 @@
     margin-right: 1rem;
   }
 @media ( width <=500px ) {
-    .leaderboard_referral_header_main_container{
+    .referral_graph_referral_header_main_container{
        padding-left:3vw ;
        padding-right: 3vw;
        margin-top: 6vw;
     }
-    .leaderboard_referral_drpepe_img{
+    .referral_graph_referral_drpepe_img{
         display: none;
     }
-    .leaderboard_referral_header_text_one{
+    .referral_graph_referral_header_text_one{
         font-size: 6vw;
     }
-    .leaderboard_referral_header_text_two,.leaderboard_referral_header_text_three{
+    .referral_graph_referral_header_text_two,.referral_graph_referral_header_text_three{
         font-size: 4vw;
     }
 }

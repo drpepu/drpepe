@@ -78,11 +78,14 @@
     "tx_hash": "交易哈希",
     "invite_date": "邀请日期",
    
-    "referral_header_text_one":"推荐计划和奖励",
-    "referral_header_text_two_a":"创建并分享您的推荐链接以获取",
-    "referral_header_text_two_b":"DRP积分",
-    "referral_header_text_three_a":"验证您的Telegram和X账号，获得",
-    "referral_header_text_three_b":"点数奖励",
+    "referral_header_text_one": "多级推荐计划和奖励",
+    "referral_header_text_two_a": "分享您的推荐链接以获得",
+    "referral_header_text_two_b": "DRP 积分。",
+    "referral_header_text_two_c": "每当有人分享您的链接时，赚取 0.5 $DRP 积分。",
+
+    "referral_header_text_three_a": "验证您的 Telegram 和 X 账号以获取 ",
+    "referral_header_text_three_b": "每个 $DRP 积分。",
+
 
     
     "referral_program_title": "生成推荐链接",
