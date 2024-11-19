@@ -16,6 +16,7 @@ const fetchReferralTree = async (rootReferrer, nodes, edges, addedNodeIds, setPo
     const querySnapshot = await getDocs(collection(db, 'referrals_two'));
     const referralMap = new Map();
 
+    // Build a referral map from the querySnapshot
     querySnapshot.forEach((doc) => {
       const { referrerPublicKey, referredPublicKey } = doc.data();
       if (!referralMap.has(referrerPublicKey)) {
@@ -25,11 +26,12 @@ const fetchReferralTree = async (rootReferrer, nodes, edges, addedNodeIds, setPo
     });
 
     let totalPoints = 0;
-    let levelCounts = [0, 0]; // Level 1, Level 2
-    const level2ReferralsSet = new Set(); // Set to track unique Level 2 referrals
+    let level1Count = 0;
+    let level2ReferralCount = 0; // Count the total number of Level 2 referrals
 
+    // Helper function to add nodes and edges
     const addNodesAndEdges = (referrer, level = 0) => {
-      if (level > 1) return; // Stop adding nodes and edges after Level 2
+      if (level > 1) return; // Only process up to Level 2
 
       const referredList = referralMap.get(referrer) || [];
 
@@ -65,14 +67,12 @@ const fetchReferralTree = async (rootReferrer, nodes, edges, addedNodeIds, setPo
           width: 2,
         });
 
-        // Adjust the points calculation for each level
+        // Adjust the points and counts for each level
         if (level === 0) {
           totalPoints += 1; // Level 1: 1 point
-          levelCounts[0] += 1;
-        } else if (level === 1 && !level2ReferralsSet.has(referredPublicKey)) {
-          totalPoints += 0.5; // Level 2: 0.5 points
-          levelCounts[1] += 1;
-          level2ReferralsSet.add(referredPublicKey); // Track this referral
+          level1Count += 1;
+        } else if (level === 1) {
+          level2ReferralCount += 1; // Count each Level 2 referral
         }
 
         addNodesAndEdges(referredPublicKey, level + 1);
@@ -90,14 +90,28 @@ const fetchReferralTree = async (rootReferrer, nodes, edges, addedNodeIds, setPo
     });
     addedNodeIds.add(rootReferrer);
 
+    // Start building the referral network
     addNodesAndEdges(rootReferrer);
 
-    setPointsAndCounts({ totalPoints, levelCounts: [...levelCounts] });
+    // Calculate Level 2 points by dividing the count by 2
+    const level2Count = level2ReferralCount / 2;
+    totalPoints += level2Count; // Add Level 2 points to the total
+
+    // Update state with the total points and individual level counts
+    setPointsAndCounts({ totalPoints, levelCounts: [level1Count, level2Count] });
+
+    // Console log the total points and breakdown by level
+    console.log('Total Points:', totalPoints);
+    console.log('Level 1 Points:', level1Count, '(1 point each)');
+    console.log('Level 2 Points:', level2Count, '(0.5 points each)');
 
   } catch (error) {
     console.error('Error fetching referral tree:', error);
   }
 };
+
+
+
 
 const createReferralNetwork = async (rootReferrer, setPointsAndCounts, networkRef) => {
   try {
@@ -242,9 +256,9 @@ const ReferralNetwork = () => {
           </thead>
           <tbody>
             <tr>
-              <td> (1 point each)</td>
-              <td> (0.5 points each)</td>
-              <td>{pointsAndCounts.totalPoints}</td>
+            <td>{pointsAndCounts.levelCounts[0]} (1 point each)</td>
+            <td>{pointsAndCounts.levelCounts[1]} (0.5 points each)</td>
+            <td>{pointsAndCounts.totalPoints}</td>
             </tr>
           </tbody>
         </table>
