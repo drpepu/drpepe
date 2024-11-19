@@ -1,8 +1,13 @@
+.leaderboard_super_container{
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+}
+
 .leaderboard_main_container {
     background-color: transparent;
-    margin-top: 2vw;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
     overflow-x: auto; 
-    margin-bottom: 2vw;
 
 }
 .sub_table{
@@ -35,14 +40,14 @@
     margin: 20px 0;
     border-spacing: 0rem 0rem;
     min-width: 600px; 
+    border-radius: 4px;
 }
 .leaderboard_table_th, .leaderboard_table_td{
-    border-radius: 0 ;
     border: 1px solid var(--tertiary-color);
+    
 
 }
 .leaderboard_table_th{
-    border-radius: 0 ;
     border: 1px solid rgb(227, 227, 227);
     background-color: var(--tertiary-color);
     color: var(--secondary-color);
@@ -72,7 +77,6 @@
 }
 .leaderboard_main_container::-webkit-scrollbar-thumb {
     background-color: var(--primary-color); 
-    border-radius: 10px;
     border: 2px solid #f1f1f1;
 }
 .leaderboard_footer_container{
@@ -88,7 +92,6 @@
 }
 .leaderboard_loadMoreButton{
     padding: 1vw;
-    border-radius: 30vw;
     background-color: var(--secondary-color);
     color: var(--tertiary-color);
     font-size: 1vw;
@@ -108,11 +111,17 @@
 
 
 @media (max-width: 500px) {
+    .leaderboard_super_container{
+        margin-bottom: 15vw;
+    }
+    
+   
     .leaderboard_main_container {
         margin-left: 3vw;
         margin-right: 3vw;
-        margin-top: 10vw;
-        margin-bottom: 10vw;
+        margin-bottom: 3vw;
+        margin-top: 3vw;
+        
     }
     .leaderboard_title{
         font-size: 10vw;
@@ -126,14 +135,23 @@
     
     }
     .leaderboard_loadMoreButton{
-        width: 50%;
+        width: 100%;
         font-size: var(--font-size-medium-mobile);
         margin-right: 0;
         padding: var(--padding-small-mobile);
         margin-bottom: var( --margin-big-desktop);
         margin-bottom: 20vw;
+        margin-right: 3vw;
+        margin-left:3vw;
 
         
+    }
+    .leaderboard_table_th{
+    
+        padding: 0px;
+        padding-left: 6px;
+        padding-right: 6px;
+    
     }
 }
 
