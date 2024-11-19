@@ -51,19 +51,18 @@ function ReferralGraphsHeader() {
   }, []);
 
   return (
-    <div className={styles.leaderboard_referral_header_main_container}>
-      <div className={styles.leaderboard_referral_header_container}>
+    <div className={styles.referral_graph_referral_header_main_container}>
+      <div className={styles.referral_graph_referral_header_container}>
         <img
           src={drpepeheadshot}
           alt='Dr. Pepe Headshot'
-          className={styles.leaderboard_referral_drpepe_img}
+          className={styles.referral_graph_referral_drpepe_img}
         />
-        <div className={styles.leaderboard_referral_header_text_container}>
-          <div className={styles.leaderboard_referral_header_text_one}>
+        <div className={styles.referral_graph_referral_header_text_container}>
+          <div className={styles.referral_graph_referral_header_text_one}>
             {t('referralgraph_header_text_one')}
           </div>
-          <div className={styles.leaderboard_referral_header_text_two}>
-            {t('referralgraph_header_text_two')}
+          <div className={styles.referral_graph_referral_header_text_two}>{t('referralgraph_header_text_two')}
           </div>
 
 

@@ -82,11 +82,15 @@
     "tx_hash": "Tx Hash",
     "invite_date": "Invite Date",
 
-    "referral_header_text_one":"REFERRAL PROGRAM AND REWARDS",
-    "referral_header_text_two_a":"CREATE AND SHARE YOUR REFERRAL LINK FOR",
+    "referral_header_text_one":"MULTI-LEVEL REFERRAL PROGRAM & REWARDS",
+    "referral_header_text_two_a":"SHARE YOUR REFERRAL LINK FOR",
     "referral_header_text_two_b":"DRP POINTS.",
-    "referral_header_text_three_a":"Verify your Telegram and X accounts for ",
-    "referral_header_text_three_b":"points each.",
+    "referral_header_text_two_c":"EARN 0.5 $DRP POINTS FOR EACH PERSON WHO SHARES YOUR LINK.",
+
+
+    "referral_header_text_three_a": "VERIFY YOUR TELEGRAM AND X ACCOUNTS FOR ",
+    "referral_header_text_three_b": "$DRP POINTS EACH.",
+
 
     "referral_program_title":"GENERATE REFERRAL LINK",
     "social_task_title":"SOCIAL TASKS",
