@@ -36,92 +36,99 @@ const LeaderboardReferrals2 = () => {
   const [error, setError] = useState(null);
   const [visibleCount, setVisibleCount] = useState(10);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
-  const [searchTerm, setSearchTerm] = useState(''); // New state for search
+  const [searchTerm, setSearchTerm] = useState(''); 
 
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
         // Fetch referrals data
         const querySnapshot = await getDocs(collection(db, 'referrals_two'));
-        const referralData = querySnapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-
-        // Create referral count map
-        const referralCountMap = referralData.reduce((acc, referral) => {
-          const cleanedReferrerPublicKey = sanitizePublicKey(referral.referrerPublicKey);
-          if (!acc[cleanedReferrerPublicKey]) {
-            acc[cleanedReferrerPublicKey] = 0;
+        const referralMap = new Map();
+  
+        // Build a referral map from the querySnapshot
+        querySnapshot.forEach((doc) => {
+          const { referrerPublicKey, referredPublicKey } = doc.data();
+          if (!referralMap.has(referrerPublicKey)) {
+            referralMap.set(referrerPublicKey, []);
           }
-          acc[cleanedReferrerPublicKey] += 1;
-          return acc;
-        }, {});
-
-        // Fetch all users who completed the social tasks
+          referralMap.get(referrerPublicKey).push(referredPublicKey);
+        });
+  
+        let leaderboardData = [];
+        const addedUserIds = new Set();
+  
+        // Helper function to calculate points for Level 1 and Level 2 referrals
+        const calculateMultiLevelPoints = (referrer) => {
+          let level1Count = 0;
+          let level2Count = 0;
+          const level2ReferralsSet = new Set();
+  
+          const addPoints = (currentReferrer, level = 0) => {
+            if (level > 1) return; 
+  
+            const referredList = referralMap.get(currentReferrer) || [];
+  
+            referredList.forEach((referredPublicKey) => {
+              if (level === 0) {
+                level1Count += 1; 
+              } else if (level === 1 && !level2ReferralsSet.has(referredPublicKey)) {
+                level2Count += 1; 
+                level2ReferralsSet.add(referredPublicKey);
+              }
+  
+              addPoints(referredPublicKey, level + 1);
+            });
+          };
+  
+          addPoints(referrer);
+          return { level1Count, level2Count };
+        };
+  
+        // Includes all unique referrers from both referralMap and social verifications
         const socialQuerySnapshot = await getDocs(collection(db, 'social_verifications'));
-        const socialVerificationData = socialQuerySnapshot.docs.map(doc => ({
-          referrerPublicKey: doc.id,
-          ...doc.data(),
-        }));
-
-        // Use a Map to ensure unique public keys
-        const uniqueUsersMap = new Map();
-
-        // Process social verification data
+        socialQuerySnapshot.docs.forEach((doc) => {
+          const cleanedPublicKey = sanitizePublicKey(doc.id);
+          addedUserIds.add(cleanedPublicKey);
+        });
+  
+        referralMap.forEach((_, referrerPublicKey) => {
+          addedUserIds.add(referrerPublicKey);
+        });
+  
+        // Process each unique referrer and calculate their points
         await Promise.all(
-          socialVerificationData.map(async (socialUser) => {
-            const cleanedPublicKey = sanitizePublicKey(socialUser.referrerPublicKey);
-
-            if (!uniqueUsersMap.has(cleanedPublicKey)) {
-              // Fetch verification status for social tasks
-              const { telegramVerified, twitterVerified } = await fetchVerificationStatus(cleanedPublicKey);
-
-              // Get referral count for this user (default to 0 if no referrals)
-              const referralCount = referralCountMap[cleanedPublicKey] || 0;
-              const points = referralCount + (telegramVerified ? 10 : 0) + (twitterVerified ? 10 : 0);
-
-              uniqueUsersMap.set(cleanedPublicKey, {
+          Array.from(addedUserIds).map(async (publicKey) => {
+            const cleanedPublicKey = sanitizePublicKey(publicKey);
+  
+            // Fetch verification status for social tasks
+            const { telegramVerified, twitterVerified } = await fetchVerificationStatus(cleanedPublicKey);
+  
+            // Calculate multi-level points
+            const { level1Count, level2Count } = calculateMultiLevelPoints(cleanedPublicKey);
+            const referralPoints = level1Count + level2Count * 0.5; // Level 1: 1 point, Level 2: 0.5 points
+  
+            // Calculate total points including social verification points
+            const totalPoints =
+              referralPoints + (telegramVerified ? 10 : 0) + (twitterVerified ? 10 : 0);
+  
+            // Only include users with more than 0 points
+            if (totalPoints > 0) {
+              leaderboardData.push({
                 referrerPublicKey: cleanedPublicKey,
-                referralCount,
-                points,
+                referralCount: level1Count + level2Count / 2, // Divide Level 2 count by 2 bc having issues with the sum
+                points: totalPoints,
                 telegramVerified,
                 twitterVerified,
               });
             }
           })
         );
-
-        // Process referral data for users who haven't been added yet
-        await Promise.all(
-          Object.keys(referralCountMap).map(async (referrerPublicKey) => {
-            const cleanedPublicKey = sanitizePublicKey(referrerPublicKey);
-
-            if (!uniqueUsersMap.has(cleanedPublicKey)) {
-              // Fetch verification status for this user
-              const { telegramVerified, twitterVerified } = await fetchVerificationStatus(cleanedPublicKey);
-
-              const referralCount = referralCountMap[referrerPublicKey];
-              const points = referralCount + (telegramVerified ? 10 : 0) + (twitterVerified ? 10 : 0);
-
-              uniqueUsersMap.set(cleanedPublicKey, {
-                referrerPublicKey: cleanedPublicKey,
-                referralCount,
-                points,
-                telegramVerified,
-                twitterVerified,
-              });
-            }
-          })
-        );
-
-        // Convert the Map values to an array and filter out users with 0 points
-        const filteredLeaderboardData = Array.from(uniqueUsersMap.values()).filter(user => user.points > 0);
-
-        // Sort leaderboard by points (descending order)
-        filteredLeaderboardData.sort((a, b) => b.points - a.points);
-
-        setLeaderboard(filteredLeaderboardData);
+  
+        // Sort leaderboard by points in descending order
+        leaderboardData.sort((a, b) => b.points - a.points);
+  
+        setLeaderboard(leaderboardData);
         setLoading(false);
       } catch (err) {
         console.error('Error fetching leaderboard data:', err);
@@ -129,9 +136,12 @@ const LeaderboardReferrals2 = () => {
         setLoading(false);
       }
     };
-
+  
     fetchData();
   }, []);
+  
+  
+  
 
   // Sorting function
   const sortLeaderboard = (key) => {
