@@ -13,7 +13,7 @@ function Tokenomics() {
 
   const { t } = useTranslation();
   // Set the target date for the countdown.
-const targetDate = new Date("Jan 31, 2025 00:00:00").getTime();
+const targetDate = new Date("Dec 25, 2024 15:00:00").getTime();
 
   // Use the countdown hook to get the time left
   const { days, hours, minutes, seconds } = useCountdown(targetDate);
