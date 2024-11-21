@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Tokenomics.module.css';
-import drpepehi4 from '../../Assets/DRPEPEHI4.svg';
+import drpepehi4 from '../../Assets/DRPEPEHI5_XMAS.svg';
 import drpepehi4left from '../../Assets/DRPEPEHI4LEFT.svg';
 import solanalogotext from '../../Assets/SOLANALOGOTEXT.svg'
 
