@@ -97,21 +97,21 @@
         margin-bottom: 12vw;
         justify-content: flex-end;
     }
-    .footerdark_social_button{
+    .footer_social_button{
         font-size: 4vw;
         padding: 3vw;
         border:0.8vw solid var(--ardrive-color);
     }
-    .footerdark_social_button:hover{
+    .footer_social_button:hover{
         background-color:var(--black-color); 
         color: var(--ardrive-color);
     }
-    .footerdark_buttons_container{
+    .footer_buttons_container{
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        border-top: 0.6vw solid var(--primary-color);
+        border-top: 0.6vw solid var(--ardrive-color);
         padding-top: 6vw;
         padding-bottom: 12vw;
         margin-top: 6vw;
@@ -128,8 +128,8 @@
     }
     .footer_button_one,  .footer_button_two, .footer_button_three{
         background-color: transparent;
-        border:  0.8vw solid var(--primary-color);
-        color: var(--primary-color);
+        border:0.8vw solid var(--ardrive-color);
+        color: var(--tertiary-color);
         font-weight: bold ;
         text-decoration: none;
     }
