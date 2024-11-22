@@ -154,6 +154,14 @@ function Header() {
               Frens
             </Link>
 
+            <Link
+              to="/immortality"
+              className={`${styles.header_sideNavLink} ${location.pathname === '/immortality' ? styles.active : ''}`}
+              onClick={() => toggleMenu('immortality')}
+            >
+             Immortality
+            </Link>
+
 
 
           </div>
