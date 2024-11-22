@@ -13,7 +13,7 @@ function ArDrive() {
     <div className={styles.ardrive_main_container}>
     <iframe
       id="dynamic-iframe"
-      src={process.env.REACT_APP_ARDRIVE_PATH}
+      src="https://ardrive.ar.io/#/drives/3f1b9e91-a572-416f-a08b-384e2d1f33b7?name=DrPepe.ai"
       title="DrPepe.ai Shared Drive"
       style={{ width: "100%", height: "75vh", border: "none",filter:"invert" }}
 
