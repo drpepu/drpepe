@@ -4,6 +4,7 @@ import ReferralSystem from './pages/ReferralSystem/ReferralSystem';
 import NotFound from './pages/NotFound/NotFound';
 import Agent from './pages/Agent/Agent';
 import ReferralGraph from './pages/ReferralGraph/ReferralGraph';
+import ArDrive from './pages/ArDrive/Ardrive';
 
 import LeaderboardReferrals2 from './components/LeaderboardReferrals/LeaderboardReferrals2'
 
@@ -30,6 +31,7 @@ function App() {
               <Route path="/referral-program" element={<ReferralSystem />} />
               <Route path="/referral-graph" element={<ReferralGraph/>} />
               <Route path="/agent" element={<Agent />} />
+              <Route path="/immortality" element={<ArDrive />} />
               <Route path="/leaderboard" element={<LeaderboardReferrals2 />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

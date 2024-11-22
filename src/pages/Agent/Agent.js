@@ -4,6 +4,7 @@ import styles from './agent.module.css';
 import Header from '../../components/Header/Header';
 import FooterSimple from '../../components/FooterSimple/FooterSimple';
 
+
 function Agent() {
 
 
@@ -18,6 +19,7 @@ function Agent() {
         className={styles.agent_iframe}
       ></iframe>
     </div>
+
     <FooterSimple/>
     </>
   );
