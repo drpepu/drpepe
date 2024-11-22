@@ -106,8 +106,15 @@ function HeaderDark() {
 
           <Link className={styles.header_link} to="/">
             <div className={styles.header_container_headshot_title}>
+             
+             
               <img src={pepeheadshot} alt="dr pepe headshot" className={styles.mobile_pepe_headshot} />
-              <div className={styles.mobile_pepe_title}>DrPepe.ai</div>
+
+              
+              <div className={styles.header_title_imm_container}>
+                <div className={styles.mobile_pepe_title}>DrPepe.ai</div>
+                <span className={styles.header_dark_subText}>Immortality</span>
+              </div>
             </div>
           </Link>
 
@@ -152,6 +159,13 @@ function HeaderDark() {
               onClick={() => toggleMenu('referral-program')}
             >
               Frens
+            </Link>
+            <Link
+              to="/immortality"
+              className={`${styles.header_sideNavLink} ${location.pathname === '/immortality' ? styles.active : ''}`}
+              onClick={() => toggleMenu('immortality')}
+            >
+             Immortality
             </Link>
 
 
