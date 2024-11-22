@@ -1,7 +1,6 @@
 import React from "react";
 import styles from './ardrive.module.css';
 import HeaderDark from '../../components/HeaderDark/HeaderDark';
-import FooterSimpleDark from '../../components/FooterSimpleDark/FooterSimpleDark';
 
 
 function ArDrive() {
@@ -19,7 +18,7 @@ function ArDrive() {
 
     ></iframe>
   </div>
-    <FooterSimpleDark/>
+
     </>
   );
 }
