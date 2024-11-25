@@ -5,6 +5,7 @@ import NotFound from './pages/NotFound/NotFound';
 import Agent from './pages/Agent/Agent';
 import ReferralGraph from './pages/ReferralGraph/ReferralGraph';
 import ArDrive from './pages/ArDrive/Ardrive';
+import Blog from './pages/Blog/Blog'
 
 import LeaderboardReferrals2 from './components/LeaderboardReferrals/LeaderboardReferrals2'
 
@@ -33,6 +34,7 @@ function App() {
               <Route path="/agent" element={<Agent />} />
               <Route path="/immortality" element={<ArDrive />} />
               <Route path="/leaderboard" element={<LeaderboardReferrals2 />} />
+              <Route path="/blog/*" element={<Blog />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Router>
