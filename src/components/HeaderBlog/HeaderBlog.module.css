@@ -25,13 +25,13 @@
     .header_link  {
         text-decoration: none;
       }
-      .header_title_imm_container{
+    .header_title_imm_container{
         display: flex;
         flex-direction: column;
         justify-content: end;
         text-align: end;
       }
-      .header_dark_subText{
+    .header_dark_subText{
         color: var(--primary-color);
         margin-top: 2px;
 

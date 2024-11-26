@@ -13,8 +13,8 @@ const AgingBiology = () => {
           target="_blank"
           rel="noopener noreferrer nofollow"
           href="http://DrPepe.ai"
-          className={styles.blog_link}
-
+          className={styles.blog_inner_link}
+       
         >
           DrPepe.ai
         </a>{" "}

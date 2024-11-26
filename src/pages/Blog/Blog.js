@@ -10,10 +10,14 @@ function Blog() {
     const blogData = [
       {
         id: 1,
-        title: "A complex systems approach to aging biology",
+        category:"Aging",
+        title: "approaching aging biology",
+        author:"Intern",
+        date:"November, 26",
         path: "aging-biology",
         component: <AgingBiology />,
       },
+
     ];
   
     return (
@@ -24,19 +28,27 @@ function Blog() {
           {/* Navigation */}
           <nav className={styles.blog_navigation}>
             <div className={styles.glowBorderr}></div>
-            <h3>Blog</h3>
+            <h3>Articles</h3>
             <ul className={styles.blog_navigation_ui}>
               {blogData.map((blog) => (
                 <li key={blog.id} className={styles.blog_navigation_li}>
                   <Link
                     to={`/blog/${blog.path}`}
-                    style={{
-                      textDecoration: "underline",
-                      cursor: "pointer",
-                    }}
                     className={styles.blog_link}
                   >
-                    {blog.title}
+                    <div className={styles.blog_article_category}>
+                        {blog.category}
+                    </div>
+                    <div className={styles.blog_article_title}>
+                        {blog.title}
+                    </div>
+                    <div className={styles.blog_article_author_date_container}>
+                        <div className={styles.blog_article_author}>
+                            By {blog.author}
+                        </div>
+                        <div className={styles.blog_article_date}>⚕ {blog.date}
+                        </div>
+                    </div>
                   </Link>
                 </li>
               ))}
