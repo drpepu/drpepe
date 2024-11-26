@@ -6,6 +6,9 @@ import patterns from '../../Patterns.module.css';
 import { useTranslation } from 'react-i18next';
 import Header from '../Header/Header';
 import LeaderboardReferralHeader from '../LeaderboardReferralHeader/LeaderboardReferralHeader';
+import CumulativeReferralsGraph from '../../pages/ReferralGraph/ReferralsCumulative';
+import DailyReferralsGraph from '../../pages/ReferralGraph/ReferralsDaily';
+import ReferralNetwork2 from '../../pages/ReferralGraph/ReferralNetwork2'
 import Footer from '../Footer/Footer';
 
 const sanitizePublicKey = (key) => {
@@ -140,9 +143,6 @@ const LeaderboardReferrals2 = () => {
     fetchData();
   }, []);
   
-  
-  
-
   // Sorting function
   const sortLeaderboard = (key) => {
     let direction = 'asc';
@@ -238,6 +238,10 @@ const LeaderboardReferrals2 = () => {
           )}
 
       </section>
+      <ReferralNetwork2 />
+      <DailyReferralsGraph />
+      <CumulativeReferralsGraph />
+
       <Footer />
     </>
   );

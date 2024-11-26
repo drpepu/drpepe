@@ -77,7 +77,7 @@ const CumulativeReferralsGraph = () => {
 
   return (
     <div className={styles.referrals_container}>
-      <div className={styles.referrals_graphs_title}>TOTAL NEW REFERRALS & NEWREFERRERS OVER TIME</div>
+      <div className={styles.referrals_graphs_title}>TOTAL NEW REFERRALS & NEW REFERRERS OVER TIME</div>
       <ResponsiveContainer width="100%" height={600}>
         <LineChart data={cumulativeData} margin={{ top: 10, right: 30, left: 0, bottom: 10 }}>
           <CartesianGrid strokeDasharray="3 3" />

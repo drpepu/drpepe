@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Tokenomics.module.css';
 import drpepehi4 from '../../Assets/DRPEPEHI5_XMAS.svg';
-import drpepehi4left from '../../Assets/DRPEPEHI4LEFT.svg';
+import drpepehi4leftxmas from '../../Assets/DRPEPEHI5LEFT_XMAS.svg';
 import solanalogotext from '../../Assets/SOLANALOGOTEXT.svg'
 
 import { useTranslation } from 'react-i18next';
@@ -55,7 +55,7 @@ const targetDate = new Date("Dec 25, 2024 15:00:00").getTime();
 
       <div className={styles.tokenomics_countdown_main_container}>
         <img src={drpepehi4} className={styles.tokenomics_pepe_image} alt="Tokenomics Pepe" />
-        <img src={drpepehi4left} className={styles.tokenomics_pepe_image_mobile} alt="Tokenomics Pepe" />
+        <img src={drpepehi4leftxmas} className={styles.tokenomics_pepe_image_mobile} alt="Tokenomics Pepe" />
         <div className={styles.tokenomics_tge_title_mobile}>{t('tokenomics_subtitle')}</div>
         <div className={styles.tokenomics_main_countdown_container}>
           <div className={styles.tokenomics_tge_title}>{t('tokenomics_subtitle')}</div>
