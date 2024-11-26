@@ -82,6 +82,7 @@
         justify-content: space-between;
         padding-left: 3vw;
         padding-right: 3vw;
+        padding-top: 12px;
 
     }
     .header_button{
@@ -176,7 +177,7 @@
         border: none;
         text-align: start;
         padding: 0;
-        font-size: 12vw;
+        font-size: 8vw;
  
     }
     .header_sideNavLink.active {

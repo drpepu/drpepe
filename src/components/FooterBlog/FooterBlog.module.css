@@ -81,6 +81,7 @@
 .footer_container{
     padding: 3vw;
     flex-direction: column;
+    overflow-x: hidden;
 
 
 }

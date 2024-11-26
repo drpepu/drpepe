@@ -167,6 +167,13 @@ function HeaderDark() {
             >
              Immortality
             </Link>
+            <Link
+              to="/blog"
+              className={`${styles.header_sideNavLink} ${location.pathname === '/blog' ? styles.active : ''}`}
+              onClick={() => toggleMenu('blog')}
+            >
+             Blog
+            </Link>
 
 
 
