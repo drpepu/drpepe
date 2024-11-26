@@ -3,19 +3,19 @@ import { Routes, Route, Link } from "react-router-dom";
 import styles from './blog.module.css';
 import HeaderBlog from '../../components/HeaderBlog/HeaderBlog';
 import FooterBlog from '../../components/FooterBlog/FooterBlog'
-import AgingBiology from './blogs/aging-biology';
+import BryanJohnson from './blogs/bryan_johnson';
 
 
 function Blog() {
     const blogData = [
       {
         id: 1,
-        category:"Aging",
-        title: "approaching aging biology",
+        category:"Live Forever",
+        title: "Is Bryan Johnson behind DrPepe.ai? The conspiracy…",
         author:"Intern",
-        date:"November, 26",
-        path: "aging-biology",
-        component: <AgingBiology />,
+        date:"November, 24",
+        path: "is-bryan-johnson-behind-drpepeai",
+        component: <BryanJohnson />,
       },
 
     ];
