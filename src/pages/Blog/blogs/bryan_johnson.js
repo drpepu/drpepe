@@ -4,7 +4,8 @@ import styles from '../blog.module.css';
 
 const BryanJohnson = () => {
   return (
-    <div>
+
+<>
       <p>
         <strong>Is Bryan Johnson behind </strong>
         <a target="_blank" rel="noopener noreferrer nofollow" href="http://DrPepe.ai" className={styles.blog_inner_link}>
@@ -82,7 +83,7 @@ const BryanJohnson = () => {
         </p>
       </section>
 
-    </div>
+</>
   );
 };
 
