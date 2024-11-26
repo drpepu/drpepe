@@ -34,6 +34,8 @@
     .header_dark_subText{
         color: var(--primary-color);
         margin-top: 2px;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 800;
 
       }
     .header_container_mobile{
@@ -196,7 +198,7 @@
         border: none;
         text-align: start;
         padding: 0;
-        font-size: 12vw;
+        font-size: 8vw;
  
     }
     .header_sideNavLink.active {
