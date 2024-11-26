@@ -90,6 +90,8 @@
 }
 .blog_inner_link{
     color: var(--tertiary-color);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 @media ( width <= 500px ){
