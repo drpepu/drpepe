@@ -18,8 +18,8 @@ function Blog() {
   
     return (
       <>
-        <HeaderBlog />
   
+        <HeaderBlog />
         <div className={styles.blog_main_container}>
           {/* Navigation */}
           <nav className={styles.blog_navigation}>
