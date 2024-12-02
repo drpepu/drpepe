@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { addSubscriber } from '../../newsletter_service/getResponseService'; 
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../firebase'; // Firebase configuration
 import styles from './Footer.module.css';
 import Modal from './NewsletterModal/Modal'; 
 import { useTranslation } from 'react-i18next';
@@ -15,14 +16,24 @@ function Footer() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!email.trim()) {
+      setMessage('Please enter a valid email.');
+      setShowModal(true);
+      return;
+    }
+
     try {
-      const listId = 'jLWBb'; 
-      await addSubscriber(listId, email); 
+      // Save email to Firestore
+      await addDoc(collection(db, 'newsletter_emails'), {
+        email: email.trim(),
+        timestamp: serverTimestamp(),
+      });
       setMessage('Successfully subscribed!');
       setShowModal(true); 
-  
-      setEmail('');
+      setEmail(''); // Clear the input field
     } catch (error) {
+      console.error('Error saving email to Firestore:', error);
       setMessage('Failed to subscribe. Please try again.');
       setShowModal(true); 
     }
@@ -68,7 +79,9 @@ function Footer() {
               required
               className={styles.footer_newsletter_input}
             />
-            <button type="submit" className={styles.footer_newsletter_form_button}>{t('footer_email_button')}</button>
+            <button type="submit" className={styles.footer_newsletter_form_button}>
+              {t('footer_email_button')}
+            </button>
           </form>
         </div>
       </div>
