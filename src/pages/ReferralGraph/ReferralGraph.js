@@ -29,12 +29,7 @@ function ReferralGraph() {
         <ReferralLinksList />
         <DailyReferralsGraph />
         <CumulativeReferralsGraph />
-      
         <ReferralNetwork2 />
-        
-
-
-
       </div>
       <FooterSimple />
     </>

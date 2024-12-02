@@ -1,5 +1,3 @@
-// File path: src/components/ReferralNetwork.js
-
 import React, { useEffect, useState, useRef } from 'react';
 import { db } from '../../firebase';
 import { collection, getDocs } from 'firebase/firestore';
@@ -16,7 +14,6 @@ const fetchReferralTree = async (rootReferrer, nodes, edges, addedNodeIds, setPo
     const querySnapshot = await getDocs(collection(db, 'referrals_two'));
     const referralMap = new Map();
 
-    // Build a referral map from the querySnapshot
     querySnapshot.forEach((doc) => {
       const { referrerPublicKey, referredPublicKey } = doc.data();
       if (!referralMap.has(referrerPublicKey)) {
@@ -27,9 +24,8 @@ const fetchReferralTree = async (rootReferrer, nodes, edges, addedNodeIds, setPo
 
     let totalPoints = 0;
     let level1Count = 0;
-    let level2ReferralCount = 0; // Count the total number of Level 2 referrals
+    let level2ReferralCount = 0; 
 
-    // Helper function to add nodes and edges
     const addNodesAndEdges = (referrer, level = 0) => {
       if (level > 1) return; // Only process up to Level 2
 
@@ -90,20 +86,14 @@ const fetchReferralTree = async (rootReferrer, nodes, edges, addedNodeIds, setPo
     });
     addedNodeIds.add(rootReferrer);
 
-    // Start building the referral network
     addNodesAndEdges(rootReferrer);
 
     // Calculate Level 2 points by dividing the count by 2
     const level2Count = level2ReferralCount / 2;
-    totalPoints += level2Count; // Add Level 2 points to the total
+    totalPoints += level2Count; 
 
-    // Update state with the total points and individual level counts
     setPointsAndCounts({ totalPoints, levelCounts: [level1Count, level2Count] });
 
-    // Console log the total points and breakdown by level
-    console.log('Total Points:', totalPoints);
-    console.log('Level 1 Points:', level1Count, '(1 point each)');
-    console.log('Level 2 Points:', level2Count, '(0.5 points each)');
 
   } catch (error) {
     console.error('Error fetching referral tree:', error);
