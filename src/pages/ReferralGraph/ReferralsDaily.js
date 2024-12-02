@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './referral_graph.module.css';
 import { db } from '../../firebase';
-import { collection, onSnapshot } from 'firebase/firestore';
+import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import {
   LineChart,
   Line,
@@ -22,31 +22,42 @@ const DailyReferralsGraph = () => {
   const [dailyReferrals, setDailyReferrals] = useState([]);
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(collection(db, 'referrals_two'), (snapshot) => {
-      const dailyReferralsByDate = {};
+    const fetchData = async () => {
+      try {
+        const q = query(
+          collection(db, 'referrals_two'),
+          orderBy('timestamp', 'desc') // Order referrals by date
+        );
+        const snapshot = await getDocs(q);
 
-      snapshot.forEach((doc) => {
-        const data = doc.data();
-        const date = data.timestamp?.toDate().toLocaleDateString();
+        const dailyReferralsByDate = {};
 
-        if (date) {
-          if (!dailyReferralsByDate[date]) {
-            dailyReferralsByDate[date] = 0;
+        snapshot.forEach((doc) => {
+          const data = doc.data();
+          const date = data.timestamp?.toDate().toLocaleDateString();
+
+          if (date) {
+            if (!dailyReferralsByDate[date]) {
+              dailyReferralsByDate[date] = 0;
+            }
+            dailyReferralsByDate[date] += 1;
           }
-          dailyReferralsByDate[date] += 1;
-        }
-      });
+        });
 
-      const dailyDataArray = Object.keys(dailyReferralsByDate)
-        .sort((a, b) => new Date(a) - new Date(b))
-        .map((date) => ({
-          date,
-          referrals: dailyReferralsByDate[date],
-        }));
-      setDailyReferrals(dailyDataArray);
-    });
+        const dailyDataArray = Object.keys(dailyReferralsByDate)
+          .sort((a, b) => new Date(a) - new Date(b))
+          .map((date) => ({
+            date,
+            referrals: dailyReferralsByDate[date],
+          }));
 
-    return () => unsubscribe();
+        setDailyReferrals(dailyDataArray);
+      } catch (error) {
+        console.error('Error fetching daily referrals:', error);
+      }
+    };
+
+    fetchData(); // Fetch data once on component mount
   }, []);
 
   return (
