@@ -43,6 +43,13 @@
     text-align: left;
     padding: 0.6rem;
     text-decoration: none;
+    border-left: 3px solid var(--black-color);
+
+}
+.blog_link:hover{
+   
+    border-left: 3px solid var(--primary-color);
+
 }
 .blog_article_author_date_container{
     display: flex;

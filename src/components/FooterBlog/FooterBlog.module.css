@@ -44,8 +44,12 @@
     text-decoration: none;
 }
 .footer_social_button:hover{
-    background-color:var(--tertiary-color); 
-    color: var(--secondary-color);
+    background-color:transparent; 
+    color: var(--primary-color);
+    border:0.2vw solid var(--primary-color);
+
+
+
 }
 .footer_buttons_container{
     display: none;
