@@ -4,6 +4,7 @@ import styles from './blog.module.css';
 import HeaderBlog from '../../components/HeaderBlog/HeaderBlog';
 import FooterBlog from '../../components/FooterBlog/FooterBlog';
 import BryanJohnson from './blogs/bryan_johnson';
+import BlogMatrixEffect from './components_blog/BlogMatrixEffect'
 
 function Blog() {
   const location = useLocation();
@@ -68,6 +69,11 @@ function Blog() {
 
         {/* Content */}
         <div className={styles.blog_content_main_container}>
+          {location.pathname === '/blog' && (
+            <div className={styles.blog_custom_container}>
+            <BlogMatrixEffect />
+            </div>
+          )}
           <Routes>
             {blogData.map((blog) => (
               <Route

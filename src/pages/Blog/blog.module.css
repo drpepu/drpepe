@@ -82,9 +82,13 @@
     
     background-color: var(--black-color);
 
-
-    
 }
+.blog_custom_container {
+    
+    height: calc(100vh - 21vh);
+    position: relative; 
+    overflow: hidden; 
+  }
 .blog_image_container{
   
     float: left; 
