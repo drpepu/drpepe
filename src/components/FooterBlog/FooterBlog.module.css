@@ -1,8 +1,4 @@
 
-/* Desktop */
-
-
-
 .footer_container{
     max-width: 100vw;
     min-height: 10vh;
@@ -47,9 +43,6 @@
     background-color:transparent; 
     color: var(--primary-color);
     border:0.2vw solid var(--primary-color);
-
-
-
 }
 .footer_buttons_container{
     display: none;
@@ -58,8 +51,6 @@
    color: var(--tertiary-color);
    text-transform: uppercase;
    font-weight: 600;
-
-  
 }
 .footer_copywrite_visible{
     display: none;
@@ -72,14 +63,10 @@
     padding: 10px;
     border-radius: 5px;
   }
-  
-  /* Styles for the active button */
-  .footer_button.active {
+.footer_button.active {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-  }
-
-
+ }
 
 @media ( width <= 500px ){
 .footer_container{
@@ -89,10 +76,6 @@
 
 
 }
-
-
-
-
 .footer_socials_container{
     width: 100%;
     margin-bottom: 12vw;

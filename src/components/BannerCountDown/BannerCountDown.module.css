@@ -1,0 +1,91 @@
+.banner_count_down_container {
+    max-width: 100vw;
+    background-color: var(--tertiary-color);
+    background-image: url("https://www.transparenttextures.com/patterns/lined-paper-2.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5vw;
+    padding-left:6vw;
+    padding-right: 6vw;
+  }
+  
+  .banner_count_down_main_content {
+    width: 100%;
+    height: 3vw; /* Fixed height to prevent jumping */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    overflow: hidden; /* Hide any content outside the fixed area */
+  }
+  
+  .banner_count_down_text,
+  .banner_count_down_dates {
+    position: absolute; /* Prevent layout shift */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+  }
+  
+  .banner_count_down_text {
+    color: var(--secondary-color);
+    font-size: 1.6vw;
+    font-weight: 700;
+  }
+  
+  .banner_count_down_dates {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+    font-size: 2vw;
+  }
+  
+  .banner_count_down_date_box {
+    min-width: calc(100% / 20);
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 1vw;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .banner_count_down_date_box_number {
+    font-size: 1.6vw;
+    font-weight: 700;
+  }
+  
+  /* Visibility styles */
+  .hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media (max-width: 500px) {
+    .banner_count_down_main_content {
+      height: 14vw; /* Adjust height for smaller screens */
+    }
+  
+    .banner_count_down_text {
+      font-size: 4.3vw;
+    }
+  
+    .banner_count_down_date_box {
+      font-size: 4.2vw;
+      padding: 2vw;
+    }
+  
+    .banner_count_down_date_box_number {
+      font-size: 6.2vw;
+    }
+  }
+  
