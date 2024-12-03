@@ -9,6 +9,7 @@ import LeaderboardReferralHeader from '../LeaderboardReferralHeader/LeaderboardR
 import ReferralNetwork2 from '../../pages/ReferralGraph/ReferralNetwork2';
 import DailyReferralsGraph from '../../pages/ReferralGraph/ReferralsDaily';
 import CumulativeReferralsGraph from '../../pages/ReferralGraph/ReferralsCumulative'
+import BannerCountDown from '../BannerCountDown/BannerCountDown';
 
 import Footer from '../Footer/Footer';
 
@@ -131,6 +132,7 @@ const LeaderboardReferrals2 = () => {
 
   return (
     <>
+      <BannerCountDown />
       <Header />
       <LeaderboardReferralHeader />
       <section className={styles.leaderboard_super_container}>
