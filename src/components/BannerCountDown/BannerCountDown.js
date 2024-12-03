@@ -35,8 +35,7 @@ function BannerCountDown() {
           }`}
           
         >
-          
-        
+          🎄
           <div className={styles.banner_count_down_date_box}>
             <div className={styles.banner_count_down_date_box_text}>{t('tokenomics_days')}</div>
             <div className={styles.banner_count_down_date_box_number}>{days}</div>
@@ -53,8 +52,7 @@ function BannerCountDown() {
             <div className={styles.banner_count_down_date_box_text}>{t('tokenomics_seconds')}</div>
             <div className={styles.banner_count_down_date_box_number}>{seconds}</div>
           </div>
-     
-          
+          🎄
         </div>
       </div>
     </div>
