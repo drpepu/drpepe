@@ -69,9 +69,9 @@ function Blog() {
 
         {/* Content */}
         <div className={styles.blog_content_main_container}>
-          {location.pathname === '/blog' && (
+          {location.pathname.startsWith('/blog') && ( 
             <div className={styles.blog_custom_container}>
-            <BlogMatrixEffect />
+              <BlogMatrixEffect />
             </div>
           )}
           <Routes>
@@ -84,7 +84,7 @@ function Blog() {
             ))}
             <Route path="/" />
           </Routes>
-        </div>
+        </div>  
       </div>
       <FooterBlog />
     </>
