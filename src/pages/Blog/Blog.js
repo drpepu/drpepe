@@ -4,6 +4,7 @@ import styles from './blog.module.css';
 import HeaderBlog from '../../components/HeaderBlog/HeaderBlog';
 import FooterBlog from '../../components/FooterBlog/FooterBlog';
 import BryanJohnson from './blogs/bryan_johnson';
+import ContentContest from './blogs/content_contest'
 import BlogMatrixEffect from './components_blog/BlogMatrixEffect'
 
 function Blog() {
@@ -11,6 +12,15 @@ function Blog() {
   const navigate = useNavigate();
   
   const blogData = [
+    {
+      id: 2,
+      category: "Live Forever",
+      title: " 1st Content Contest",
+      author: "Intern",
+      date: "December, 24",
+      path: "content-contest",
+      component: <ContentContest />,
+    },
     {
       id: 1,
       category: "Live Forever",
@@ -29,15 +39,7 @@ function Blog() {
     <>
       <HeaderBlog />
       <div className={styles.blog_main_container}>
-        {/* Back to Blog button */}
-        {isViewingArticle && (
-          <button
-            className={styles.blog_back_button}
-            onClick={() => navigate('/blog')}
-          >
-            ← Back to Blog
-          </button>
-        )}
+  
 
         {/* Conditionally render navigation */}
         {!isViewingArticle && (
@@ -69,6 +71,7 @@ function Blog() {
 
         {/* Content */}
         <div className={styles.blog_content_main_container}>
+    
           {location.pathname === '/blog' && (
             <div className={styles.blog_custom_container}>
             <BlogMatrixEffect />
@@ -85,7 +88,17 @@ function Blog() {
             <Route path="/" />
           </Routes>
         </div>
+                    {/* Back to Blog button */}
+                    {isViewingArticle && (
+          <button
+            className={styles.blog_back_button}
+            onClick={() => navigate('/blog')}
+          >
+            ← Back to Blog
+          </button>
+        )}
       </div>
+      
       <FooterBlog />
     </>
   );
