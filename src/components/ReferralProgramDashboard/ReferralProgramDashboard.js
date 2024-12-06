@@ -4,7 +4,6 @@ import { doc, getDoc, collection, query, where, onSnapshot } from 'firebase/fire
 import { db } from '../../firebase';
 import gsap from 'gsap';
 import styles from './ReferralProgramDashboard.module.css';
-import ReferralLog from '../ReferralLog/ReferralLog';
 import pepebestfren from '../../Assets/DRPEPEBESTFREN.svg';
 
 const ReferralProgramDashboard = () => {
@@ -126,7 +125,6 @@ const ReferralProgramDashboard = () => {
                 className={styles.dropdownContent}
                 style={{ height: 0, overflow: 'hidden' }}
             >
-                <ReferralLog />
             </div>
 
         </div>
