@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { db } from '../../firebase';
 import { collection, getDocs } from 'firebase/firestore';
-import { query, orderBy, limit } from 'firebase/firestore';
-
 import styles from './LeaderboardReferrals.module.css';
 import patterns from '../../Patterns.module.css';
 import { useTranslation } from 'react-i18next';
@@ -21,7 +19,6 @@ const LeaderboardReferrals3 = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [visibleCount, setVisibleCount] = useState(10);
-  const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
@@ -105,21 +102,7 @@ const LeaderboardReferrals3 = () => {
     fetchData();
   }, []);
 
-  // Sorting function
-  const sortLeaderboard = (key) => {
-    let direction = 'asc';
-    if (sortConfig.key === key && sortConfig.direction === 'asc') {
-      direction = 'desc';
-    }
-    setSortConfig({ key, direction });
 
-    const sortedData = [...leaderboard].sort((a, b) => {
-      if (a[key] < b[key]) return direction === 'asc' ? -1 : 1;
-      if (a[key] > b[key]) return direction === 'asc' ? 1 : -1;
-      return 0;
-    });
-    setLeaderboard(sortedData);
-  };
 
   // Handle load more button click
   const handleLoadMore = () => {
