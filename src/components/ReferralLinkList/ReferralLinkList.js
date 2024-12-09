@@ -13,20 +13,15 @@ const ReferralLinksList = () => {
   useEffect(() => {
     const fetchReferralData = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, 'referrals_two'));
-        const data = querySnapshot.docs.map(doc => {
-          const docData = doc.data();
-
-          // Convert timestamp to Date object
-          if (docData.timestamp) {
-            docData.timestamp = docData.timestamp.toDate(); // Convert Firestore Timestamp to JavaScript Date
-          }
-
-          return {
-            id: doc.id, // Include the document ID for uniqueness
-            ...docData, // Spread the document data
-          };
-        });
+        const querySnapshot = await getDocs(collection(db, 'referrals'));
+        const data = querySnapshot.docs.map((doc) => ({
+          id: doc.id, // Document ID (unique per referrer)
+          referrerPublicKey: doc.data().referrerPublicKey,
+          totalReferrals: doc.data().totalReferrals,
+          level1Referrals: doc.data().level1Referrals || 0, // Level 1 referrals
+          level2Referrals: doc.data().level2Referrals || 0, // Level 2 referrals
+          totalPoints: doc.data().totalPoints || 0, // Total points
+        }));
 
         setReferralData(data);
       } catch (err) {
@@ -37,31 +32,9 @@ const ReferralLinksList = () => {
     fetchReferralData();
   }, []);
 
-  // Truncate signature to show first 5 and last 5 characters
-  const truncateSignature = (signature) => {
-    if (signature && signature.length > 10) {
-      return `${signature.slice(0, 5)}...${signature.slice(-5)}`;
-    }
-    return signature;
-  };
-
-
-
-  // Sort function
-  const requestSort = (key) => {
-    let direction = 'asc';
-    if (sortConfig.key === key && sortConfig.direction === 'asc') {
-      direction = 'desc';
-    }
-    setSortConfig({ key, direction });
-  };
-
   // Filter data based on search term
-  const filteredData = referralData.filter(row =>
-    row.id?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    row.referrerPublicKey?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    row.referredPublicKey?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    row.signature?.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredData = referralData.filter((row) =>
+    row.referrerPublicKey?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   // Sort the filtered data
@@ -96,77 +69,48 @@ const ReferralLinksList = () => {
     }
   };
 
-  // Compute unique counts
-  const uniqueIds = new Set(referralData.map(row => row.id));
-  const uniqueReferrers = new Set(referralData.map(row => row.referrerPublicKey));
-  const uniqueReferred = new Set(referralData.map(row => row.referredPublicKey));
-  const uniqueSignatures = new Set(referralData.map(row => row.signature));
-
-  // Calculate the earliest and latest date from referral data
-  const dates = referralData.map(row => row.timestamp).filter(date => date != null); // Only consider valid dates
-
-  const earliestDate = dates.length > 0 ? new Date(Math.min(...dates)) : null;
-  const latestDate = dates.length > 0 ? new Date(Math.max(...dates)) : null;
-
-  const totalDays = earliestDate && latestDate
-    ? Math.floor((latestDate - earliestDate) / (1000 * 60 * 60 * 24)) // Calculate total days between the two dates
-    : 0;
+  // Sort function
+  const requestSort = (key) => {
+    let direction = 'asc';
+    if (sortConfig.key === key && sortConfig.direction === 'asc') {
+      direction = 'desc';
+    }
+    setSortConfig({ key, direction });
+  };
 
   return (
     <>
       <div className={styles.referralLinksList_main_container}>
-        <h2 className={styles.referralLinksList_title}>REFERRAL FULL DATABASE</h2>
+        <h2 className={styles.referralLinksList_title}>REFERRAL SUMMARY</h2>
 
         {/* Search Bar */}
         <input
           type="text"
-          placeholder="Search by referrer, referred, or signature..."
+          placeholder="Search by referrer..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className={styles.searchBar}
         />
 
-        {/* Unique Counts Table */}
-        <table className={styles.referralTable}>
-          <thead>
-            <tr>
-              <th>Unique IDs</th>
-              <th>Unique Referrers</th>
-              <th>Unique Referred</th>
-              <th>Unique Signatures</th>
-              <th>Total Days</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{uniqueIds.size}</td>
-              <td>{uniqueReferrers.size}</td>
-              <td>{uniqueReferred.size}</td>
-              <td>{uniqueSignatures.size}</td>
-              <td>{totalDays} days</td>
-            </tr>
-          </tbody>
-        </table>
-
         {/* Main Referral Data Table */}
         <table className={styles.referralTable}>
           <thead>
             <tr>
-              <th onClick={() => requestSort('id')}>ID</th>
               <th onClick={() => requestSort('referrerPublicKey')}>Referrer PublicKey</th>
-              <th onClick={() => requestSort('referredPublicKey')}>Referred PublicKey</th>
-              <th onClick={() => requestSort('signature')}>Signature</th>
-              <th onClick={() => requestSort('timestamp')}>Timestamp</th>
+              <th onClick={() => requestSort('totalReferrals')}>Total Referrals</th>
+              <th onClick={() => requestSort('level1Referrals')}>Level 1 Referrals</th>
+              <th onClick={() => requestSort('level2Referrals')}>Level 2 Referrals</th>
+              <th onClick={() => requestSort('totalPoints')}>Total Points</th>
             </tr>
           </thead>
           <tbody>
             {currentRows.map((row) => (
               <tr key={row.id}>
-                <td>{row.id}</td>
-                <td>{truncateSignature(row.referrerPublicKey)}</td>
-                <td>{truncateSignature(row.referredPublicKey)}</td>
-                <td>{truncateSignature(row.signature)}</td>
-                <td>{row.timestamp ? row.timestamp.toLocaleString() : 'N/A'}</td>
+                <td>{row.referrerPublicKey}</td>
+                <td>{row.totalReferrals}</td>
+                <td>{row.level1Referrals}</td>
+                <td>{row.level2Referrals}</td>
+                <td>{row.totalPoints}</td>
               </tr>
             ))}
           </tbody>
@@ -174,42 +118,12 @@ const ReferralLinksList = () => {
 
         {/* Pagination Controls */}
         <div className={styles.referral_list_pagination}>
-          {/* Previous Button */}
           <button onClick={handlePreviousPage} disabled={currentPage === 1}>
             Previous
           </button>
-
-          {/* Page Numbers */}
-          {currentPage > 2 && (
-            <>
-              <button onClick={() => setCurrentPage(1)}>1</button>
-              <span>...</span>
-            </>
-          )}
-
-          {Array.from({ length: 5 }, (_, index) => {
-            const pageNumber = currentPage - 2 + index;
-            return pageNumber > 0 && pageNumber <= Math.ceil(sortedData.length / rowsPerPage) ? (
-              <button
-                key={pageNumber}
-                onClick={() => setCurrentPage(pageNumber)}
-                className={currentPage === pageNumber ? styles.activePage : ''}
-              >
-                {pageNumber}
-              </button>
-            ) : null;
-          })}
-
-          {currentPage < Math.ceil(sortedData.length / rowsPerPage) - 1 && (
-            <>
-              <span>...</span>
-              <button onClick={() => setCurrentPage(Math.ceil(sortedData.length / rowsPerPage))}>
-                {Math.ceil(sortedData.length / rowsPerPage)}
-              </button>
-            </>
-          )}
-
-          {/* Next Button */}
+          <span>
+            Page {currentPage} of {Math.ceil(sortedData.length / rowsPerPage)}
+          </span>
           <button
             onClick={handleNextPage}
             disabled={currentPage >= Math.ceil(sortedData.length / rowsPerPage)}
@@ -217,9 +131,7 @@ const ReferralLinksList = () => {
             Next
           </button>
         </div>
-
       </div>
-
     </>
   );
 };
