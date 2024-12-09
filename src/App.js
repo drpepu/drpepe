@@ -7,7 +7,9 @@ import ReferralGraph from './pages/ReferralGraph/ReferralGraph';
 import ArDrive from './pages/ArDrive/Ardrive';
 import Blog from './pages/Blog/Blog'
 
-import LeaderboardReferrals2 from './components/LeaderboardReferrals/LeaderboardReferrals2'
+import LeaderboardReferrals2 from './components/LeaderboardReferrals/LeaderboardReferrals2';
+import LeaderboardReferrals3 from './components/LeaderboardReferrals/LeaderboardReferrals2'
+
 
 // Import Solana wallet adapter components
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
@@ -30,10 +32,11 @@ function App() {
             <Routes>
               <Route path="/" element={<Landing />} />
               <Route path="/referral-program" element={<ReferralSystem />} />
-              <Route path="/referral-graph" element={<ReferralGraph/>} />
+              <Route path="/graphics" element={<ReferralGraph/>} />
               <Route path="/agent" element={<Agent />} />
               <Route path="/immortality" element={<ArDrive />} />
               <Route path="/leaderboard" element={<LeaderboardReferrals2 />} />
+              <Route path="/leaderboard3" element={<LeaderboardReferrals3 />} />
               <Route path="/blog/*" element={<Blog />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
