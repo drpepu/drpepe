@@ -9,11 +9,19 @@ const ReferralLinksList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 12;
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
+  const [totalReads, setTotalReads] = useState(0); // Counter for database reads
 
   useEffect(() => {
     const fetchReferralData = async () => {
       try {
+        // Start a new database read
         const querySnapshot = await getDocs(collection(db, 'referrals'));
+        setTotalReads((prevReads) => {
+          const newReads = prevReads + 1;
+          console.log(`Total Database Reads: ${newReads}`); // Log total reads to the console
+          return newReads;
+        });
+
         const data = querySnapshot.docs.map((doc) => ({
           id: doc.id, // Document ID (unique per referrer)
           referrerPublicKey: doc.data().referrerPublicKey,
