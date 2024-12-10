@@ -4,7 +4,7 @@ import Header from '../../components/Header/Header';
 import FooterSimple from '../../components/FooterSimple/FooterSimple';
 import ReferralGraphsHeader from '../../components/ReferralGraphsHeader/ReferralGraphsHeader';
 import ReferralLinksList from '../../components/ReferralLinkList/ReferralLinkList';
-
+import FirebaseAddLevel2Points from '../../components/FirebaseLab/FirebaseAddLevel2Points'
 
 
 
@@ -32,7 +32,7 @@ function ReferralGraph() {
         <ReferralNetwork2 />
         
         */}
- 
+ <FirebaseAddLevel2Points/>
       </div>
       <FooterSimple />
     </>
