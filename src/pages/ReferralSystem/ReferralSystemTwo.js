@@ -5,7 +5,7 @@ import Header from '../../components/Header/Header';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import '@solana/wallet-adapter-react-ui/styles.css';
 import ReferralProgramDashboard from '../../components/ReferralProgramDashboard/ReferralProgramDashboard';
-import GenerateReferralLink from '../../components/GenerateReferralLink/GenerateReferralLink';
+import GenerateReferralLinkTwo from '../../components/GenerateReferralLink/GenerateReferralLinkTwo';
 import SocialTaskTelelegram from '../../components/SocialTaskTelegram/SocialTaskTelegram';
 import SocialTaskTwitter from '../../components/SocialTaskTwitter/SocialTaskTwitter';
 import FooterSimple from '../../components/FooterSimple/FooterSimple';
@@ -43,7 +43,7 @@ function ReferralSystemTwo() {
       </div>
       <ReferralProgramDashboard />
       <div className={styles.referralSystem_block_titles}>{t('referral_program_title')}</div>
-      <GenerateReferralLink />
+      <GenerateReferralLinkTwo />
  
         <div className={styles.referralSystem_block_titles}>{t('social_task_title')}</div>
       <SocialTaskTelelegram />
