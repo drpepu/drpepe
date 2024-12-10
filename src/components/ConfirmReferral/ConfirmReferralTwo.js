@@ -49,52 +49,54 @@ const ConfirmReferralTwo = () => {
       setError('Please connect your wallet first.');
       return;
     }
-
+  
     if (!referrer) {
       setError('No referrer found in the URL.');
       return;
     }
-
+  
     if (referrer === publicKey.toBase58()) {
       setError('You cannot refer yourself.');
       return;
     }
-
+  
     if (alreadyConfirmed) {
       setError('You have already confirmed this referral.');
       return;
     }
-
+  
     try {
       const message = 'Please sign this message to confirm your referral.';
       const encodedMessage = new TextEncoder().encode(message);
-
+  
       const signedMessage = await signMessage(encodedMessage);
       const referredPublicKey = publicKey.toBase58();
-
+  
       const referrerDocRef = doc(db, 'referrals', referrer);
-
+  
       try {
         const referrerDocSnapshot = await getDoc(referrerDocRef);
-
+  
+        const currentTimestamp = new Date(); // Use the client-side timestamp instead of serverTimestamp()
+  
         if (referrerDocSnapshot.exists()) {
           // Update Level 1 referral for the current referrer
           const referredList = referrerDocSnapshot.data().referredPublicKeys || [];
           if (!referredList.some((referred) => referred.referredPublicKey === referredPublicKey)) {
             await updateDoc(referrerDocRef, {
-              referredPublicKeys: arrayUnion({ referredPublicKey, timestamp: serverTimestamp() }),
+              referredPublicKeys: arrayUnion({ referredPublicKey, timestamp: currentTimestamp }),
               totalReferrals: (referrerDocSnapshot.data().totalReferrals || 0) + 1,
               level1Referrals: (referrerDocSnapshot.data().level1Referrals || 0) + 1,
               totalPoints: (referrerDocSnapshot.data().totalPoints || 0) + 1,
-              lastUpdated: serverTimestamp(),
+              lastUpdated: serverTimestamp(), // Keep serverTimestamp() here for the lastUpdated field
             });
-
+  
             // Update Level 2 referrals for the grand referrer
             const grandReferrer = referrerDocSnapshot.data().referrerPublicKey;
             if (grandReferrer) {
               const grandReferrerDocRef = doc(db, 'referrals', grandReferrer);
               const grandReferrerDocSnapshot = await getDoc(grandReferrerDocRef);
-
+  
               if (grandReferrerDocSnapshot.exists()) {
                 await updateDoc(grandReferrerDocRef, {
                   level2Referrals: (grandReferrerDocSnapshot.data().level2Referrals || 0) + 1,
@@ -108,14 +110,14 @@ const ConfirmReferralTwo = () => {
           // Create a new document for the referrer
           await setDoc(referrerDocRef, {
             referrerPublicKey: referrer,
-            referredPublicKeys: [{ referredPublicKey, timestamp: serverTimestamp() }],
+            referredPublicKeys: [{ referredPublicKey, timestamp: currentTimestamp }],
             totalReferrals: 1,
             level1Referrals: 1,
             totalPoints: 1,
             lastUpdated: serverTimestamp(),
           });
         }
-
+  
         setSuccess(true);
       } catch (dbError) {
         console.error('Error storing referral data:', dbError);
@@ -126,6 +128,7 @@ const ConfirmReferralTwo = () => {
       setError('An error occurred during the referral process.');
     }
   };
+  
 
   const handleClose = () => {
     setIsVisible(false);
