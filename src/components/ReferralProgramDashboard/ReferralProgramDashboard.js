@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useWallet } from '@solana/wallet-adapter-react';
-import { doc, getDoc, collection, onSnapshot } from 'firebase/firestore';
+import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '../../firebase';
 import gsap from 'gsap';
 import styles from './ReferralProgramDashboard.module.css';
@@ -9,6 +9,8 @@ import pepebestfren from '../../Assets/DRPEPEBESTFREN.svg';
 const ReferralProgramDashboard = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [referralData, setReferralData] = useState(null); // Store data for the connected wallet
+    const [telegramVerified, setTelegramVerified] = useState(false);
+    const [twitterVerified, setTwitterVerified] = useState(false);
     const dropdownRef = useRef(null);
     const { publicKey } = useWallet();
 
@@ -27,23 +29,41 @@ const ReferralProgramDashboard = () => {
 
             const unsubscribe = onSnapshot(referralDocRef, (docSnapshot) => {
                 if (docSnapshot.exists()) {
-                    setReferralData(docSnapshot.data());
+                    const data = docSnapshot.data();
+                    setReferralData(data);
+
+                    // Check Telegram Verification
+                    if (data.telegramId && data.telegramId.trim() !== '') {
+                        setTelegramVerified(true);
+                    } else {
+                        setTelegramVerified(false);
+                    }
+
+                    // Check Twitter Verification
+                    if (data.twitterHandle && data.twitterHandle.trim() !== '') {
+                        setTwitterVerified(true);
+                    } else {
+                        setTwitterVerified(false);
+                    }
                 } else {
                     setReferralData(null);
+                    setTelegramVerified(false);
+                    setTwitterVerified(false);
                 }
             });
 
             return () => unsubscribe();
         } else {
             setReferralData(null);
+            setTelegramVerified(false);
+            setTwitterVerified(false);
         }
     }, [publicKey]);
 
-    const twitterVerified = referralData?.twitterHandle ? true : false;
-    const telegramVerified = referralData?.telegramVerification ? true : false;
-
     const totalDRPPoints = referralData
-        ? (referralData.totalPoints || 0) + (telegramVerified ? 10 : 0) + (twitterVerified ? 10 : 0)
+        ? (referralData.totalPoints || 0) +
+          (telegramVerified ? 10 : 0) +
+          (twitterVerified ? 10 : 0)
         : 0;
 
     return (
