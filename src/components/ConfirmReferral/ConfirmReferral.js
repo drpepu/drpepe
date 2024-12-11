@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useWallet } from '@solana/wallet-adapter-react';
-import { doc, getDoc, setDoc, updateDoc, serverTimestamp, arrayUnion } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc, arrayUnion, serverTimestamp } from 'firebase/firestore';
 import { db } from '../../firebase';
 import styles from './ConfirmReferral.module.css';
 import { useTranslation } from 'react-i18next';
@@ -27,9 +27,7 @@ const ConfirmReferral = () => {
 
     useEffect(() => {
         const checkForExistingReferral = async () => {
-            if (!publicKey || !referrer) {
-                return; // Ensure both publicKey and referrer are available
-            }
+            if (!publicKey || !referrer) return;
 
             try {
                 const userDocRef = doc(db, 'referrals', referrer);
@@ -42,7 +40,7 @@ const ConfirmReferral = () => {
                     }
                 }
             } catch (err) {
-                console.error("Error checking for existing referral:", err);
+                console.error('Error checking for existing referral:', err);
             }
         };
 
@@ -76,53 +74,49 @@ const ConfirmReferral = () => {
 
             const signedMessage = await signMessage(encodedMessage);
             const referredPublicKey = publicKey.toBase58();
-
             const referrerDocRef = doc(db, 'referrals', referrer);
 
-            try {
-                const referrerDocSnapshot = await getDoc(referrerDocRef);
+            const referrerDocSnapshot = await getDoc(referrerDocRef);
 
-                if (referrerDocSnapshot.exists()) {
-                    const referredList = referrerDocSnapshot.data().referredPublicKeys || [];
-                    if (!referredList.some((referred) => referred.referredPublicKey === referredPublicKey)) {
-                        await updateDoc(referrerDocRef, {
-                            referredPublicKeys: arrayUnion({ referredPublicKey, timestamp: serverTimestamp() }),
-                            totalReferrals: (referrerDocSnapshot.data().totalReferrals || 0) + 1,
-                            level1Referrals: (referrerDocSnapshot.data().level1Referrals || 0) + 1,
-                            totalPoints: (referrerDocSnapshot.data().totalPoints || 0) + 1,
-                            lastUpdated: serverTimestamp(),
-                        });
+            if (referrerDocSnapshot.exists()) {
+                const referredList = referrerDocSnapshot.data().referredPublicKeys || [];
+                if (!referredList.some((referred) => referred.referredPublicKey === referredPublicKey)) {
+                    const referredEntry = { referredPublicKey, timestamp: new Date().toISOString() };
 
-                        const grandReferrerPublicKey = referrerDocSnapshot.data().referrerPublicKey;
-                        if (grandReferrerPublicKey) {
-                            const grandReferrerDocRef = doc(db, 'referrals', grandReferrerPublicKey);
-                            const grandReferrerDocSnapshot = await getDoc(grandReferrerDocRef);
-
-                            if (grandReferrerDocSnapshot.exists()) {
-                                await updateDoc(grandReferrerDocRef, {
-                                    level2Referrals: (grandReferrerDocSnapshot.data().level2Referrals || 0) + 1,
-                                    totalPoints: (grandReferrerDocSnapshot.data().totalPoints || 0) + 1 / 2,
-                                    lastUpdated: serverTimestamp(),
-                                });
-                            }
-                        }
-                    }
-                } else {
-                    await setDoc(referrerDocRef, {
-                        referrerPublicKey: referrer,
-                        referredPublicKeys: [{ referredPublicKey, timestamp: serverTimestamp() }],
-                        totalReferrals: 1,
-                        level1Referrals: 1,
-                        totalPoints: 1,
+                    await updateDoc(referrerDocRef, {
+                        referredPublicKeys: arrayUnion(referredEntry),
+                        totalReferrals: (referrerDocSnapshot.data().totalReferrals || 0) + 1,
+                        level1Referrals: (referrerDocSnapshot.data().level1Referrals || 0) + 1,
+                        totalPoints: (referrerDocSnapshot.data().totalPoints || 0) + 1,
                         lastUpdated: serverTimestamp(),
                     });
-                }
 
-                setSuccess(true);
-            } catch (dbError) {
-                console.error('Error storing referral data:', dbError);
-                setError('Failed to store referral data.');
+                    const grandReferrerPublicKey = referrerDocSnapshot.data().referrerPublicKey;
+                    if (grandReferrerPublicKey) {
+                        const grandReferrerDocRef = doc(db, 'referrals', grandReferrerPublicKey);
+                        const grandReferrerDocSnapshot = await getDoc(grandReferrerDocRef);
+
+                        if (grandReferrerDocSnapshot.exists()) {
+                            await updateDoc(grandReferrerDocRef, {
+                                level2Referrals: (grandReferrerDocSnapshot.data().level2Referrals || 0) + 1,
+                                totalPoints: (grandReferrerDocSnapshot.data().totalPoints || 0) + 1 / 2,
+                                lastUpdated: serverTimestamp(),
+                            });
+                        }
+                    }
+                }
+            } else {
+                await setDoc(referrerDocRef, {
+                    referrerPublicKey: referrer,
+                    referredPublicKeys: [{ referredPublicKey, timestamp: new Date().toISOString() }],
+                    totalReferrals: 1,
+                    level1Referrals: 1,
+                    totalPoints: 1,
+                    lastUpdated: serverTimestamp(),
+                });
             }
+
+            setSuccess(true);
         } catch (error) {
             console.error('Error during referral process:', error);
             setError('An error occurred during the referral process.');
