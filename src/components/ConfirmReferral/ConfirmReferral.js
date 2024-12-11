@@ -5,7 +5,7 @@ import { doc, getDoc, updateDoc, arrayUnion, serverTimestamp, setDoc } from 'fir
 import { db } from '../../firebase';
 import styles from './ConfirmReferral.module.css';
 import { useTranslation } from 'react-i18next';
-import FirebaseScanAndUpdateLevel2Referrals from '../ScanAndUpdateLevel2Referrals/FirebaseScanAndUpdateLevel2Referrals';
+import FirebaseScanAndUpdateLevel2Referrals from '../../components/FirebaseLab/FirebaseScanAndUpdateLevel2Referrals';
 
 const ConfirmReferral = () => {
   const { t } = useTranslation();
