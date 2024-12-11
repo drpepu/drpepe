@@ -31,11 +31,9 @@ const FirebaseScanAndUpdateLevel2Referrals = ({ onComplete }) => {
         const docRef = doc(db, 'referrals', referrerPublicKey);
         await updateDoc(docRef, { level2Referrals, totalPoints });
 
-        console.log(`Updated Level 2 referrals for: ${referrerPublicKey}`);
       }
 
-      console.log('Level 2 referrals and points updated.');
-      if (onComplete) onComplete();
+  
     } catch (error) {
       console.error('Error updating Level 2 referrals:', error);
     }
