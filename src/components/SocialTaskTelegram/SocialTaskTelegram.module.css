@@ -74,6 +74,7 @@ input[type="number"]::-webkit-inner-spin-button {
     cursor: pointer;
     font-weight: 600;
     min-width: 12vw;
+    border: none;
 }
 .checkmarkIcon{
     width: 2vw;

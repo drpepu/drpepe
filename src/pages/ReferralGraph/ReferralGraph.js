@@ -5,8 +5,7 @@ import FooterSimple from '../../components/FooterSimple/FooterSimple';
 import ReferralGraphsHeader from '../../components/ReferralGraphsHeader/ReferralGraphsHeader';
 import ReferralLinksList from '../../components/ReferralLinkList/ReferralLinkList';
 import FirebaseAddLevel2Points from '../../components/FirebaseLab/FirebaseAddLevel2Points'
-
-
+import FirebaseDeleteDuplicates from '../../components/FirebaseLab/FirebaseDeleteDuplicates'
 
 
 function ReferralGraph() {
@@ -32,7 +31,7 @@ function ReferralGraph() {
         <ReferralNetwork2 />
         
         */}
- <FirebaseAddLevel2Points/>
+      <FirebaseDeleteDuplicates/>
       </div>
       <FooterSimple />
     </>

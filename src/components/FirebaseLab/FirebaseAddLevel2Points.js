@@ -25,7 +25,7 @@ const AddLevel2AndPoints = () => {
       // Process each document to calculate level2Referrals and update totalPoints
       for (const docSnapshot of querySnapshot.docs) {
         const data = docSnapshot.data();
-        const { referrerPublicKey, totalPoints = 0, referredPublicKeys } = data;
+        const { referrerPublicKey, level1Referrals = 0, referredPublicKeys } = data;
 
         if (!referrerPublicKey) {
           console.warn(`Skipping document with no referrerPublicKey: ${docSnapshot.id}`);
@@ -40,14 +40,17 @@ const AddLevel2AndPoints = () => {
           level2Referrals += subReferrals.length;
         });
 
-        // Calculate additional points for level2Referrals
-        const additionalPoints = level2Referrals * 0.5;
+        // Calculate points for level2Referrals (dividing total by 2)
+        const level2Points = level2Referrals / 2;
+
+        // Calculate totalPoints (level1Referrals + level2Points)
+        const totalPoints = level1Referrals + level2Points;
 
         // Update the document with new fields
         const docRef = doc(db, 'referrals', referrerPublicKey);
         await updateDoc(docRef, {
           level2Referrals,
-          totalPoints: totalPoints + additionalPoints,
+          totalPoints,
         });
 
         console.log(`Updated document for referrer: ${referrerPublicKey}`);
@@ -66,8 +69,8 @@ const AddLevel2AndPoints = () => {
     <div>
       <h2>Add Level 2 Referrals and Update Points</h2>
       <p>
-        This will calculate and add <strong>level2Referrals</strong> and update{' '}
-        <strong>totalPoints</strong> in the "referrals" collection.
+        This will calculate and add <strong>level2Referrals</strong>, divide Level 2 referrals by 2,
+        and update <strong>totalPoints</strong> in the "referrals" collection.
       </p>
       <button onClick={updateSchemaWithLevel2AndPoints} disabled={loading || processComplete}>
         {loading ? 'Processing...' : 'Add Level 2 and Update Points'}

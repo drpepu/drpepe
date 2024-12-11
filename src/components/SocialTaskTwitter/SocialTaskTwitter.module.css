@@ -59,7 +59,7 @@ input[type="number"]::-webkit-inner-spin-button {
     padding: 1vw;
     border-radius: 30vw;
     background-color: var(--secondary-color);
-    color: var(--tertiary-color-hover-text);
+    color: var(--tertiary-color);
 
     font-size: 1vw;
 
@@ -94,6 +94,25 @@ input[type="number"]::-webkit-inner-spin-button {
   
     display: none;
 }
+
+.twitterInputWrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+  }
+  
+  .atSymbol {
+    position: absolute;
+    left: 16%;
+    font-size: 22px;
+    color: var(--secondary-color);
+  }
+  
+  .SocialTaskTwitter_input {
+    padding-left: 20px; /* Space for the @ symbol */
+  }
+  
 @media ( width <=500px ){
     .SocialTaskTwitter_main_container {
 

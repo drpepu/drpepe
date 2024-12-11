@@ -12,7 +12,7 @@ const DeletesDuplicate = () => {
     setLoading(true); // Set loading state to true
 
     try {
-      const collectionRef = collection(db, 'referrals_two'); // Replace with your collection name
+      const collectionRef = collection(db, 'referrals'); // Replace with your collection name
       const querySnapshot = await getDocs(collectionRef);
 
       const seenSignatures = new Set(); // To track unique signatures
@@ -34,7 +34,7 @@ const DeletesDuplicate = () => {
 
       // Delete documents with duplicate IDs
       for (const id of duplicateIds) {
-        const docRef = doc(db, 'referrals_two', id);
+        const docRef = doc(db, 'referrals', id);
         await deleteDoc(docRef);
         console.log(`Deleted duplicate document with ID: ${id}`);
       }
