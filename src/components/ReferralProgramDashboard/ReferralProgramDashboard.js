@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useWallet } from '@solana/wallet-adapter-react';
-import { doc, getDoc, collection, query, where, onSnapshot } from 'firebase/firestore';  // Correct imports
+import { doc, getDoc, collection, onSnapshot } from 'firebase/firestore';
 import { db } from '../../firebase';
 import gsap from 'gsap';
 import styles from './ReferralProgramDashboard.module.css';
@@ -8,9 +8,7 @@ import pepebestfren from '../../Assets/DRPEPEBESTFREN.svg';
 
 const ReferralProgramDashboard = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [totalReferrals, setTotalReferrals] = useState(0);
-    const [telegramVerified, setTelegramVerified] = useState(false);  // State for Telegram verification status
-    const [twitterVerified, setTwitterVerified] = useState(false);    // State for Twitter verification status
+    const [referralData, setReferralData] = useState(null); // Store data for the connected wallet
     const dropdownRef = useRef(null);
     const { publicKey } = useWallet();
 
@@ -25,86 +23,56 @@ const ReferralProgramDashboard = () => {
 
     useEffect(() => {
         if (publicKey) {
-            // Query to filter referrals linked to the connected wallet's publicKey
-            const referralQuery = query(
-                collection(db, 'referrals_two'),
-                where('referrerPublicKey', '==', publicKey.toString())
-            );
+            const referralDocRef = doc(db, 'referrals', publicKey.toBase58());
 
-            const unsubscribe = onSnapshot(referralQuery, (snapshot) => {
-                setTotalReferrals(snapshot.size);
+            const unsubscribe = onSnapshot(referralDocRef, (docSnapshot) => {
+                if (docSnapshot.exists()) {
+                    setReferralData(docSnapshot.data());
+                } else {
+                    setReferralData(null);
+                }
             });
 
-            // Check Telegram verification status
-            const fetchTelegramVerification = async () => {
-                const userDocRef = doc(db, 'social_verifications', publicKey.toBase58());
-                const userDocSnap = await getDoc(userDocRef);
-
-                if (userDocSnap.exists()) {
-                    const userData = userDocSnap.data();
-                    if (userData.telegramVerification && userData.telegramVerification.verifiedStatus) {
-                        setTelegramVerified(true);
-                    }
-                }
-            };
-
-            // Check Twitter verification status
-            const fetchTwitterVerification = async () => {
-                const userDocRef = doc(db, 'social_verifications', publicKey.toBase58());
-                const userDocSnap = await getDoc(userDocRef);
-
-                if (userDocSnap.exists()) {
-                    const userData = userDocSnap.data();
-                    if (userData.twitterHandle && userData.twitterHandle.trim() !== "") {  // Check if the Twitter handle exists
-                        setTwitterVerified(true);
-                    }
-                }
-            };
-
-            fetchTelegramVerification();
-            fetchTwitterVerification();
-
-            // Clean up the listener on component unmount
             return () => unsubscribe();
         } else {
-            setTotalReferrals(0); // Reset count when wallet is not connected
+            setReferralData(null);
         }
     }, [publicKey]);
 
-    // Calculate total $DRP Points
-    const totalDRPPoints = publicKey
-        ? totalReferrals * 1 + (telegramVerified ? 10 : 0) + (twitterVerified ? 10 : 0)  // 10 points per referral + points from Telegram and Twitter verifications
+    const twitterVerified = referralData?.twitterHandle ? true : false;
+    const telegramVerified = referralData?.telegramVerification ? true : false;
+
+    const totalDRPPoints = referralData
+        ? (referralData.totalPoints || 0) + (telegramVerified ? 10 : 0) + (twitterVerified ? 10 : 0)
         : 0;
 
     return (
         <div className={styles.referral_program_dashboard_main_container} onClick={toggleDropdown} style={{ cursor: 'pointer' }}>
-            
             <div className={styles.referral_program_dashboardHeader}>
-
                 <div className={styles.referral_program_dashboard_box}>
                     <div className={styles.referral_program_dashboard_box_description}>
                         X (Twitter) Points
                     </div>
                     <div className={styles.referral_program_dashboard_box_total}>
-                        {publicKey ? (twitterVerified ? 10 : 0) : 0}  {/* Add 10 points if Twitter is verified */}
+                        {twitterVerified ? 10 : 0}
                     </div>
-                </div>  
+                </div>
 
                 <div className={styles.referral_program_dashboard_box}>
                     <div className={styles.referral_program_dashboard_box_description}>
                         Telegram Points
                     </div>
                     <div className={styles.referral_program_dashboard_box_total}>
-                        {publicKey ? (telegramVerified ? 10 : 0) : 0}  {/* Add 10 points if Telegram is verified */}
+                        {telegramVerified ? 10 : 0}
                     </div>
-                </div> 
+                </div>
 
                 <div className={styles.referral_program_dashboard_box}>
                     <div className={styles.referral_program_dashboard_box_description}>
                         Total Referrals
                     </div>
                     <div className={styles.referral_program_dashboard_box_total}>
-                        {totalReferrals}
+                        {referralData ? referralData.totalReferrals || 0 : 0}
                     </div>
                 </div>
 
@@ -113,11 +81,10 @@ const ReferralProgramDashboard = () => {
                         Total $DRP Points
                     </div>
                     <div className={styles.referral_program_dashboard_box_total}>
-                        {publicKey ? totalDRPPoints : 0}  {/* Sum the points */}
+                        {totalDRPPoints}
                     </div>
                     <img src={pepebestfren} alt='pepebestfren' className={styles.referral_program_dashboard_img_bestfren}></img>
                 </div>
-
             </div>
 
             <div
@@ -125,8 +92,13 @@ const ReferralProgramDashboard = () => {
                 className={styles.dropdownContent}
                 style={{ height: 0, overflow: 'hidden' }}
             >
+                {referralData && (
+                    <div className={styles.referral_details}>
+                        <p><strong>Level 1 Referrals:</strong> {referralData.level1Referrals || 0}</p>
+                        <p><strong>Level 2 Referrals:</strong> {referralData.level2Referrals || 0}</p>
+                    </div>
+                )}
             </div>
-
         </div>
     );
 };
