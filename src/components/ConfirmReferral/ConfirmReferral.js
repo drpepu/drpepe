@@ -27,7 +27,11 @@ const ConfirmReferral = () => {
 
     useEffect(() => {
         const checkForExistingReferral = async () => {
-            if (publicKey) {
+            if (!publicKey || !referrer) {
+                return; // Ensure both publicKey and referrer are available
+            }
+
+            try {
                 const userDocRef = doc(db, 'referrals', referrer);
                 const userDocSnapshot = await getDoc(userDocRef);
 
@@ -37,8 +41,11 @@ const ConfirmReferral = () => {
                         setAlreadyConfirmed(true);
                     }
                 }
+            } catch (err) {
+                console.error("Error checking for existing referral:", err);
             }
         };
+
         checkForExistingReferral();
     }, [publicKey, referrer]);
 
