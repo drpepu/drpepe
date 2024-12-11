@@ -91,6 +91,7 @@ const ConfirmReferral = () => {
                         lastUpdated: serverTimestamp(),
                     });
 
+                    // Handle Level 2 referrals
                     const grandReferrerPublicKey = referrerDocSnapshot.data().referrerPublicKey;
                     if (grandReferrerPublicKey) {
                         const grandReferrerDocRef = doc(db, 'referrals', grandReferrerPublicKey);
@@ -99,7 +100,7 @@ const ConfirmReferral = () => {
                         if (grandReferrerDocSnapshot.exists()) {
                             await updateDoc(grandReferrerDocRef, {
                                 level2Referrals: (grandReferrerDocSnapshot.data().level2Referrals || 0) + 1,
-                                totalPoints: (grandReferrerDocSnapshot.data().totalPoints || 0) + 1 / 2,
+                                totalPoints: (grandReferrerDocSnapshot.data().totalPoints || 0) + 1 / 2, // Level 2 points
                                 lastUpdated: serverTimestamp(),
                             });
                         }
