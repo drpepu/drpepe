@@ -12,8 +12,8 @@ const FirebaseDuplicateCollection = () => {
     setLoading(true); // Set loading state to true
 
     try {
-      const sourceCollectionRef = collection(db, 'referrals_two'); // Source collection
-      const targetCollectionRef = collection(db, 'referrals'); // Target collection
+      const sourceCollectionRef = collection(db, 'social_verifications'); // Source collection
+      const targetCollectionRef = collection(db, 'social_verifications_backup'); // Target collection
       const querySnapshot = await getDocs(sourceCollectionRef);
 
       // Duplicate each document with a new ID
@@ -37,7 +37,7 @@ const FirebaseDuplicateCollection = () => {
   return (
     <div>
       <h2>Duplicate Collection</h2>
-      <p>Duplicates all documents from "referrals_two" to "referrals".</p>
+      <p>Duplicates all documents from "social_verifications" to "social_verifications_backup".</p>
       <button onClick={duplicateCollection} disabled={processComplete || loading}>
         {loading ? 'Processing...' : 'Duplicate Collection'}
       </button>

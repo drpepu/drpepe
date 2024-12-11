@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { db } from '../../firebase'; // Ensure Firebase is properly set up
+import { db } from '../../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import styles from './ReferralLinksList.module.css';
 
@@ -7,33 +7,65 @@ const ReferralLinksList = () => {
   const [referralData, setReferralData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const rowsPerPage = 12;
+  const rowsPerPage = 10;
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
-  const [totalReads, setTotalReads] = useState(0); // Counter for database reads
+  const [totalReads, setTotalReads] = useState(0);
+  const [totalReferrers, setTotalReferrers] = useState(0);
+  const [totalReferrals, setTotalReferrals] = useState(0);
 
   useEffect(() => {
     const fetchReferralData = async () => {
       try {
-        // Start a new database read
-        const querySnapshot = await getDocs(collection(db, 'referrals'));
+        // Fetch referrals data
+        const referralsSnapshot = await getDocs(collection(db, 'referrals'));
         setTotalReads((prevReads) => {
           const newReads = prevReads + 1;
-          console.log(`Total Database Reads: ${newReads}`); // Log total reads to the console
+          console.log(`Total Database Reads: ${newReads}`);
           return newReads;
         });
 
-        const data = querySnapshot.docs.map((doc) => ({
-          id: doc.id, // Document ID (unique per referrer)
+        const referralsData = referralsSnapshot.docs.map((doc) => ({
+          id: doc.id,
           referrerPublicKey: doc.data().referrerPublicKey,
-          totalReferrals: doc.data().totalReferrals,
-          level1Referrals: doc.data().level1Referrals || 0, // Level 1 referrals
-          level2Referrals: doc.data().level2Referrals || 0, // Level 2 referrals
-          totalPoints: doc.data().totalPoints || 0, // Total points
+          totalReferrals: doc.data().totalReferrals || 0,
+          level1Referrals: doc.data().level1Referrals || 0,
+          level2Referrals: doc.data().level2Referrals || 0,
+          totalPoints: doc.data().totalPoints || 0,
         }));
 
-        setReferralData(data);
+        // Fetch social verification data
+        const socialSnapshot = await getDocs(collection(db, 'social_verifications'));
+        setTotalReads((prevReads) => {
+          const newReads = prevReads + 1;
+          console.log(`Total Database Reads: ${newReads}`);
+          return newReads;
+        });
+
+        const socialData = socialSnapshot.docs.reduce((acc, doc) => {
+          const { publicKey, telegramVerification, twitterHandle } = doc.data();
+          acc[publicKey] = {
+            telegramId: telegramVerification?.telegramUserId || null,
+            twitterHandle: twitterHandle || null,
+          };
+          return acc;
+        }, {});
+
+        // Merge data
+        const mergedData = referralsData.map((referral) => ({
+          ...referral,
+          telegramId: socialData[referral.referrerPublicKey]?.telegramId || 'N/A',
+          twitterHandle: socialData[referral.referrerPublicKey]?.twitterHandle || 'N/A',
+        }));
+
+        // Calculate totals
+        const referrersCount = mergedData.length;
+        const referralsCount = mergedData.reduce((sum, item) => sum + item.totalReferrals, 0);
+
+        setReferralData(mergedData);
+        setTotalReferrers(referrersCount);
+        setTotalReferrals(referralsCount);
       } catch (err) {
-        console.error('Error fetching referral data:', err);
+        console.error('Error fetching data:', err);
       }
     };
 
@@ -91,14 +123,20 @@ const ReferralLinksList = () => {
       <div className={styles.referralLinksList_main_container}>
         <h2 className={styles.referralLinksList_title}>REFERRAL SUMMARY</h2>
 
-        {/* Search Bar */}
-        <input
-          type="text"
-          placeholder="Search by referrer..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className={styles.searchBar}
-        />
+        {/* Search Bar and Totals */}
+        <div className={styles.searchBarContainer}>
+          <input
+            type="text"
+            placeholder="Search by referrer..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className={styles.searchBar}
+          />
+          <div className={styles.totals}>
+            <p>Total Referrers: {totalReferrers}</p>
+            <p>Total Referrals: {totalReferrals}</p>
+          </div>
+        </div>
 
         {/* Main Referral Data Table */}
         <table className={styles.referralTable}>
@@ -109,6 +147,8 @@ const ReferralLinksList = () => {
               <th onClick={() => requestSort('level1Referrals')}>Level 1 Referrals</th>
               <th onClick={() => requestSort('level2Referrals')}>Level 2 Referrals</th>
               <th onClick={() => requestSort('totalPoints')}>Total Points</th>
+              <th>Telegram ID</th>
+              <th>Twitter Handle</th>
             </tr>
           </thead>
           <tbody>
@@ -119,6 +159,8 @@ const ReferralLinksList = () => {
                 <td>{row.level1Referrals}</td>
                 <td>{row.level2Referrals}</td>
                 <td>{row.totalPoints}</td>
+                <td>{row.telegramId}</td>
+                <td>{row.twitterHandle}</td>
               </tr>
             ))}
           </tbody>

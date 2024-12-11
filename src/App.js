@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from './pages/Landing/Landing';
 import ReferralSystem from './pages/ReferralSystem/ReferralSystem';
-import ReferralSystemTwo from './pages/ReferralSystem/ReferralSystemTwo';
 import NotFound from './pages/NotFound/NotFound';
 import Agent from './pages/Agent/Agent';
 import ReferralGraph from './pages/ReferralGraph/ReferralGraph';
@@ -33,7 +32,6 @@ function App() {
             <Routes>
               <Route path="/" element={<Landing />} />
               <Route path="/referral-program" element={<ReferralSystem />} />
-              <Route path="/referral-program-new-database-structure" element={<ReferralSystemTwo />} />
               <Route path="/graphics" element={<ReferralGraph/>} />
               <Route path="/agent" element={<Agent />} />
               <Route path="/immortality" element={<ArDrive />} />

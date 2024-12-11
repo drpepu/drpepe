@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import gsap from 'gsap';
-import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { doc, getDoc, setDoc, serverTimestamp, collection, query, where, getDocs } from 'firebase/firestore';
 import { useWallet } from '@solana/wallet-adapter-react';
-import { db } from '../../firebase'; 
+import { db } from '../../firebase';
 import styles from './SocialTaskTelegram.module.css';
 import checkmark_green from '../../Assets/CHECKMARK_ICON_GREEN.svg';
 import checkmark_grey from '../../Assets/CHECKMARK_ICON_GREY.svg';
@@ -15,40 +15,35 @@ const SocialTaskTelegram = () => {
     const [loading, setLoading] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [membershipStatus, setMembershipStatus] = useState('grey');
-    const [isWalletConnected, setIsWalletConnected] = useState(false); 
-    const [verifiedTelegramId, setVerifiedTelegramId] = useState(''); 
+    const [isWalletConnected, setIsWalletConnected] = useState(false);
+    const [verifiedTelegramId, setVerifiedTelegramId] = useState('');
     const dropdownRef = useRef(null);
 
     const { t } = useTranslation();
-
-
-    const { publicKey } = useWallet(); 
+    const { publicKey } = useWallet();
 
     useEffect(() => {
         if (publicKey) {
             setIsWalletConnected(true);
-            fetchTelegramVerification(); 
+            fetchTelegramVerification();
         } else {
-          
             setIsWalletConnected(false);
-            setVerifiedTelegramId(''); 
-            setMembershipStatus('grey'); 
+            setVerifiedTelegramId('');
+            setMembershipStatus('grey');
         }
     }, [publicKey]);
 
-    
     const fetchTelegramVerification = async () => {
         if (!publicKey) return;
 
-        const userDocRef = doc(db, 'social_verifications', publicKey.toBase58());
+        const userDocRef = doc(db, 'referrals', publicKey.toBase58());
         const userDocSnap = await getDoc(userDocRef);
 
         if (userDocSnap.exists()) {
             const userData = userDocSnap.data();
-            if (userData.telegramVerification) {
-                const { telegramUserId, verifiedStatus } = userData.telegramVerification;
-                setVerifiedTelegramId(telegramUserId);
-                setMembershipStatus(verifiedStatus ? 'green' : 'red');
+            if (userData.telegramId) {
+                setVerifiedTelegramId(userData.telegramId);
+                setMembershipStatus('green');
             }
         }
     };
@@ -58,59 +53,64 @@ const SocialTaskTelegram = () => {
             console.error("No public key found. Connect the wallet first.");
             return;
         }
-    
+
         setLoading(true);
-        setMembershipStatus('grey'); 
-    
+        setMembershipStatus('grey');
+
         try {
-            
-            const telegramIdCheckRef = doc(db, 'social_verifications', userId); 
-            const telegramIdCheckSnap = await getDoc(telegramIdCheckRef);
-    
-            if (telegramIdCheckSnap.exists()) {
-            
+            // Check if the Telegram ID is already used
+            const referralsCollection = collection(db, 'referrals');
+            const telegramQuery = query(referralsCollection, where('telegramId', '==', userId));
+            const querySnapshot = await getDocs(telegramQuery);
+
+            if (!querySnapshot.empty) {
                 setMembershipStatus('red');
                 setVerifiedTelegramId('');
                 alert("This Telegram ID is already associated with another wallet.");
                 return;
             }
 
+            // Verify Telegram membership through external API
             const response = await axios.post('https://social-task-telegram-server.onrender.com/check-membership', { userId });
             const isMember = response.data.isMember;
-    
 
             if (isMember) {
                 setMembershipStatus('green');
-                setVerifiedTelegramId(userId); 
-    
-               
-                const userDocRef = doc(db, 'social_verifications', publicKey.toBase58());
-                await setDoc(userDocRef, {
-                    publicKey: publicKey.toBase58(),
-                    telegramVerification: {
-                        telegramUserId: userId,
-                        verifiedStatus: true,
-                        timestamp: serverTimestamp(),
-                    }
-                }, { merge: true });
-    
-               
-                await setDoc(telegramIdCheckRef, {
-                    publicKey: publicKey.toBase58(),
-                    telegramUserId: userId,
-                });
+                setVerifiedTelegramId(userId);
+
+                const userDocRef = doc(db, 'referrals', publicKey.toBase58());
+                const userDocSnap = await getDoc(userDocRef);
+
+                if (userDocSnap.exists()) {
+                    await setDoc(userDocRef, {
+                        telegramId: userId,
+                        lastUpdated: serverTimestamp(),
+                    }, { merge: true });
+                } else {
+                    await setDoc(userDocRef, {
+                        referrerPublicKey: publicKey.toBase58(),
+                        telegramId: userId,
+                        totalReferrals: 0,
+                        level1Referrals: 0,
+                        level2Referrals: 0,
+                        totalPoints: 0,
+                        lastUpdated: serverTimestamp(),
+                    });
+                }
+
+                alert("Telegram ID saved successfully!");
             } else {
                 setMembershipStatus('red');
                 setVerifiedTelegramId('');
             }
         } catch (error) {
             console.error('Error checking membership:', error);
-            setMembershipStatus('red'); 
+            setMembershipStatus('red');
         } finally {
-            setLoading(false); 
+            setLoading(false);
         }
     };
-    
+
     const toggleDropdown = () => {
         if (isDropdownOpen) {
             gsap.to(dropdownRef.current, { height: 0, duration: 0.5, ease: 'power3.inOut' });
@@ -122,15 +122,14 @@ const SocialTaskTelegram = () => {
 
     const getMembershipIcon = () => {
         if (membershipStatus === 'green') {
-            return checkmark_green; 
+            return checkmark_green;
         } else if (membershipStatus === 'red') {
-            return xmark_red; 
+            return xmark_red;
         } else {
-            return checkmark_grey; 
+            return checkmark_grey;
         }
     };
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
     const openTelegramLink = () => {
         const mobileLink = 'tg://resolve?domain=drpepeaiOFFICIAL'; 
         const webLink = 'https://web.telegram.org/a/#-1002428485287'; 
@@ -142,10 +141,6 @@ const SocialTaskTelegram = () => {
         }
     };
 
-    const openXLink = () => {
-        const webLink = 'https://x.com/drpepeai'; 
-        window.open(webLink, '_blank', 'noopener noreferrer');
-    };
 
     return (
         <div
@@ -159,34 +154,29 @@ const SocialTaskTelegram = () => {
                     <div className={styles.SocialTaskTelegram_input_button}>
                         <input
                             type="number"
-                            placeholder={publicKey ? "TELEGRAM USER ID" : "TELEGRAM USER ID"}
+                            placeholder={publicKey ? "TELEGRAM USER ID" : "CONNECT WALLET"}
                             value={userId}
                             onClick={(e) => e.stopPropagation()}
                             onChange={(e) => setUserId(e.target.value)}
                             className={styles.SocialTaskTelegram_input}
-                            disabled={!isWalletConnected || membershipStatus === 'green'} 
+                            disabled={!isWalletConnected || membershipStatus === 'green'}
                         />
                         <button
                             onClick={(e) => { e.stopPropagation(); handleCheckMembership(); }}
-                            disabled={loading || !publicKey || membershipStatus === 'green'} 
+                            disabled={loading || !publicKey || membershipStatus === 'green'}
                             className={styles.SocialTaskTelegram_button}
                             style={{
                                 backgroundColor: publicKey && membershipStatus !== 'green' ? 'var(--secondary-color)' : 'var(--tertiary-color-hover)',
-                                borderColor: publicKey && membershipStatus !== 'green' ? 'var(--secondary-color)' : 'var(--tertiary-color-hover)',
-                                border: publicKey && membershipStatus !== 'green' ? 'var(--border-container-width) solid var(--secondary-color)' : ' var(--border-container-width) solid var(--tertiary-color-hover)',
-                                color: publicKey && membershipStatus !== 'green' ? 'var(--tertiary-color-hover)' : 'var(--tertiary-color-hover-text)', 
-                                cursor: publicKey && membershipStatus !== 'green' ? 'pointer' : 'not-allowed', 
+                                cursor: publicKey && membershipStatus !== 'green' ? 'pointer' : 'not-allowed',
                             }}
                         >
                             {loading ? 'VERIFYING...' : 'VERIFY TELEGRAM'}
                         </button>
 
-                  
                         {(membershipStatus === 'green' || membershipStatus === 'red') && (
                             <img src={getMembershipIcon()} alt="membership status" className={styles.checkmarkIcon} />
                         )}
                     </div>
-
 
                     {verifiedTelegramId && membershipStatus === 'green' && (
                         <div className={styles.SocialTaskTelegram_verified}>
@@ -220,8 +210,9 @@ const SocialTaskTelegram = () => {
                         <li className={styles.SocialTaskTelegram_li}>{t('social_task_telegram_step_4')}</li>
                     </ul>
                 </div>
-                <div className={styles.SocialTaskTelegram_read_instructions}>📖</div>
+            <div className={styles.SocialTaskTelegram_read_instructions}>📖</div>
             </div>
+    
         </div>
     );
 };
