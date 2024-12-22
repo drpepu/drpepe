@@ -19,6 +19,7 @@ import { clusterApiUrl } from '@solana/web3.js';
 
 import './App.css';
 import './i18n'; 
+import SideNavWeb from './pages/SideNavWeb/SideNavWeb';
 
 function App() {
   const endpoint = clusterApiUrl('devnet'); // Switch to 'mainnet-beta' for production
@@ -38,6 +39,7 @@ function App() {
               <Route path="/leaderboard" element={<LeaderboardReferrals2 />} />
               <Route path="/leaderboard3" element={<LeaderboardReferrals3 />} />
               <Route path="/blog/*" element={<Blog />} />
+              <Route path="/sidenavweb/*" element={<SideNavWeb />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Router>
