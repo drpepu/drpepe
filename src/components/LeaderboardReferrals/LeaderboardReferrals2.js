@@ -96,7 +96,6 @@ const LeaderboardReferrals2 = () => {
 
   return (
     <>
-      <BannerCountDown />
       <Header />
       <LeaderboardReferralHeader />
       <section className={styles.leaderboard_super_container}>
