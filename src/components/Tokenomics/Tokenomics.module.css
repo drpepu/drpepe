@@ -72,7 +72,7 @@
 .tokenomics_pepe_image{
     width: 35%;
     position: absolute;
-    bottom: 8.1vw;
+    bottom: 1.1vw;
     right: 2vw;
 }
 .tokenomics_pepe_image_mobile{
@@ -87,8 +87,7 @@
 }
 .tokenomics_main_countdown_container{
     width: 100%;
-    border: 0.3vw solid var(--secondary-color);
-    border-radius: 1.5vw;
+    border-top:0.4vw solid var(--secondary-color);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -111,9 +110,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 0vw;
+    height: 8rem !important;
 }
 .tokenomics_date_box{
-    height: 100%;
+    min-height: 6rem;
     min-width: calc(100% / 8);
     text-align: center;
     color: var(--secondary-color);
@@ -184,7 +184,7 @@
         .tokenomics_pepe_image_mobile{
             display: block;
             position: absolute;
-            bottom: 40.5vw;
+            bottom: 3.5vw;
             width: 55%;
             right: -4vw;
         }
@@ -213,7 +213,8 @@
         }
         .tokenomics_main_countdown_container{
             width: 98%;
-            border:1vw solid var(--secondary-color);
+            border-top:1vw solid var(--secondary-color);
+            height:1rem !important;
 
         }
         .tokenomics_container_countdown{

@@ -55,33 +55,7 @@ function Tokenomics() {
       <div className={styles.tokenomics_countdown_main_container}>
         <img src={drpepehi4} className={styles.tokenomics_pepe_image} alt="Tokenomics Pepe" />
         <img src={drpepehi4leftxmas} className={styles.tokenomics_pepe_image_mobile} alt="Tokenomics Pepe" />
-        <div className={styles.tokenomics_tge_title_mobile}>{t('tokenomics_subtitle')}</div>
-        <div className={styles.tokenomics_main_countdown_container}>
-          <div className={styles.tokenomics_tge_title}>{t('tokenomics_subtitle')}</div>
-           
-           
-            <div className={styles.tokenomics_container_countdown}>
-              <div className={styles.tokenomics_date_box}>
-                <div className={styles.tokenomics_date_box_text}>{t('tokenomics_days')}</div>
-                <div className={styles.tokenomics_date_box_number}>{days}</div>
-              </div>
 
-              <div className={styles.tokenomics_date_box}>
-                <div className={styles.tokenomics_date_box_text}>{t('tokenomics_hours')}</div>
-                <div className={styles.tokenomics_date_box_number}>{hours}</div>
-              </div>
-
-              <div className={styles.tokenomics_date_box}>
-                <div className={styles.tokenomics_date_box_text}>{t('tokenomics_minutes')}</div>
-                <div className={styles.tokenomics_date_box_number}>{minutes}</div>
-              </div>
-
-              <div className={styles.tokenomics_date_box}>
-                <div className={styles.tokenomics_date_box_text}>{t('tokenomics_seconds')}</div>
-                <div className={styles.tokenomics_date_box_number}>{seconds}</div>
-              </div>
-            </div>
-        </div>
 
       </div>
     </div>
