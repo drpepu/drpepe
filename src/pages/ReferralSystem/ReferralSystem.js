@@ -11,7 +11,6 @@ import SocialTaskTwitter from '../../components/SocialTaskTwitter/SocialTaskTwit
 import FooterSimple from '../../components/FooterSimple/FooterSimple';
 import ConfirmReferral from '../../components/ConfirmReferral/ConfirmReferral';
 import ReferralHeader from '../../components/ReferralHeader/ReferralHeader';
-import BannerCountDown from '../../components/BannerCountDown/BannerCountDown'
 import { Link } from 'react-router-dom'; 
 import { useTranslation } from 'react-i18next';
 
@@ -32,7 +31,6 @@ function ReferralSystem() {
 
   return (
     <>
-      <BannerCountDown />
       <Header />
       <ReferralHeader />
       <div className={styles.wallet_confirm_container}>
