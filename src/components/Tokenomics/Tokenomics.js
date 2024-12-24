@@ -28,7 +28,7 @@ function Tokenomics() {
               <div className={styles.tokenomics_info_box_container}>
                   <div className={styles.tokenomics_info_box}>
                     <div className={styles.tokenomics_info_title}>{t('tokenomics_info_one_title')}</div>
-                    <div className={styles.tokenomics_info_description}>DRP</div>
+                    <div className={styles.tokenomics_info_description}>BRYAN</div>
                   </div>
                   <div className={styles.tokenomics_info_box}>
                     <div className={styles.tokenomics_info_title}>{t('tokenomics_info_two_title')}</div>
@@ -41,11 +41,11 @@ function Tokenomics() {
               <div className={styles.tokenomics_info_box_container}>
                   <div className={styles.tokenomics_info_box}>
                     <div className={styles.tokenomics_info_title}>{t('tokenomics_info_three_title')}</div>
-                    <div className={styles.tokenomics_info_description}>COMING SOON</div>
+                    <div className={styles.tokenomics_info_description}>BrYANThKaAbjZZH5XWLrw26NzMbfUNmBwbZiMe4Fj5Mk</div>
                   </div>
                   <div className={styles.tokenomics_info_box}>
                     <div className={styles.tokenomics_info_title}>{t('tokenomics_info_four_title')}</div>
-                    <div className={styles.tokenomics_info_description}>1.000.000.000.000</div>
+                    <div className={styles.tokenomics_info_description}>888,888,888,888,888</div>
                   </div>
               </div>
 
