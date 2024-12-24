@@ -52,6 +52,12 @@
 .tokenomics_info_box{
     width: 49%;
     height: 100%;
+    padding-left: 3rem;
+}
+.tokenomics_info_box_2{
+    width: 49%;
+    height: 100%;
+    padding-left: 3rem;
 }
 .tokenomics_info_title{
     color: var(--secondary-color);
@@ -60,7 +66,7 @@
 }
 .tokenomics_info_description {
     color: var(--secondary-color);
-    font-size: 1.8vw;
+    font-size: 1.2vw;
     font-weight: 700;
     flex-wrap: wrap;
     word-break: break-word; /* Breaks words that are too long for the container */
@@ -171,13 +177,14 @@
         .tokenomics_info_box{
             padding: 3.2vw;
             width:50%;
+            font-size: 16px;
         }
         .tokenomics_info_title{
             font-size: 4.2vw;
             line-height: 4vw;
         }
         .tokenomics_info_description{
-            font-size: 4.2vw;
+            font-size: 12px;
             line-height: 4vw;
             padding-top: 1vw;
         }
